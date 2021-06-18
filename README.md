@@ -15,3 +15,13 @@ Soy Brayan Garcia, estudio licenciatura en administración, tengo 19 años, me g
 Me llamo Federico Villegas, estudio Ing. en Computación, tengo 23 años. Me gusta el desarrollo de software.
 
 Soy Fernando Figueroa, tengo 22 años. Estudio Ingeniería en Sistemas Digitales y Robótica en el Tec de Monterrey. Me apasiona aprender nuevas cosas y poder aplicar lo que sé. Me gustan los videojuegos y jugar futbol.
+
+#Referentes en el Mercado
+
+Los siguientes 5 sitios web se consideraron como buenos referentes debido a su similitud entre ellos, a los productos que ofrecen y al publico al que estan dirgidos. Considermos que las 5 tiendas tienen un Front-End bastante atractivo el cual es una buena referencia para DH-clothes.
+
+        -Adidas (https://www.adidas.mx/)
+        -Nike (https://www.nike.com/mx)
+        -Pirma (https://pirma.com.mx/)
+        -UnderArmour (https://www.underarmour.com.mx/es-mx/)
+        -Vans (https://www.vans.mx/)
