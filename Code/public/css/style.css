@@ -26,11 +26,11 @@ header{
     font-size: 2rem;
 }
 .header-logo{
-    width: 15%;
+    width: 33%;
 }
 
 .header-logo img{
-    width: 100%;
+    width: 75%;
     padding: 20px;
     /* animation: rotacion 3s infinite alternate; */
 }
