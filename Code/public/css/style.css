@@ -18,13 +18,14 @@ html {
     padding: 0;
 }
 
-header{
+header {
     background-color: var(--fondoOscuro);
     display: flex;
     align-content: flex-end;
     justify-content: space-around;
     font-size: 2rem;
 }
+
 .header-logo{
     width: 33%;
 }
@@ -65,14 +66,14 @@ header{
     align-items: flex-end;
 }
 
-header form{
+header form {
     position: relative;
     display: flex;
     align-content: flex-end;
     padding: 10px 0;
 }
 
-.header-icons{
+.header-icons {
     color: white;
     display: flex;
     align-content: flex-end;
@@ -82,6 +83,10 @@ header form{
     position: absolute;
     top: 20px;
     right: 20px;
+}
+
+.header-icons a {
+    color: white;
 }
 
 .header-icons .fa-shopping-cart, .fa-user{
@@ -178,10 +183,92 @@ footer a{
     text-align: center;
 }
 
+/* login.html */
+#form-login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+#form-login-container img {
+    width: 5%;
+    margin: 15px;
+}
+
+#join-login, #password-login {
+    margin-bottom: 15px;
+}
+
+#join-login a {
+    font-size: 1.0em;
+    color: var(--verde);
+    text-decoration: none;
+}
+
+#password-login a {
+    font-size: 0.5em;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+#img-login img {
+    width: 25%;
+}
+
+.form-control h3 {
+    font-size: 2em;
+}
+
+.form-control-input {
+    width: 25%;
+}
+
+.form-control-input input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    margin-bottom: 7.5px;
+}
+
+.form-control button {
+    font-size: 1em;
+    padding: 4px 7.5px 4px 7.5px; 
+    border-radius: 3px;
+    background-color: var(--verde);
+    margin-bottom: 8px;
+}
+/* login.html */
+
 @media (min-width: 480px) {
     .header-icons{
         position: static;
     }
+
+    /* login.html */
+    .form-login-container img {
+        width: 7%;
+    }
+
+    .form-control button {
+        font-size: 2em;
+        padding: 8px 15px 8px 15px; 
+        border-radius: 3px;
+        background-color: var(--verde);
+        margin-bottom: 10px;
+    }
+
+    #join-login a {
+        font-size: 1.5em;
+    }
+    
+    #password-login a {
+        font-size: 1.0em;
+    }
+
+    /* login.html */
 }
 
 @media (min-width: 768px) {

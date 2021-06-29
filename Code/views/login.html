@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/css/normalize.css">
     <link rel="stylesheet" href="static/css/style.css">
-    <title>DH-Clothes</title>
+    <title>Mi cuenta</title>
 </head>
 <body>
     <header>
@@ -47,11 +47,31 @@
             <i class="fas fa-bars"></i>
         </div>
     </header>
-
     <main>
-        <h1>Productos</h1>
+        <form action="" method="POST"></form>
+            <div id="form-login-container">
+                <img src="static/images/logo.png"/>
+                <div class="form-control">
+                    <h3>TU CUENTA</h3>
+                </div>
+                <div class="form-control-input">
+                    <input type="email" placeholder="Correo electronico"/>               
+                </div>
+                <div class="form-control-input">
+                    <input type="password" placeholder="Contraseña"/>
+                </div>
+                <div class="form-control">
+                    <button type="submit" id="form-login-input">Iniciar sesion</button>
+                </div>
+                <div id="join-login">
+                    <a href="#">¿No eres miembro? Unete.</a>
+                </div>
+                <div id="password-login">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+        </form> 
     </main>
-
     <footer>
         <div class="footer-logo">
             <a href="home.html">
@@ -61,7 +81,7 @@
         <nav class="footer-nav">
             <ul type='none'>
                 <li>
-                    <a href="#" class="footer-nav-a1">Home</a>
+                    <a href="home.html" class="footer-nav-a1">Home</a>
                 </li>
                 <li>
                     <a href="#" class="footer-nav-a2">Sobre Nosotros</a>
