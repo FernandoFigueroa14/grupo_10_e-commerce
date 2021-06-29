@@ -16,6 +16,10 @@ app.get('/login.html' ,function(req, res){
     res.sendFile(path.join(__dirname, '/views/login.html'));
 });
 
+app.get('/register.html' ,function(req, res){
+    res.sendFile(path.join(__dirname, '/views/register.html'));
+});
+
 app.listen(3000, ()=>{
     console.log('Servidor activo en el puerto 3000');
 });

@@ -242,6 +242,65 @@ footer a{
 }
 /* login.html */
 
+/* register.html */
+#form-register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-register-container img {
+    width: 5%;
+    margin: 15px;
+}
+
+#form-register-container h3, #form-register-container h4 {
+    text-align: center;
+}
+
+#form-register-container h3 {
+    font-size: 2em;
+}
+
+#form-register-container h4 {
+    font-size: 1.5em;
+}
+
+#genero-usuario {
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#genero-usuario label {
+    font-size: 2em;
+}
+
+#promociones {
+    width: 25%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#promociones label {
+    font-size: 1.5em;
+}
+
+#login-text a {
+    color: var(--verde);
+    text-decoration: none;
+    font-size: 1.5em;
+} 
+
+#login-text {
+    margin-bottom: 15px;
+}
+
+/* register.html */
+
+
 @media (min-width: 480px) {
     .header-icons{
         position: static;
@@ -269,6 +328,12 @@ footer a{
     }
 
     /* login.html */
+
+    /* register.html */
+    #form-register-container img {
+        width: 7%;
+    }
+    /* register.html */
 }
 
 @media (min-width: 768px) {

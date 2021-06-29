@@ -49,10 +49,12 @@
     </header>
     <main>
         <form action="" method="POST">
-            <div id="form-login-container">
+            <div id="form-register-container">
                 <img src="static/images/logo.png"/>
                 <div class="form-control">
-                    <h3>TU CUENTA</h3>
+                    <h3>HAZTE MIEMBRO</h3>
+                    <h4>Crea tu perfil como miembro y obten acceso a</h4>
+                    <h4>los mejores productos</h4>
                 </div>
                 <div class="form-control-input">
                     <input type="email" placeholder="Correo electronico"/>               
@@ -60,14 +62,36 @@
                 <div class="form-control-input">
                     <input type="password" placeholder="Contraseña"/>
                 </div>
+                <div class="form-control-input">
+                    <input type="text" placeholder="Nombre"/>               
+                </div>
+                <div class="form-control-input">
+                    <input type="text" placeholder="Apellidos"/>               
+                </div>
+                <div class="form-control-input">
+                    <input type="date" placeholder="Fecha nacimiento"/>               
+                </div>
+                <div id="genero-usuario">
+                    <label>
+                        <input type="radio" name="perfil-usuario" value="Comprador">
+                        H
+                    </label>
+                    <label>
+                        <input type="radio" name="perfil-usuario" value="Vendedor">
+                        M
+                    </label>
+                </div>
+                <div id="promociones">
+                    <label>
+                        <input type="checkbox" name="perfil-usuario" value="Comprador">
+                        Regístrate para recibir correos electrónicos con actualizaciones de productos, fechas y beneficios como miembro.
+                    </label>
+                </div>
                 <div class="form-control">
-                    <button type="submit" id="form-login-input">Iniciar sesion</button>
+                    <button type="submit" id="form-login-input">Unirse</button>
                 </div>
-                <div id="join-login">
-                    <a href="register.html">¿No eres miembro? Unete.</a>
-                </div>
-                <div id="password-login">
-                    <a href="#">¿Olvidaste tu contraseña?</a>
+                <div id="login-text">
+                    <a href="login.html">¿Ya eres miembro? Iniciar Sesion.</a>
                 </div>
             </div>
         </form> 
