@@ -12,6 +12,10 @@ app.get('/home.html' ,function(req, res){
     res.sendFile(path.join(__dirname, '/views/home.html'));
 });
 
+app.get('/producto.html' ,function(req, res){
+    res.sendFile(path.join(__dirname, '/views/producto.html'));
+});
+
 app.get('/login.html' ,function(req, res){
     res.sendFile(path.join(__dirname, '/views/login.html'));
 });

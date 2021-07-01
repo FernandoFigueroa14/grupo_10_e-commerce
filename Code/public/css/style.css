@@ -167,7 +167,99 @@ main{
     border-bottom: solid 1px #ebebeb;
 }
 
+.articulo a{
+    color: black;
+}
 
+/* .producto{
+    
+} */
+
+.producto-img{
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+}
+
+.producto img{
+    width: 100%;
+    padding: 20px;
+}
+
+.producto-descripcion{
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #ebebeb;
+    padding: 20px 0;
+    font-size: 2rem;
+}
+
+.producto-descripcion div, .producto-descripcion form,.producto-descripcion button{
+    padding: 15px 30px;
+}
+
+.producto-info, .producto-descripcion form{
+    text-align: left;
+    padding:0 30px;
+}
+
+.form-talla{
+    display: flex;
+    justify-content: center;
+}
+
+.form-talla h3{
+    width: 100%;
+    margin: 10px 0;
+}
+
+.talla-button{
+    width: 90%;
+    margin: 10px;
+    background-color: var(--fondoOscuro);
+    color: white;
+    padding: 10px 50px;
+    border: var(--verde) 2px solid;
+    border-radius: 6%; 
+    text-align: center;
+}
+
+.talla-button, .talla-button .mediana, .talla-button .grande{
+    transition: all 0.5s;
+}
+
+.talla-button input:checked+label{
+    background-color: var(--verde);
+    color: black;
+    border: var(--fondoOscuro) 2px solid;
+}
+
+.talla-button input{
+    display: none;
+}
+
+.añadir-carrito-button{
+    background-color: var(--fondoOscuro);
+    color: white;
+    border: var(--verde) 2px solid;
+    border-radius: 6%;
+    transition: all 0.5s;
+}
+
+.añadir-carrito-button:focus{
+    background-color: var(--verde);
+    color: var(--fondoOscuro);
+    border: var(--fondoOscuro) 2px solid
+}
+
+.añadir-carrito-button i{
+    color: var(--verde);
+    transition: all 0.5s;
+}
+
+.añadir-carrito-button:focus i{
+    color: var(--fondoOscuro);
+}
 
 footer{
     background-color: var(--fondoOscuro);
@@ -411,7 +503,28 @@ footer a{
     .articulo{
         width: 30%;
     }
+    .talla-button{
+        width: 30%;
+        justify-content: space-around;
+    }
     footer{
         padding: 5px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .producto{
+        display: flex;
+        justify-content: space-around;
+        background-color: white;
+    }
+    .producto-descripcion{
+        border-left: 1px solid #ebebeb;
+    }
+    .producto-img, .producto-descripcion{
+        width: 45%;
+    }
+    .talla-button{
+        width: 25%;
     }
 }
