@@ -491,6 +491,11 @@ footer a{
     }
     /* register.html */
 }
+/*carrito de compras*/
+
+.productoscomprados{
+    font-size: 30px;
+}
 
 @media (min-width: 768px) {
     .header-logo, .footer-logo{
