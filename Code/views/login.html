@@ -48,31 +48,31 @@
         </div>
     </header>
     <main>
-        <form action="" method="POST">
-            <div id="form-login-container">
+        <h2>Tu cuenta</h2>
+        <div id="main-login">
+            <div id="form-container-login">
                 <img src="static/images/logo.png"/>
-                <div class="form-control">
-                    <h3>TU CUENTA</h3>
-                </div>
-                <div class="form-control-input">
-                    <input type="email" placeholder="Correo electronico"/>               
-                </div>
-                <div class="form-control-input">
-                    <input type="password" placeholder="Contraseña"/>
-                </div>
-                <div class="form-control">
-                    <button type="submit" id="form-login-input">Iniciar sesion</button>
-                </div>
-                <div id="join-login">
-                    <a href="register.html">¿No eres miembro? Unete.</a>
-                </div>
-                <div id="password-login">
-                    <a href="#">¿Olvidaste tu contraseña?</a>
+                <form action="" method="POST" id="form-login">
+                    <div class="form-control-login">
+                        <input type="text" name="usuario" placeholder="Usuario" minlength="3">
+                    </div>
+                    <div class="form-control-login">
+                        <input type="password" name="password" placeholder="Passsword" minlength="8">
+                    </div>
+                    <div id="button-login">
+                        <button type="submit" class="button-form">enviar</button>
+                    </div>
+                    <div class="form-control-login">
+                        <a href="register.html">¿No eres miembro? Únete</a>
+                    </div>
+                    <div class="form-control-login-pass">
+                        <a href="login.html">¿Olvidaste la contraña?</a>
+                    </div>
                 </div>
             </div>
-        </form> 
+        </div>
     </main>
-    <footer>
+    <footer id="footer-login">
         <div class="footer-logo">
             <a href="home.html">
                 <img src="static/images/logo.png" alt="logo">
