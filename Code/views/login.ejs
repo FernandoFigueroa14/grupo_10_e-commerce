@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Mi cuenta</title>
+</head>
+<body>
+    
+    <%- include('./partials/header') %>
+
+    <main>
+        <h2>Tu cuenta</h2>
+        <div id="main-login">
+            <div id="form-container-login">
+                <img src="/images/logo.png"/>
+                <form action="" method="POST" id="form-login">
+                    <div class="form-control-login">
+                        <input type="text" name="usuario" placeholder="Usuario" minlength="3">
+                    </div>
+                    <div class="form-control-login">
+                        <input type="password" name="password" placeholder="Passsword" minlength="8">
+                    </div>
+                    <div id="button-login">
+                        <button type="submit" class="button-form">enviar</button>
+                    </div>
+                    <div class="form-control-login">
+                        <a href="register">¿No eres miembro? Únete</a>
+                    </div>
+                    <div class="form-control-login-pass">
+                        <a href="login">¿Olvidaste la contraña?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <%- include('./partials/header') %>
+
+</body>
+</html>
