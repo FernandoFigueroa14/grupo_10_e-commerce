@@ -1,3 +1,10 @@
+*, *:before, *:after {
+    box-sizing: inherit;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --verde: #1AE51A;
     --fondoOscuro: #0C0C0C;
@@ -11,13 +18,6 @@ html {
     font-size: 62.5%; 
     font-family: var(--fuentePrincipal);
     background-color: var(--grisClaro);
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
 }
 
 header {
@@ -331,173 +331,176 @@ footer a{
     text-align: center;
 }
 
-/* login.html */
-#form-login-container {
+/* form-register/form-login */
+#main-register, #main-login {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-} 
-
-#form-login-container img {
-    width: 5%;
-    margin: 15px;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
-#join-login, #password-login {
-    margin-bottom: 15px;
-}
-
-#join-login a {
-    font-size: 1.0em;
-    color: var(--verde);
-    text-decoration: none;
-}
-
-#join-login a:hover {
-    color: white;
-} 
-
-#password-login a {
-    font-size: 0.5em;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-}
-
-#img-login img {
-    width: 25%;
-}
-
-.form-control h3 {
+main h2 {
     font-size: 2em;
-}
-
-.form-control-input {
-    width: 25%;
-}
-
-.form-control-input input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-}
-
-.form-control {
-    margin-bottom: 7.5px;
-}
-
-.form-control button {
-    font-size: 1em;
-    padding: 4px 7.5px 4px 7.5px; 
-    border-radius: 3px;
-    background-color: var(--verde);
-    margin-bottom: 8px;
-}
-/* login.html */
-
-/* register.html */
-#form-register-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#form-register-container img {
-    width: 5%;
-    margin: 15px;
-}
-
-#form-register-container h3, #form-register-container h4 {
+    font-weight: bold;
     text-align: center;
 }
 
-#form-register-container h3 {
-    font-size: 2em;
+#form-register, #form-login {
+    padding: 30px;
 }
 
-#form-register-container h4 {
-    font-size: 1.5em;
+#form-container-register, #form-container-login {
+    width: 35%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
 }
 
-#genero-usuario {
+#form-container-register img, #form-container-login img {
     width: 25%;
+}
+
+#profile-radiobox-register {
     display: flex;
     justify-content: space-around;
-    margin-top: 15px;
+    font-size: 1.3em;
+    padding: 10px;
+}
+
+#button-register {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#button-login {
+    text-align: center;
+}
+
+#button-register button, #button-login button {
+    width: 75px;
+    padding: 5px 5px;
+    color: rgb(0, 0, 0);
+    background-color: var(--verde);
+    border-radius: 10px;
+    font-size: 17.5px;
+}
+
+#button-register button:hover, #button-login button:hover {
+    background-color: rgb(32, 207, 77);
+    color: rgb(255, 255, 255);
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+}
+
+.title-register {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.form-control-register, .form-control-login {
     margin-bottom: 15px;
 }
 
-#genero-usuario label {
-    font-size: 2em;
-}
-
-#promociones {
-    width: 25%;
+.form-control-login {
     margin-top: 15px;
-    margin-bottom: 15px;
 }
 
-#promociones label {
-    font-size: 1.5em;
+.form-control-register label {
+    display: block;
 }
 
-#login-text a {
+.form-control-register a, .form-control-login a {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 15px;
     color: var(--verde);
-    text-decoration: none;
-    font-size: 1.5em;
-} 
+}
 
-#login-text a:hover {
-    color: white;
-} 
+#form-control-register-checkbox {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
 
-#login-text {
+.form-control-register input, .form-control-register textarea, .form-control-login input {
+    width: 95%;
+    padding: 5px;
+    resize: none;
+}
+
+.form-control-register a:hover, .form-control-login a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.form-control-register input:invalid, .form-control-register textarea:invalid, .form-control-login input:invalid {
+    border: 3px solid rgb(255, 0, 0);
+}
+
+.form-control-check-register label {
+    display: block;
     margin-bottom: 15px;
 }
 
-/* register.html */
-
-
-@media (min-width: 480px) {
-    .header-icons{
-        position: static;
-    }
-
-    /* login.html */
-    .form-login-container img {
-        width: 7%;
-    }
-
-    .form-control button {
-        font-size: 2em;
-        padding: 8px 15px 8px 15px; 
-        border-radius: 3px;
-        background-color: var(--verde);
-        margin-bottom: 10px;
-    }
-
-    #join-login a {
-        font-size: 1.5em;
-    }
-    
-    #password-login a {
-        font-size: 1.0em;
-    }
-
-    /* login.html */
-
-    /* register.html */
-    #form-register-container img {
-        width: 7%;
-    }
-    /* register.html */
+.form-control-login-pass a {
+    font-size: 1.2em;
+    color: rgb(205, 205, 205);
 }
+
+.form-control-login-pass a:hover {
+    color: rgb(0, 0, 0);
+}
+/* form-register/form-login */
+
+
 /*carrito de compras*/
 
 .productoscomprados{
     font-size: 30px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 942px) {
+    .header-icons{
+        position: static;
+    }
+
+    /* form-register/form-login */
+    #main-register {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 5px;
+    }
+
+    main h2 {
+        font-size: 1.75em;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .title-register {
+        font-size: 1.2em;
+    }
+
+    .form-control-register input, .form-control-register textarea, .form-control-login input {
+        width: 97%;
+    }
+
+    #profile-radiobox-register {
+        font-size: 1em;
+    }
+
+    #form-container-register, #form-container-login {
+        width: 100%;
+    }
+
+    #button-register button, #button-login button {
+        padding: 2px 1px;
+        font-size: 1.2em;
+        width: 75px;
+    }
+    /* form-register/form-login */
+}
+
+@media (min-width: 942px) {
     .header-logo, .footer-logo{
         width: 15%;
     }    

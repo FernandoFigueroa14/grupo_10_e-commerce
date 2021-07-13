@@ -1,34 +1,16 @@
 const express = require('express');
 const path = require('path');
+const router = require('./routers/main');
+
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 
-app.use('/static', express.static(path.join(__dirname,'/public')));
+app.use(express.static(path.resolve('./public')));
+app.use(router);
 
-app.get('/' ,function(req, res){
-    res.sendFile(path.join(__dirname, '/views/home.html'));
-});
+app.set('view engine', 'ejs');
 
-app.get('/home.html' ,function(req, res){
-    res.sendFile(path.join(__dirname, '/views/home.html'));
-});
-
-app.get('/producto.html' ,function(req, res){
-    res.sendFile(path.join(__dirname, '/views/producto.html'));
-});
-
-app.get('/login.html' ,function(req, res){
-    res.sendFile(path.join(__dirname, '/views/login.html'));
-});
-
-app.get('/register.html' ,function(req, res){
-    res.sendFile(path.join(__dirname, '/views/register.html'));
-});
-
-app.get('/carrito.html' ,function(req, res){
-    res.sendFile(path.join(__dirname, '/views/carrito.html'));
-});
-
-
-app.listen(3000, ()=>{
-    console.log('Servidor activo en el puerto 3000');
+app.listen(PORT, () => {
+    console.log('Servidor funcionando en puerto: ' + PORT);
 });
