@@ -9,9 +9,10 @@
     <%- include('./partials/header') %>
 
     <main>
-        <section class="Carrito de Compras">
-            <div class="carrito">
+        <section class="logo-carrito">
+            <div class="carrito-logo">
                 <i class="fas fa-shopping-cart"></i>
+                </div>
                 <h1>Tu Carrito</h1>
                 
                 <article>
@@ -20,7 +21,7 @@
                 </span>
                 
                     <span class="precio">
-                        <span>precio</span>
+                        <span>Precio</span>
                     </span>
                     <span class="cantidad"> 
                     <span>Cantidad</span>
@@ -28,10 +29,21 @@
                     <span class="total-de-compra">
                     <span>Total</span>
                     </span>
-                    
-                    <p>Aun no tienes articulos seleccionados</p>
-                    
+                    <hr>
+                    <article class="producto-añadido">
+                    <a href="producto.html">
+                        <img src="/images/producto-prueba.jpg" alt="producto-prueba">
+                        <h4>Playera Node JS</h4>
+                        </a>
                 </article>
+                <section class="cantidades">
+                <input type="number" name="cantidad">
+                </section>
+                <p>aun no es full responsive</p>
+                
+                
+                </section>
+
             </section> 
     </main>
 
