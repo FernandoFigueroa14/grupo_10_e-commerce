@@ -453,10 +453,44 @@ main h2 {
 
 
 /*carrito de compras*/
-
 .productoscomprados{
     font-size: 30px;
+    margin-left: 10%;
 }
+.precio{
+    font-size:30px;
+    margin-left: 20%;
+}
+.cantidad{
+    font-size:30px;
+    margin-left: 20%;
+}
+.total-de-compra{
+    font-size: 30px;
+    margin-left: 20%;
+}
+
+
+main section i{
+    width: 100px;
+}
+article h4{
+    font-size: 20px;
+    text-align: left;
+    margin-left: 10%;
+    color:rgb(0, 0, 0)
+}
+article .producto-añadido img{
+   
+    display: flex;
+        justify-content: left;
+        width: 10%;
+        padding: 5px;
+        margin-left: 10% ;
+}
+
+
+/*carrito de compras*/
 
 @media (max-width: 942px) {
     .header-icons{
