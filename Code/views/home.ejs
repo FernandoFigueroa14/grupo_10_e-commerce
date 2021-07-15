@@ -26,8 +26,8 @@
         <section class="articulos">
             <h3 class="titular">¡Lo más vendido!</h3>
 
-            <% for(let i = 0; i < 6; i++) { %>
-                <%- include('./partials/producto', {producto : productos[i]}) %>
+            <% for(let i = 0; i < productos.length; i++) { %>
+                <%- include('./partials/producto', {producto : productos[i], id : i} ) %>
             <% } %>
 
         </section>

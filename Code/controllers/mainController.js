@@ -24,6 +24,10 @@ productos = [
     {
         nombre: "Playera node 6",
         precio: "$1750",
+    },
+    {
+        nombre: "Playera node 7",
+        precio: "$1850",
     }
 ];
 
@@ -32,7 +36,7 @@ const controller = {
         res.render(path.resolve('views/home'), {productos : productos});
     },
     producto: (req, res) => {
-        res.render(path.resolve('views/detalleProducto'));
+        res.render(path.resolve('views/detalleProducto'), {productos : productos, id : req.params.id});
     },
     login: (req, res) => {
         res.render(path.resolve('views/login'));
