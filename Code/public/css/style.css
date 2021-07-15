@@ -301,14 +301,14 @@ footer a{
     color: var(--verde);
 }
 
-.social-media{
+.social-media {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
 }
 
-.social-media p{
+.social-media p { 
     margin: 10px 0;
 }
 
@@ -316,11 +316,11 @@ footer a{
     margin-bottom: 10px;
 }
 
-.social-media .footer-icons .iconFb, .iconInsta, .iconTw, .iconYt{
+.social-media .footer-icons .iconFb, .iconInsta, .iconTw, .iconYt {
     transition: all .5s;
 }
 
-.social-media .footer-icons .iconFb:hover, .iconInsta:hover, .iconTw:hover, .iconYt:hover{
+.social-media .footer-icons .iconFb:hover, .iconInsta:hover, .iconTw:hover, .iconYt:hover {
     color: var(--verde);
 }
 
