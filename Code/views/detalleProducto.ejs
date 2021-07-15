@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('./partials/head') %>
-    <title>DH-Clothes</title>
+    <title> DH-Clothes </title>
 </head>
 <body>
     
@@ -22,8 +22,8 @@
             </div>
             <div class="producto-descripcion">
                 <div class="top-info">
-                    <h2 class="producto-nombre">Playera NodeJS</h2>
-                    <p class="precio">$1200</p>
+                    <h2 class="producto-nombre"> <%= productos[id].nombre %> </h2>
+                    <p class="precio"> <%= productos[id].precio %> </p>
                 </div>
                 <form action="" method="POST" class="form-talla">
                     <h3>Talla</h3>
