@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head') %>
+    <!-- head --> 
+    <%- include('../partials/head') %>
+    <!-- /head -->
     <title>Mi cuenta</title>
 </head>
 <body>
 
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
 
     <main>
         <h2>HAZTE MIEMBRO</h2>
@@ -14,7 +16,9 @@
         <h2>los mejores productos</h2>
         <div id="main-register">
             <div id="form-container-register">
-                <img src="/images/logo.png"/>
+                <a href="/home">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
                 <form action="" method="POST" id="form-register">
                     <div class="form-control-register">
                         <input type="email" name="e-mail" placeholder="E-mail" minlength="10">
@@ -63,7 +67,7 @@
         </div>
     </main>
 
-    <%- include('./partials/footer') %>
+    <%- include('../partials/footer') %>
 
 </body>
 </html>

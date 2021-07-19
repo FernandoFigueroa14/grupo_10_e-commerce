@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- head --> 
     <%- include('./partials/head') %>
+    <!-- /head -->
     <title>DH-Clothes</title>
 </head>
 <body>
@@ -24,7 +26,7 @@
         </section>
 
         <section class="articulos">
-            <h3 class="titular">¡Lo más vendido!</h3>
+            <h3 class="titular">¡Lo más vendido en D-HC!</h3>
 
             <% for(let i = 0; i < productos.length; i++) { %>
                 <%- include('./partials/producto', {producto : productos[i], id : i} ) %>

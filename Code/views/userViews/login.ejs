@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head') %>
+    <!-- head --> 
+    <%- include('../partials/head') %>
+    <!-- /head -->
     <title>Mi cuenta</title>
 </head>
 <body>
     
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
 
     <main>
         <h2>Tu cuenta</h2>
         <div id="main-login">
             <div id="form-container-login">
-                <img src="/images/logo.png"/>
+                <a href="/home">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
                 <form action="" method="POST" id="form-login">
                     <div class="form-control-login">
                         <input type="text" name="usuario" placeholder="Usuario" minlength="3">
@@ -24,17 +28,17 @@
                         <button type="submit" class="button-form">enviar</button>
                     </div>
                     <div class="form-control-login">
-                        <a href="register">¿No eres miembro? Únete</a>
+                        <a href="/register">¿No eres miembro? Únete</a>
                     </div>
                     <div class="form-control-login-pass">
-                        <a href="login">¿Olvidaste la contraña?</a>
+                        <a href="/recoverPassword">¿Olvidaste la contraña?</a>
                     </div>
                 </form>
             </div>
         </div>
     </main>
     
-    <%- include('./partials/footer') %>
+    <%- include('../partials/footer') %>
 
 </body>
 </html>

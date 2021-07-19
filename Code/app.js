@@ -14,5 +14,5 @@ app.use(routerUser);
 app.set('view engine', 'ejs');
 
 app.listen(PORT, () => {
-    console.log('Servidor funcionando en puerto: ' + PORT);
+    console.log('Server running on port: ' + PORT + ', check it! :D');
 });
