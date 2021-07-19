@@ -572,7 +572,7 @@ article .producto-añadido img{
         align-content: space-around;
     }
     .articulo {
-        width: 21%;
+        width: 42%;
     }
     .talla-button{
         width: 30%;
@@ -584,6 +584,9 @@ article .producto-añadido img{
 }
 
 @media (min-width: 1200px) {
+    .articulo {
+        width: 21%;
+    }
     .producto {
         display: flex;
         justify-content: space-around;
