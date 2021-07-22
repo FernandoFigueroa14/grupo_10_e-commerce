@@ -1,146 +1,50 @@
 [
     {
-        "nombre": "Playera node 1",
-        "precio": "$1250",
-        "descripcion": "descripcion 1",
-        "img": "muestra-1.jpg"
-    },
-    {
-        "nombre": "Playera node 2",
-        "precio": "$1350",
-        "descripcion": "descripcion 2",
-        "img": "muestra-2.jpg"
-    },
-    {
-        "nombre": "Playera node 3",
-        "precio": "$1450",
-        "descripcion": "descripcion 3",
+        "id": 1626977204187,
+        "name": "Playera node Hombre",
+        "price": "$1250",
+        "description": "descripcion 1",
+        "category": "male",
         "img": "producto-prueba.jpg"
-    },
-    {
-        "nombre": "Playera node 4",
-        "precio": "$1550",
-        "descripcion": "descripcion 4",
-        "img": "muestra-2.jpg"
-    },
-    {
-        "nombre": "Playera node 5",
-        "precio": "$1650",
-        "descripcion": "descripcion 5",
-        "img": "producto-prueba.jpg"
-    },
-    {
-        "nombre": "Playera node 6",
-        "precio": "$1750",
-        "descripcion": "descripcion 6",
-        "img": "muestra-3.jpg"
-    },
-    {
-        "nombre": "Playera node 7",
-        "precio": "$1850",
-        "descripcion": "descripcion 7",
-        "img": "muestra-2.jpg"
-    },
-    {
-        "nombre": "Playera node 8",
-        "precio": "$17350",
-        "descripcion": "descripcion 8",
-        "img": "muestra-3.jpg"
-    },
-    {
-        "nombre": "Playera node 8",
-        "precio": "$1430",
-        "descripcion": "descripcion 8",
-        "img": "producto-prueba.jpg"
-    },
-    {
-        "nombre": "Playera node 9",
-        "precio": "$1540",
-        "descripcion": "descripcion 9",
-        "img": "muestra-2.jpg"
-    },
-    {
-        "nombre": "Playera node 10",
-        "precio": "$4350",
-        "descripcion": "descripcion 10",
-        "img": "muestra-3.jpg"
     }, 
     {
-        "nombre": "Playera node 1",
-        "precio": "$1250",
-        "descripcion": "descripcion 1",
-        "img": "muestra-1.jpg"
-    },
+        "id": 1626977204185,
+        "name": "Playera node Mujer",
+        "price": "$1250",
+        "description": "descripcion 2",
+        "category": "female",
+        "img": "producto-prueba.jpg"
+    }, 
     {
-        "nombre": "Playera node 2",
-        "precio": "$1350",
-        "descripcion": "descripcion 2",
-        "img": "muestra-2.jpg"
-    },
-    {
-        "nombre": "Playera node 3",
-        "precio": "$1450",
-        "descripcion": "descripcion 3",
+        "id": 1626977204186,
+        "name": "Playera node Niño",
+        "price": "$1250",
+        "description": "descripcion 3",
+        "category": "kid",
         "img": "producto-prueba.jpg"
     },
     {
-        "nombre": "Playera node 4",
-        "precio": "$1550",
-        "descripcion": "descripcion 4",
-        "img": "muestra-2.jpg"
-    },
-    {
-        "nombre": "Playera node 5",
-        "precio": "$1650",
-        "descripcion": "descripcion 5",
+        "id": 1626977203287,
+        "name": "Playera node Hombre 2",
+        "price": "$12050",
+        "description": "descripcion 1",
+        "category": "male",
         "img": "producto-prueba.jpg"
-    },
+    }, 
     {
-        "nombre": "Playera node 6",
-        "precio": "$1750",
-        "descripcion": "descripcion 6",
-        "img": "muestra-3.jpg"
-    },
-    {
-        "nombre": "Playera node 7",
-        "precio": "$1850",
-        "descripcion": "descripcion 7",
-        "img": "muestra-2.jpg"
-    },
-    {
-        "nombre": "Playera node 8",
-        "precio": "$17350",
-        "descripcion": "descripcion 8",
-        "img": "muestra-3.jpg"
-    },
-    {
-        "nombre": "Playera node 8",
-        "precio": "$1430",
-        "descripcion": "descripcion 8",
+        "id": 1626972304185,
+        "name": "Playera node Mujer 2",
+        "price": "$1500",
+        "description": "descripcion 2",
+        "category": "female",
         "img": "producto-prueba.jpg"
-    },
+    }, 
     {
-        "nombre": "Playera node 9",
-        "precio": "$1540",
-        "descripcion": "descripcion 9",
-        "img": "muestra-2.jpg"
-    },
-    {
-        "nombre": "Playera node 10",
-        "precio": "$4350",
-        "descripcion": "descripcion 10",
-        "img": "muestra-3.jpg"
-    },
-    {
-        "nombre": "Playera node 89",
-        "precio": "$329846",
-        "descripcion": "descripcion 89",
-        "img": "muestra-1.jpg"
-    },
-    {
-        "nombre": "Playera node 103",
-        "precio": "$12345",
-        "descripcion": "descripcion 103",
-        "img": "muestra-1.jpg"
+        "id": 1096977204186,
+        "name": "Playera node Niño 2",
+        "price": "$125",
+        "description": "descripcion 3",
+        "category": "kid",
+        "img": "producto-prueba.jpg"
     }
 ]

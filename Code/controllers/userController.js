@@ -5,9 +5,6 @@ const productsJSON = path.resolve('./data/dataProducts.json');
 const products = JSON.parse(fs.readFileSync(productsJSON, 'utf-8'));
 
 const userController = {
-    producto: (req, res) => {
-        res.render(path.resolve('views/detalleProducto'), {productos : products, id : req.params.id});
-    },
     login: (req, res) => {
         res.render(path.resolve('views/userViews/login'));
     },

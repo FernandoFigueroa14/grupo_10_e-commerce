@@ -4,7 +4,7 @@
     <!-- head -->
     <%- include('./partials/head') %>
     <!-- /head -->
-    <title> DH-Clothes </title>
+    <title> DH-Clothes : <%= product.name %></title>
 </head>
 <body>
     <!-- header -->
@@ -13,7 +13,7 @@
     <main>
         <section class="producto">
             <div class="producto-img">
-                <img src="/images/<%= productos[id].img %>" alt="producto-prueba">
+                <img src="/images/<%= product.img %>" alt="producto-prueba">
                 <div class="producto-img-buttons">
                     <input type="radio" name="img-buttons" checked>
                     <input type="radio" name="img-buttons">
@@ -24,8 +24,8 @@
             </div>
             <div class="producto-descripcion">
                 <div class="top-info">
-                    <h2 class="producto-nombre"> <%= productos[id].nombre %> </h2>
-                    <p class="precio"> <%= productos[id].precio %> </p>
+                    <h2 class="producto-nombre"> <%= product.name %> </h2>
+                    <p class="precio"> <%= product.price %> </p>
                 </div>
                 <form action="" method="POST" class="form-talla">
                     <h3>Talla</h3>
@@ -44,7 +44,7 @@
                 </form>
                 <div class="producto-info">
                     <h3>Descripción</h3>
-                    <p> <%= productos[id].descripcion %> </p>
+                    <p> <%= product.description %> </p>
                 </div>
                 <button type="submit" class="añadir-carrito-button">
                     <i class="fas fa-cart-plus"></i>
