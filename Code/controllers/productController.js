@@ -22,7 +22,7 @@ const productController = {
             price: req.body.price,
             description: req.body.description,
             category: req.body.category,
-            img: "producto-prueba.jpg" 
+            img: req.file ? req.file.filename : "producto-prueba.jpg" 
         };
 
         products.push(newProduct);
