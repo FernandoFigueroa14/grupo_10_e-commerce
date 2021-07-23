@@ -468,6 +468,33 @@ main h2 {
 }
 /* form-register/form-login */
 
+/* form-create */
+.titles-create-product {
+    text-align: left;
+} 
+
+.form-control-create {
+    margin-bottom: 15px;
+}
+
+#form-control-create-select {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.form-control-create input, .form-control-create textarea {
+    width: 95%;
+    padding: 5px;
+    resize: none;
+}
+
+#img-title-create-product {
+    text-align: left;
+    margin-bottom: 15px;
+}
+/* form-create */
+
 
 /*carrito de compras*/
 .productoscomprados{

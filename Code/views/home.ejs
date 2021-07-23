@@ -29,7 +29,7 @@
             <h3 class="titular">¡Lo más vendido en D-HC!</h3>
 
             <% for(let i = 0; i < products.length; i++) { %>
-                <%- include('./partials/producto', {product: products[i]} ) %>
+                <%- include('./partials/producto', {product: products[i], toThousand: toThousand}) %>
             <% } %>
 
         </section>

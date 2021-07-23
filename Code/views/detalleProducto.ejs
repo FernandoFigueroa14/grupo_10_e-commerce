@@ -25,7 +25,7 @@
             <div class="producto-descripcion">
                 <div class="top-info">
                     <h2 class="producto-nombre"> <%= product.name %> </h2>
-                    <p class="precio"> <%= product.price %> </p>
+                    <p class="precio"> $ <%= toThousand(product.price) %> </p>
                 </div>
                 <form action="" method="POST" class="form-talla">
                     <h3>Talla</h3>

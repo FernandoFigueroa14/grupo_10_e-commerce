@@ -26,10 +26,10 @@
         </section>
 
         <section class="articulos">
-            <h3 class="titular">Ropa para Niños en D-HC!</h3>
+            <h3 class="titular">Ropa para Niño en D-HC!</h3>
 
             <% for(let i = 0; i < products.length; i++) { %>
-                <%- include('../partials/producto', {product: products[i]} ) %>
+                <%- include('../partials/producto', {product: products[i], toThousand: toThousand} ) %>
             <% } %>
 
         </section>

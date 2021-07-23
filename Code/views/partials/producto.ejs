@@ -1,7 +1,7 @@
 <div class="articulo">
-    <a href="/detalleProducto/<%= product.id %>">
+    <a href="product/detail/<%= product.id %>">
         <img src="/images/<%= product.img %>" alt="producto-prueba">
         <h4> <%= product.name %> </h4>
-        <p> <%= product.price %> </p>
+        <p> $ <%= toThousand(product.price) %> </p>
     </a> 
 </div>

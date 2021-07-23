@@ -12,9 +12,12 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.resolve('./public')));
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
 app.use(routerMain);
 app.use(routerUser);
-app.use(routerProduct);
+app.use('/product', routerProduct);
 app.use(routerCategories);
 
 app.listen(PORT, () => {
