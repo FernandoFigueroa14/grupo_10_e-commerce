@@ -62,6 +62,10 @@ a{
     transition: all .5s;
 }
 
+.header-nav ul li .selected {
+    border-bottom: 2px solid white;
+}
+
 .header-nav ul li a:hover{
     color: var(--verde);
     border-bottom: 2px solid white;
