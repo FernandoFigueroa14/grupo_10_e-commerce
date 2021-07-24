@@ -536,9 +536,12 @@ article .producto-añadido img{
         padding: 5px;
         margin-left: 10% ;
 }
+article .cantidades{
+display: inline;
+text-align: left;
+}
 
-
-/*carrito de compras*/
+/*Fin carrito de compras*/
 
 @media (max-width: 942px) {
     .header-icons{
