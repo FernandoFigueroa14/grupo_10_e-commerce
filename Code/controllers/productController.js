@@ -26,7 +26,7 @@ const productController = {
         };
 
         products.push(newProduct);
-        fs.writeFileSync(pathProductsJSON, JSON.stringify(products));
+        fs.writeFileSync(pathProductsJSON, JSON.stringify(products, null, 2));
         res.redirect('/');
     }
 };
