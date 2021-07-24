@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- header -->
-    <%- include('./partials/header') %>
+    <%- include('./partials/header', {selected: ''}) %>
     <!-- /header -->
     <main>
         <section class="producto">
@@ -46,10 +46,22 @@
                     <h3>Descripción</h3>
                     <p> <%= product.description %> </p>
                 </div>
-                <button type="submit" class="añadir-carrito-button">
-                    <i class="fas fa-cart-plus"></i>
-                    <span>Añadir al carrito</span>
-                </button>
+                <div class="producto-info">
+                    <h3>Categoria</h3>
+                    <% if (product.category == 'male') { %> 
+                        <p> Playera para hombre </p>
+                    <% } else if (product.category == 'female') { %>
+                        <p> Playera para mujer </p>
+                    <% } else { %>
+                        <p> Playera para  niño </p>
+                    <% } %>
+                </div>
+                <div id="carrito">
+                    <button type="submit" class="añadir-carrito-button">
+                        <i class="fas fa-cart-plus"></i>
+                        <span>Añadir al carrito</span>
+                    </button>
+                </div>
             </div>
         </section>
     </main>

@@ -6,17 +6,47 @@
     </div>
     <nav class="header-nav">
         <ul type='none'>
-            <li>
-                <a href="/women">Mujeres</a>
-            </li>
-            <li>
-                <a href="/men">Hombres</a>
-            </li>
-            <li>
-                <a href="/kids">Niños</a>
-            </li>
+            <% if (selected == 'home') { %> 
+                <li>
+                    <a href="/" class="selected">Todos</a>
+                </li>
+            <% } else { %>
+                <li>
+                    <a href="/">Todos</a>
+                </li>
+            <% } %>
+            <% if (selected == 'women') { %> 
+                <li>
+                    <a href="/women" class="selected">Mujeres</a>
+                </li>
+            <% } else { %>
+                <li>
+                    <a href="/women">Mujeres</a>
+                </li>
+            <% } %>
+            <% if (selected == 'men') { %> 
+                <li>
+                    <a href="/men" class="selected">Hombre</a>
+                </li>
+            <% } else { %>
+                <li>
+                    <a href="/men">Hombre</a>
+                </li>
+            <% } %>
+            <% if (selected == 'kids') { %> 
+                <li>
+                    <a href="/kids" class="selected">Niños</a>
+                </li>
+            <% } else { %>
+                <li>
+                    <a href="/kids">Niños</a>
+                </li>
+            <% } %>
             <li>
                 <a href="#">Tenis</a>
+            </li>
+            <li>
+                <a href="product/create">[Registrar]*</a>
             </li>
         </ul>
     </nav>
