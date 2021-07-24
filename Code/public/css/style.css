@@ -186,6 +186,8 @@ main{
     width: 100%;
     background-color: white;
     padding: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .producto img {
@@ -455,7 +457,7 @@ main h2 {
     color: rgb(0, 0, 0);
 }
 
-.form-control-register input:invalid, .form-control-register textarea:invalid, .form-control-login input:invalid {
+.form-control-register input:invalid, .form-control-register textarea:invalid, .form-control-login input:invalid, .form-control-create input:invalid {
     border: 3px solid rgb(255, 0, 0);
 }
 
@@ -477,10 +479,27 @@ main h2 {
 /* form-create */
 .titles-create-product {
     text-align: left;
+    font-size: 2em;
 } 
 
 .form-control-create {
     margin-bottom: 15px;
+}
+
+.form-control-delete input {
+    margin-bottom: 15px;
+    margin-top: 25px;
+    font-size: 2em;
+}
+
+.form-control-create {
+    font-size: 2em;
+}
+
+.form-control-create input, .form-control-delete input, .form-control-create textarea {
+    width: 95%;
+    padding: 5px;
+    resize: none;
 }
 
 #form-control-create-select {
@@ -489,10 +508,8 @@ main h2 {
     text-align: left;
 }
 
-.form-control-create input, .form-control-create textarea {
-    width: 95%;
-    padding: 5px;
-    resize: none;
+#create-product-title {
+    font-size: 3em;
 }
 
 #img-title-create-product {

@@ -1,5 +1,8 @@
 const express = require('express');
 const path = require('path');
+const logger = require('morgan');
+const methodOverride = require('method-override');
+
 const routerMain = require('./routers/main');
 const routerUser = require('./routers/user');
 const routerProduct = require('./routers/product');
@@ -14,6 +17,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.resolve('./public')));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(logger('dev'));
+app.use(methodOverride('_method'));
 
 app.use(routerMain);
 app.use(routerUser);

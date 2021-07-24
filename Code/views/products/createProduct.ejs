@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <!-- head --> 
-    <%- include('./partials/head') %>
+    <%- include('../partials/head') %>
     <!-- /head -->
     <title>Registrar nuevo producto</title>
 </head>
 <body>
     <!-- header --> 
-    <%- include('./partials/header', {selected: ''}) %>
+    <%- include('../partials/header', {selected: ''}) %>
     <!-- /header --> 
     <main>
-        <h2>Registrar producto</h2>
+        <h1 id="create-product-title">Registrar producto</h1>
         <div id="main-register">
             <div id="form-container-register">
                 <form action="/product/create" method="POST" id="form-register" enctype="multipart/form-data">
@@ -45,7 +45,7 @@
         </div>
     </main>
     <!-- footer --> 
-    <%- include('./partials/footer') %>
+    <%- include('../partials/footer') %>
     <!-- /footer --> 
 </body>
 </html>

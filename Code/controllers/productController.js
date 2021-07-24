@@ -10,10 +10,10 @@ const productController = {
     detail: (req, res) => {
         const product = products.find(product => product.id === parseInt(req.params.id));
         
-        res.render(path.resolve('views/detalleProducto'), {product: product, toThousand: toThousand});
+        res.render(path.resolve('views/products/detailProduct'), {product: product, toThousand: toThousand});
     }, 
-    showForm: (req, res) => {
-        res.render(path.resolve('views/createProduct'));
+    showFormCreate: (req, res) => {
+        res.render(path.resolve('views/products/createProduct'));
     },
     create: (req, res) => {
         const newProduct = {
@@ -27,6 +27,15 @@ const productController = {
 
         products.push(newProduct);
         fs.writeFileSync(pathProductsJSON, JSON.stringify(products, null, 2));
+        res.redirect('/');
+    }, 
+    showFormDelete: (req, res) => {
+        res.render(path.resolve('views/products/deleteProduct'));
+    },
+    delete: (req, res) => {
+        const productsFiltereds = products.filter(product => product.id !== parseInt(req.body.id));
+
+        fs.writeFileSync(pathProductsJSON, JSON.stringify(productsFiltereds, null, 2));
         res.redirect('/');
     }
 };

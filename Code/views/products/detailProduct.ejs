@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
     <!-- head -->
-    <%- include('./partials/head') %>
+    <%- include('../partials/head') %>
     <!-- /head -->
     <title> DH-Clothes : <%= product.name %></title>
 </head>
 <body>
     <!-- header -->
-    <%- include('./partials/header', {selected: ''}) %>
+    <%- include('../partials/header', {selected: ''}) %>
     <!-- /header -->
     <main>
         <section class="producto">
             <div class="producto-img">
-                <img src="/images/<%= product.img %>" alt="producto-prueba">
-                <div class="producto-img-buttons">
+                <img src="/images/img-products/<%= product.img %>" alt="producto-prueba">
+                <!--<div class="producto-img-buttons">
                     <input type="radio" name="img-buttons" checked>
                     <input type="radio" name="img-buttons">
                     <input type="radio" name="img-buttons">
                     <input type="radio" name="img-buttons">
                     <input type="radio" name="img-buttons">
-                </div>
+                </div>-->
             </div>
             <div class="producto-descripcion">
                 <div class="top-info">
@@ -43,11 +43,11 @@
                     </div>
                 </form>
                 <div class="producto-info">
-                    <h3>Descripción</h3>
+                    <h3>Descripción: </h3>
                     <p> <%= product.description %> </p>
                 </div>
                 <div class="producto-info">
-                    <h3>Categoria</h3>
+                    <h3>Categoria: </h3>
                     <% if (product.category == 'male') { %> 
                         <p> Playera para hombre </p>
                     <% } else if (product.category == 'female') { %>
@@ -55,6 +55,9 @@
                     <% } else { %>
                         <p> Playera para  niño </p>
                     <% } %>
+                </div>
+                <div class="producto-info">
+                    <p> ID del producto: <%= product.id %> </p>
                 </div>
                 <div id="carrito">
                     <button type="submit" class="añadir-carrito-button">
@@ -66,7 +69,7 @@
         </section>
     </main>
     <!-- footer -->
-    <%- include('./partials/footer') %>
+    <%- include('../partials/footer') %>
     <!-- /footer -->
 </body>
 </html>
