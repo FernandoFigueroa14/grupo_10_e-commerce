@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- head --> 
+    <%- include('../partials/head') %>
+    <!-- /head -->
+    <title>DH-Clothes : Hombres</title>
+</head>
+<body>
+    <!-- header --> 
+    <%- include('../partials/header', {selected: 'men'}) %>
+    <!-- /head --> 
+    <main>
+        <section class="banner">
+            <div class="banner-img">
+                <img src="/images/muestra.png" alt="banner">
+            </div>
+
+            <div class="banner-buttons">
+                <input type="radio" name="banner" checked>
+                <input type="radio" name="banner">
+                <input type="radio" name="banner">
+                <input type="radio" name="banner">
+                <input type="radio" name="banner">
+            </div>
+        </section>
+
+        <section class="articulos">
+            <h3 class="titular">Ropa para Hombre en D-HC!</h3>
+
+            <% for(let i = 0; i < products.length; i++) { %>
+                <%- include('../partials/producto', {product: products[i], toThousand: toThousand} ) %>
+            <% } %>
+
+        </section>
+    </main>
+    <!-- footer --> 
+    <%- include('../partials/footer') %>
+    <!-- /footer --> 
+</body>
+</html>

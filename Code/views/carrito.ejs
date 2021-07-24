@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- head --> 
     <%- include('./partials/head') %>
+    <!-- /head -->
     <title>DH-Clothes</title>
 </head>
 <body>
-
-    <%- include('./partials/header') %>
-
+    <!-- header --> 
+    <%- include('./partials/header', {selected: ''}) %>
+    <!-- /header --> 
     <main>
         <section class="logo-carrito">
             <div class="carrito-logo">
@@ -46,8 +48,8 @@
 
             </section> 
     </main>
-
+    <!-- footer --> 
     <%- include('./partials/footer') %>
-    
+    <!-- /footer --> 
 </body>
 </html>

@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- head --> 
     <%- include('./partials/head') %>
+    <!-- /head -->
     <title>DH-Clothes</title>
 </head>
 <body>
-    
-    <%- include('./partials/header') %>
-
+    <!-- header --> 
+    <%- include('./partials/header', {selected: 'home'}) %>
+    <!-- /head --> 
     <main>
         <section class="banner">
             <div class="banner-img">
-                <img src="/images/banner.jpg" alt="banner">
+                <img src="/images/muestra.png" alt="banner">
             </div>
 
             <div class="banner-buttons">
@@ -24,16 +26,16 @@
         </section>
 
         <section class="articulos">
-            <h3 class="titular">¡Lo más vendido!</h3>
+            <h3 class="titular">¡Lo más vendido en D-HC!</h3>
 
-            <% for(let i = 0; i < productos.length; i++) { %>
-                <%- include('./partials/producto', {producto : productos[i], id : i} ) %>
+            <% for(let i = 0; i < products.length; i++) { %>
+                <%- include('./partials/producto', {product: products[i], toThousand: toThousand}) %>
             <% } %>
 
         </section>
     </main>
-
+    <!-- footer --> 
     <%- include('./partials/footer') %>
-
+    <!-- /footer --> 
 </body>
 </html>
