@@ -70,5 +70,45 @@
     "description": "Playera para niño con estampado, pez espada.",
     "category": "kid",
     "img": "img-product-1627223341881.jpeg"
+  },
+  {
+    "id": 1627233814884,
+    "name": "Playera de hombre color verde",
+    "price": "800",
+    "description": "Playera de hombre color verde con estampado",
+    "category": "male",
+    "img": "img-product-1627233814880.jpeg"
+  },
+  {
+    "id": 1627233889901,
+    "name": "Playera de hombre color verde",
+    "price": "900",
+    "description": "Playera de hombre sin estampado, color verde.",
+    "category": "male",
+    "img": "img-product-1627233889898.jpeg"
+  },
+  {
+    "id": 1627233974312,
+    "name": "Playeras de hombre color blanco",
+    "price": "1500",
+    "description": "Pack de 3 playeras para hombre sin estampado, de color blanco.  ",
+    "category": "male",
+    "img": "img-product-1627233974308.jpeg"
+  },
+  {
+    "id": 1627234039827,
+    "name": "Playera con estampado de pez",
+    "price": "500",
+    "description": "Playera color azul, con estampado de pez.",
+    "category": "kid",
+    "img": "img-product-1627234039822.jpeg"
+  },
+  {
+    "id": 1627234098935,
+    "name": "Playera con estampado",
+    "price": "495",
+    "description": "Playera de color verde, con estampado. ",
+    "category": "kid",
+    "img": "img-product-1627234098931.jpeg"
   }
 ]
