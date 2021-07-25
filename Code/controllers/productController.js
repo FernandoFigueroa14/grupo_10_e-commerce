@@ -37,6 +37,18 @@ const productController = {
 
         fs.writeFileSync(pathProductsJSON, JSON.stringify(productsFiltereds, null, 2));
         res.redirect('/');
+    }, 
+    showFormEditId: (req, res) => {
+        res.render(path.resolve('views/products/editProductSelectId'), {id: ''});
+    }, 
+    editProductById: (req, res) => {
+        const productEdit = products.find(product => product.id === parseInt(req.query.id));
+
+        if (productEdit) {
+            res.render(path.resolve('views/products/editProductForm'), {product: productEdit});
+        } else {
+            res.render(path.resolve('views/products/editProductSelectId'), {id: req.query.id});
+        }
     }
 };
 
