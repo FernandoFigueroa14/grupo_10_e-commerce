@@ -24,6 +24,9 @@
                 </form>
             </div>
         </div>
+        <% if (id) { %>
+            <h2 style="color: red;">No existe producto con id: <%= id %></h2>
+        <% } %>
     </main>
     <!-- footer --> 
     <%- include('../partials/footer') %>

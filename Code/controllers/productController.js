@@ -30,13 +30,19 @@ const productController = {
         res.redirect('/');
     }, 
     showFormDelete: (req, res) => {
-        res.render(path.resolve('views/products/deleteProduct'));
+        res.render(path.resolve('views/products/deleteProduct'), {id: ''});
     },
     delete: (req, res) => {
-        const productsFiltereds = products.filter(product => product.id != parseInt(req.body.id));
+        const productSelected = products.find(product => product.id == parseInt(req.body.id));
 
-        fs.writeFileSync(pathProductsJSON, JSON.stringify(productsFiltereds, null, 2));
-        res.redirect('/');
+        if (productSelected) {
+            const productsFiltereds = products.filter(product => product.id != parseInt(req.body.id));
+            fs.writeFileSync(pathProductsJSON, JSON.stringify(productsFiltereds, null, 2));
+            res.redirect('/');
+        } else {
+            res.render(path.resolve('views/products/deleteProduct'), {id: req.body.id});
+        }
+        
     }, 
     showFormEditId: (req, res) => {
         res.render(path.resolve('views/products/editProductSelectId'), {id: ''});

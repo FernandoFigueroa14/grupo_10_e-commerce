@@ -28,3 +28,7 @@ app.use(routerCategories);
 app.listen(PORT, () => {
     console.log('Server running on port: ' + PORT + ', check it! :D');
 });
+
+// http://localhost:3000/product/create
+// http://localhost:3000/product/delete
+// http://localhost:3000/product/edit
