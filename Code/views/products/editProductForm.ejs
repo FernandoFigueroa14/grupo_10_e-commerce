@@ -15,21 +15,24 @@
         <h1 id="create-product-title">ID: <%= product.id %></h1>
         <div id="main-register">
             <div id="form-container-register">
-                <form action="/product/create" method="POST" id="form-register" enctype="multipart/form-data">
+                <form action="/product/edit?_method=PUT" method="POST" id="form-register" enctype="multipart/form-data">
+                    <div class="form-control-create">
+                        <input type="text" name="id" value="<%= product.id %>" minlength="5" readonly>
+                    </div>
                     <div class="form-control-create">
                         <input type="text" name="name" placeholder="Nombre del producto" minlength="5">
                     </div>
                     <div class="form-control-create">
-                        <input type="text" name="price" placeholder="Precio">
+                        <input type="text" name="price" placeholder="Precio" value=<%= product.price %>>
                     </div>
                     <div class="form-control-create">
-                        <textarea type="text" name="description" placeholder="Descripción" minlength="5"></textarea>
+                        <textarea type="text" name="description" placeholder="Descripción" minlength="5"><%= product.description %></textarea>
                     </div>
                     <h3 class="titles-create-product">Categoria</h3>
                     <div id="form-control-create-select"> 
                         <select name="category">
                             <option value="male" selected="selected">Hombre</option>
-                            <option value="femlae" >Mujer</option>
+                            <option value="female" >Mujer</option>
                             <option value="kid" >Niño</option>
                         </select>
                     </div>

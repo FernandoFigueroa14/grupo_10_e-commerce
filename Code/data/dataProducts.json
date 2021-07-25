@@ -8,14 +8,6 @@
     "img": "producto-prueba.jpg"
   },
   {
-    "id": 1626977204185,
-    "name": "Playera node Mujer",
-    "price": "1250",
-    "description": "descripcion 2",
-    "category": "female",
-    "img": "producto-prueba.jpg"
-  },
-  {
     "id": 1626977204186,
     "name": "Playera node Niño",
     "price": "1250",
@@ -48,27 +40,27 @@
     "img": "producto-prueba.jpg"
   },
   {
-    "id": 1627005388175,
-    "name": "Producto de prueba",
-    "price": "500",
-    "description": "Producto creado desde el formulario",
-    "category": "male",
+    "id": 1627087075952,
+    "name": "React T-shirt",
+    "price": "1200",
+    "description": "Playera de React, react T-shirt",
+    "category": "female",
+    "img": "producto-prueba.jpg"
+  },
+  {
+    "id": 1626977204185,
+    "name": "Playera node Mujer (editada)",
+    "price": "1450",
+    "description": "Descripcion 2 playera node para mujer",
+    "category": "female",
     "img": "producto-prueba.jpg"
   },
   {
     "id": 1627070134385,
-    "name": "torage: storage });",
-    "price": "torage: storage });",
-    "description": "torage: storage });",
-    "category": "kid",
-    "img": "img-product-1627070134380.jpeg"
-  },
-  {
-    "id": 1627087075952,
-    "name": "React T-shirt",
-    "price": "1200",
-    "description": "Playera de React",
+    "name": "Playero de prueba (editada) --",
+    "price": "1350",
+    "description": "Playero de prueba [descripcion]",
     "category": "male",
-    "img": "img-product-1627087075945.jfif"
+    "img": "img-product-1627187331494.jpg"
   }
 ]

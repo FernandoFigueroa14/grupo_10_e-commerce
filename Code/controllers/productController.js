@@ -8,7 +8,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const productController = {
     detail: (req, res) => {
-        const product = products.find(product => product.id === parseInt(req.params.id));
+        const product = products.find(product => product.id == parseInt(req.params.id));
         
         res.render(path.resolve('views/products/detailProduct'), {product: product, toThousand: toThousand});
     }, 
@@ -33,7 +33,7 @@ const productController = {
         res.render(path.resolve('views/products/deleteProduct'));
     },
     delete: (req, res) => {
-        const productsFiltereds = products.filter(product => product.id !== parseInt(req.body.id));
+        const productsFiltereds = products.filter(product => product.id != parseInt(req.body.id));
 
         fs.writeFileSync(pathProductsJSON, JSON.stringify(productsFiltereds, null, 2));
         res.redirect('/');
@@ -42,13 +42,29 @@ const productController = {
         res.render(path.resolve('views/products/editProductSelectId'), {id: ''});
     }, 
     editProductById: (req, res) => {
-        const productEdit = products.find(product => product.id === parseInt(req.query.id));
+        const productEdit = products.find(product => product.id == parseInt(req.query.id));
 
         if (productEdit) {
             res.render(path.resolve('views/products/editProductForm'), {product: productEdit});
         } else {
             res.render(path.resolve('views/products/editProductSelectId'), {id: req.query.id});
         }
+    }, 
+    update: (req, res) => {
+        const product = products.find(product => product.id == parseInt(req.body.id));
+        const updatedProduct = {
+            id: parseInt(req.body.id, 10),
+            name: req.body.name,
+            price: req.body.price,
+            description: req.body.description,
+            category: req.body.category,
+            img: req.file ? req.file.filename : product.img 
+        };
+
+        const filterProduct = products.filter(product => product.id != parseInt(req.body.id)); 
+		filterProduct.push(updatedProduct);
+		fs.writeFileSync(pathProductsJSON, JSON.stringify(filterProduct, null, 2));
+		res.redirect('/');
     }
 };
 
