@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const { ESRCH } = require('constants');
 
 const pathProductsJSON = path.resolve('./data/dataProducts.json');
 const products = JSON.parse(fs.readFileSync(pathProductsJSON, 'utf-8'));
@@ -67,10 +68,19 @@ const productController = {
             img: req.file ? req.file.filename : product.img 
         };
 
-        const filterProduct = products.filter(product => product.id != parseInt(req.body.id)); 
-		filterProduct.push(updatedProduct);
-		fs.writeFileSync(pathProductsJSON, JSON.stringify(filterProduct, null, 2));
+        const filterProducts = products.filter(product => product.id != parseInt(req.body.id)); 
+		filterProducts.push(updatedProduct);
+		fs.writeFileSync(pathProductsJSON, JSON.stringify(filterProducts, null, 2));
 		res.redirect('/');
+    }, 
+    search: (req, res) => {
+        if (/\s/.exec(req.query.keyWord) || req.query.keyWord == '') {
+            res.render(path.resolve('views/products/searchProduct'), {products: '', keyWord: req.query.keyWord, toThousand: toThousand});
+        }
+
+        const filterProducts = products.filter(product => product.name.toLowerCase().includes(req.query.keyWord.toLowerCase()));
+
+        res.render(path.resolve('views/products/searchProduct'), {products: filterProducts, keyWord: req.query.keyWord, toThousand: toThousand});
     }
 };
 

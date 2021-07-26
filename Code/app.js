@@ -16,9 +16,9 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.resolve('./public')));
 app.use(express.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(logger('dev'));
-app.use(methodOverride('_method'));
 
 app.use(routerMain);
 app.use(routerUser);

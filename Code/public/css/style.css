@@ -25,6 +25,7 @@ header {
     display: flex;
     justify-content: space-around;
     font-size: 2rem;
+    align-items: center;
 }
 
 a {
@@ -34,13 +35,14 @@ a {
 
 .header-logo{
     width: 33%;
+
 }
 
 .header-logo img{
     width: 75%;
     padding: 20px;
     /* animation: rotacion 3s infinite alternate; */
-}
+} 
 
 /* @keyframes rotacion {
     0%{
@@ -74,7 +76,6 @@ a {
 .header-nav ul{
     display: flex;
     padding-bottom: 35px;
-    align-items: flex-end;
 }
 
 .header-nav li {
@@ -95,7 +96,6 @@ header form {
     justify-content: space-between;
     padding: 10px 0;
     margin-left: 10px;
-    position: absolute;
     top: 20px;
     right: 20px;
 }
