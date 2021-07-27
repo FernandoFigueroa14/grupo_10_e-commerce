@@ -48,14 +48,6 @@
     "img": "img-product-1627223185811.jpeg"
   },
   {
-    "id": 1627223227927,
-    "name": "Playera para niño con estampado",
-    "price": "450",
-    "description": "Playera para niño con estampado rosa",
-    "category": "kid",
-    "img": "img-product-1627223227923.jpeg"
-  },
-  {
     "id": 1627223262060,
     "name": "Playera para niño con estampado",
     "price": "500",
@@ -110,5 +102,13 @@
     "description": "Playera de color verde, con estampado. ",
     "category": "kid",
     "img": "img-product-1627234098931.jpeg"
+  },
+  {
+    "id": 1627223227927,
+    "name": "Playera para niño con estampado de oso",
+    "price": "450",
+    "description": "Playera para niño con estampado rosa",
+    "category": "kid",
+    "img": "img-product-1627223227923.jpeg"
   }
 ]
