@@ -16,6 +16,7 @@ router.delete('/delete', productController.delete);
 router.get('/edit', productController.showFormEditId);
 router.get('/editProductById', productController.editProductById);
 router.put('/edit', multer.single('img'), productController.update);
+
 router.get('/search', productController.search);
 
 module.exports = router;

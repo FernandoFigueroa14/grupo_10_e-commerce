@@ -373,6 +373,7 @@ main h2 {
 }
 
 #form-container-register img, #form-container-login img {
+    margin-top: 25px;
     width: 25%;
 }
 
@@ -473,6 +474,12 @@ main h2 {
 
 .form-control-login-pass a:hover {
     color: rgb(0, 0, 0);
+}
+
+.errors-register {
+    font-size: 1.3em;
+    color:rgb(255, 0, 0);
+    margin-bottom: 15px;
 }
 /* form-register/form-login */
 
