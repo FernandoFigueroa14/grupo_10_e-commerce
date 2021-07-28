@@ -1,9 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const { validationResult } = require('express-validator');
-
-const productsJSON = path.resolve('./data/dataProducts.json');
-const products = JSON.parse(fs.readFileSync(productsJSON, 'utf-8'));
+const { validationResult } = require('express-validator'); 
 
 const userController = {
     login: (req, res) => {
@@ -18,6 +15,8 @@ const userController = {
         if (!resultValidation.isEmpty()) {
             res.render(path.resolve('views/userViews/register'), {errors: resultValidation.mapped(), oldData: req.body});
         }
+
+        res.render('No hay errores en los datos introducidos');
     }, 
     recoverPassword: (req, res) => {
         res.render(path.resolve('views/userViews/recoverPassword'));
