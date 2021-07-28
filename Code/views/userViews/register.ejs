@@ -24,25 +24,25 @@
                         <input type="email" name="emailUser" placeholder="E-mail" minlength="8" value="<%=locals.oldData ? oldData.emailUser : ''%>">
                     </div>
                     <% if (locals.errors && errors.emailUser) { %>
-                        <p class='errors-register'><%= errors.emailUser.msg %></p>
+                        <p class='errors-style'><%= errors.emailUser.msg %></p>
                     <% } %>
                     <div class="form-control-register">
                         <input type="password" name="passwordUser" placeholder="Contraseña" minlength="6">
                     </div>
                     <% if (locals.errors && errors.passwordUser) { %>
-                        <p class='errors-register'><%= errors.passwordUser.msg %></p>
+                        <p class='errors-style'><%= errors.passwordUser.msg %></p>
                     <% } %>
                     <div class="form-control-register">
                         <input type="text" name="nameUser" placeholder="Nombre" minlength="3" value="<%=locals.oldData ? oldData.nameUser : ''%>">
                     </div>
                     <% if (locals.errors && errors.nameUser) { %>
-                        <p class='errors-register'><%= errors.nameUser.msg %></p>
+                        <p class='errors-style'><%= errors.nameUser.msg %></p>
                     <% } %>
                     <div class="form-control-register">
                         <input type="text" name="lastnameUser" placeholder="Apellido" minlength="3" value="<%=locals.oldData ? oldData.lastnameUser : ''%>">
                     </div>
                     <% if (locals.errors && errors.lastnameUser) { %>
-                        <p class='errors-register'><%= errors.lastnameUser.msg %></p>
+                        <p class='errors-style'><%= errors.lastnameUser.msg %></p>
                     <% } %>
                     <div class="form-control-register">
                         <label class="title-register">Fecha de nacimiento</label>

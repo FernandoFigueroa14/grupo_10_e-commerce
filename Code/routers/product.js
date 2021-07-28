@@ -1,14 +1,15 @@
 const express = require('express');
+const multer = require('../js/multer');
 
 const productController = require('../controllers/productController');
-const multer = require('../js/multer');
+const createProductValidations = require('../js/validations/productsCreateValidations');
 
 const router = express.Router();
 
 router.get('/detail/:id', productController.detail);
 
 router.get('/create', productController.showFormCreate);
-router.post('/create', multer.single('img'), productController.create);
+router.post('/create', multer.single('img'), createProductValidations, productController.processCreate);
 
 router.get('/delete', productController.showFormDelete);
 router.delete('/delete', productController.delete);

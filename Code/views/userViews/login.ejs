@@ -17,13 +17,19 @@
                 <a href="/home">
                     <img src="/images/logo.png" alt="logo">
                 </a>
-                <form action="" method="POST" id="form-login">
+                <form action="/login" method="POST" id="form-login">
                     <div class="form-control-login">
-                        <input type="text" name="usuario" placeholder="Usuario" minlength="3">
+                        <input type="email" name="user" placeholder="Usuario" minlength="3" value="<%= locals.oldData ? oldData.user : ''%>">
                     </div>
+                    <% if (locals.errors && errors.user) { %>
+                        <p class="errors-style"> <%= errors.user.msg %> </p>
+                    <% } %>
                     <div class="form-control-login">
                         <input type="password" name="password" placeholder="Passsword" minlength="8">
                     </div>
+                    <% if (locals.errors && errors.password) { %>
+                        <p class="errors-style"> <%= errors.password.msg %> </p>
+                    <% } %>
                     <div id="button-login">
                         <button type="submit" class="button-form">enviar</button>
                     </div>

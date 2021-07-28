@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const { ESRCH } = require('constants');
+const { validationResult } = require('express-validator');
 
 const pathProductsJSON = path.resolve('./data/dataProducts.json');
 const products = JSON.parse(fs.readFileSync(pathProductsJSON, 'utf-8'));
@@ -16,7 +16,8 @@ const productController = {
     showFormCreate: (req, res) => {
         res.render(path.resolve('views/products/createProduct'));
     },
-    create: (req, res) => {
+    processCreate: (req, res) => {
+        const validationResults = validationResult(req);
         const newProduct = {
             id: Date.now(),
             name: req.body.name,
@@ -26,9 +27,13 @@ const productController = {
             img: req.file ? req.file.filename : "producto-prueba.jpg" 
         };
 
-        products.push(newProduct);
-        fs.writeFileSync(pathProductsJSON, JSON.stringify(products, null, 2));
-        res.redirect('/');
+        if (!validationResults.isEmpty()) {
+            res.render(path.resolve('views/products/createProduct'), {errors: validationResults.mapped(), oldData: req.body});
+        } else {
+            products.push(newProduct);
+            fs.writeFileSync(pathProductsJSON, JSON.stringify(products, null, 2));
+            res.redirect('/');
+        }
     }, 
     showFormDelete: (req, res) => {
         res.render(path.resolve('views/products/deleteProduct'), {id: ''});

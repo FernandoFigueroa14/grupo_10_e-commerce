@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const methodOverride = require('method-override');
+const session = require('express-session');
 
 const routerMain = require('./routers/main');
 const routerUser = require('./routers/user');
@@ -19,6 +20,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(logger('dev'));
+app.use(session( {secret: "Acceso seguro"} ));
 
 app.use(routerMain);
 app.use(routerUser);
