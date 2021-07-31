@@ -527,6 +527,10 @@ main h2 {
 
 
 /*carrito de compras*/
+main h1 .car{
+font-size: 50px;
+text-align: left;
+}
 .productoscomprados{
     font-size: 30px;
 }
@@ -538,6 +542,8 @@ main h2 {
 .precio {
     padding-top: 15px;
     font-size:30px;
+    margin-left: 10%;
+    
 }
 .cantidad{
     font-size:30px;
@@ -552,23 +558,26 @@ main h2 {
 main section i{
     width: 100px;
 }
-article h4{
+article .productoAgregado h4{
     font-size: 20px;
     text-align: left;
     margin-left: 10%;
+    margin-left: 18%;
     color:rgb(0, 0, 0)
 }
-article .producto-añadido img{
-   
-    display: flex;
-        justify-content: left;
-        width: 10%;
-        padding: 5px;
-        margin-left: 10% ;
-}
 article .cantidades{
-display: inline;
+display: flex;
+flex-direction: column;
 text-align: left;
+margin-left: 55%;
+margin-right: 50%;
+height: 60px;
+
+}
+article .productoAgregado img{
+display:block;
+box-sizing: border-box;
+ margin-left:15%;
 }
 
 /*Fin carrito de compras*/
