@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(logger('dev'));
-app.use(session( {secret: "Acceso seguro"} ));
+app.use(session( {secret: "Acceso seguro", resave: false, saveUninitialized: false} ));
 
 app.use(routerMain);
 app.use(routerUser);
@@ -28,9 +28,9 @@ app.use('/product', routerProduct);
 app.use(routerCategories);
 
 app.listen(PORT, () => {
-    console.log('Server running on port: ' + PORT + ', check it! :D');
+    console.log('Server running on port: ' + PORT + ' :D');
 });
 
 // http://localhost:3000/product/create
-// http://localhost:3000/product/delete
 // http://localhost:3000/product/edit
+// http://localhost:3000/product/delete
