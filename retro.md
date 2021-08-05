@@ -28,6 +28,22 @@ Se lograron implementar en código HTML y CSS de manera satisfactoria todas las 
 
 #Retroalimentación Sprint 3
 
+Los avances en este sprint fueron los esperados debido a que se implemento en todas las vistas EJS como template engine, haciendo dinámicas las vistas del sprint 2. De igual manera se agregaron las nuevas vistas propuestas para agregar un nuevo producto y la administración del mismo. Las acciones propuestas son:
 
+    Start:  
+            -Entregar los sprints en la fecha establecida.
+            -Sesiones breves 10-15 minutos para planear sprint.
+            Coordinar de mejor manera nuestro trabajo para cumplir con los tiempos establecidos.
+
+    Continue:
+            -Cumplir con la parte del trabajo que le toca a cada uno.
+            -La forma de comunicación y organización.
+            -Seguir compartiendo ideas de todo tipo que puedan sumar al proyecto.
+            -Generando ideas y aplicando ideas mejores para el proyecto.
+    
+    Stop: 
+            -Acumular trabajo de sprints anteriores.
+            -Hacer los sprints a destiempo.
+            Dejar todo a la última hora provocando que se vayan atrasando los sprints.
 
 #Retroalimentación Sprint 4
