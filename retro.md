@@ -47,3 +47,20 @@ Los avances en este sprint fueron los esperados debido a que se implemento en to
             Dejar todo a la última hora provocando que se vayan atrasando los sprints.
 
 #Retroalimentación Sprint 4
+
+Se agrego al proyecto la parte del CRUD para poder crear, eliminar y modificar productos dentro del archivo JSON que contiene la información de los mismos. Las acciones propuestas son:
+
+    Start:  
+            -Definir alcances.
+            -Mayor comunicación.
+            -Reuniones antes y después de cada sprint.
+            -Aportar ideas y mejoras al trabajo existente.
+            -Mejor planeación de los sprints.
+
+    Continue:
+            -Trabajo de calidad.
+            -Escuchar y valorar todas las opiniones e ideas.
+    
+    Stop: 
+            -Atrasos con entregas de sprints pasados.
+            -No comunicar los avances realizados.
