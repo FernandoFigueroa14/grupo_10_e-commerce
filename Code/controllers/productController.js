@@ -6,7 +6,6 @@ const pathProductsJSON = path.resolve('./data/dataProducts.json');
 const products = JSON.parse(fs.readFileSync(pathProductsJSON, 'utf-8'));
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-
 const productController = {
     detail: (req, res) => {
         const product = products.find(product => product.id == parseInt(req.params.id));
