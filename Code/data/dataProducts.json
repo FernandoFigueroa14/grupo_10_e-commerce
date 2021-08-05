@@ -112,19 +112,19 @@
     "img": "img-product-1627223227923.jpeg"
   },
   {
-    "id": 1628185126464,
-    "name": "Playera para mujer rojo",
-    "price": "675",
-    "description": "Playera con franjas rojas para mujer,",
-    "category": "female",
-    "img": "img-product-1628185126444.jpeg"
-  },
-  {
     "id": 1628185186759,
     "name": "Playera para mujer",
     "price": "785",
     "description": "Playera con estampado circular de color negro. ",
     "category": "female",
     "img": "img-product-1628185186755.jpeg"
+  },
+  {
+    "id": 1628185126464,
+    "name": "Playera para mujer de color rojo",
+    "price": "975",
+    "description": "Playera con franjas rojas para mujer.",
+    "category": "female",
+    "img": "img-product-1628185126444.jpeg"
   }
 ]

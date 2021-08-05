@@ -6,14 +6,21 @@ const pathProductsJSON = path.resolve('./data/dataProducts.json');
 const products = JSON.parse(fs.readFileSync(pathProductsJSON, 'utf-8'));
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+const modelProduct = require('../models/modelProduct');
+
+const pathDetailProductView = '../views/products/detailProduct';
+const pathCreateProductView = '../views/products/createProduct';
+const pathDeleteProductView = '../views/products/deleteProduct';
+const pathSelectProductToEditByIdView = '../views/products/editProductSelectId';
+const pathSelectedProductToEditView = '../views/products/editProductForm';
+const pathSearchProducts = '../views/products/searchProduct';
+
 const productController = {
     detail: (req, res) => {
-        const product = products.find(product => product.id == parseInt(req.params.id));
-        
-        res.render(path.resolve('views/products/detailProduct'), {product: product, toThousand: toThousand});
+        res.render(pathDetailProductView, {product: modelProduct.searchProductById(req.params.id), toThousand: toThousand});
     }, 
     showFormCreate: (req, res) => {
-        res.render(path.resolve('views/products/createProduct'));
+        res.render(pathCreateProductView);
     },
     processCreate: (req, res) => {
         const validationResults = validationResult(req);
@@ -27,7 +34,7 @@ const productController = {
         };
 
         if (!validationResults.isEmpty()) {
-            res.render(path.resolve('views/products/createProduct'), {errors: validationResults.mapped(), oldData: req.body});
+            res.render(pathCreateProductView, {errors: validationResults.mapped(), oldData: req.body});
         } else {
             products.push(newProduct);
             fs.writeFileSync(pathProductsJSON, JSON.stringify(products, null, 2));
@@ -35,30 +42,26 @@ const productController = {
         }
     }, 
     showFormDelete: (req, res) => {
-        res.render(path.resolve('views/products/deleteProduct'), {id: ''});
+        res.render(pathDeleteProductView);
     },
     delete: (req, res) => {
-        const productSelected = products.find(product => product.id == parseInt(req.body.id));
-
-        if (productSelected) {
-            const productsFiltereds = products.filter(product => product.id != parseInt(req.body.id));
-            fs.writeFileSync(pathProductsJSON, JSON.stringify(productsFiltereds, null, 2));
+        if (modelProduct.searchProductById(req.body.id)) {
+            fs.writeFileSync(pathProductsJSON, JSON.stringify(modelProduct.filterProductsById(req.body.id), null, 2));
             res.redirect('/');
         } else {
-            res.render(path.resolve('views/products/deleteProduct'), {id: req.body.id});
+            res.render(pathDeleteProductView, {id: req.body.id});
         }
-        
     }, 
     showFormEditId: (req, res) => {
-        res.render(path.resolve('views/products/editProductSelectId'), {id: ''});
+        res.render(pathSelectProductToEditByIdView, {id: ''});
     }, 
     editProductById: (req, res) => {
-        const productEdit = products.find(product => product.id == parseInt(req.query.id));
+        const productEdit = modelProduct.searchProductById(req.query.id);
 
         if (productEdit) {
-            res.render(path.resolve('views/products/editProductForm'), {product: productEdit});
+            res.render(pathSelectedProductToEditView, {product: productEdit});
         } else {
-            res.render(path.resolve('views/products/editProductSelectId'), {id: req.query.id});
+            res.render(pathSelectProductToEditByIdView, {id: req.query.id});
         }
     }, 
     update: (req, res) => {
@@ -72,19 +75,19 @@ const productController = {
             img: req.file ? req.file.filename : product.img 
         };
 
-        const filterProducts = products.filter(product => product.id != parseInt(req.body.id)); 
+        const filterProducts = modelProduct.filterProductsById(req.body.id)
 		filterProducts.push(updatedProduct);
 		fs.writeFileSync(pathProductsJSON, JSON.stringify(filterProducts, null, 2));
 		res.redirect('/');
     }, 
     search: (req, res) => {
         if (/\s/.exec(req.query.keyWord) || req.query.keyWord == '') {
-            res.render(path.resolve('views/products/searchProduct'), {products: '', keyWord: req.query.keyWord, toThousand: toThousand});
+            res.render(pathSearchProducts, {products: '', keyWord: req.query.keyWord, toThousand: toThousand});
         }
 
         const filterProducts = products.filter(product => product.name.toLowerCase().includes(req.query.keyWord.toLowerCase()));
 
-        res.render(path.resolve('views/products/searchProduct'), {products: filterProducts, keyWord: req.query.keyWord, toThousand: toThousand});
+        res.render(pathSearchProducts, {products: filterProducts, keyWord: req.query.keyWord, toThousand: toThousand});
     }
 };
 
