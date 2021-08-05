@@ -137,7 +137,7 @@ main{
 }
 
 .banner-img img {
-    width: 70%;
+    width: 100%;
     margin: auto;
     padding: 10px;
 }
@@ -527,58 +527,59 @@ main h2 {
 
 
 /*carrito de compras*/
-main h1 .car{
-font-size: 50px;
-text-align: left;
+.enc1{
+    background-color:var(--grisClaro);
+    display:flex;
+    justify-content: space-around;
 }
-.productoscomprados{
-    font-size: 30px;
+.grunder{
+    border-color: var(--verde);
 }
-
-.producto-nombre {
-    text-align: left;
-}
-
-.precio {
-    padding-top: 15px;
-    font-size:30px;
-    margin-left: 10%;
-    
-}
-.cantidad{
-    font-size:30px;
-    margin-left: 20%;
-}
-.total-de-compra{
-    font-size: 30px;
-    margin-left: 20%;
-}
-
-
-main section i{
-    width: 100px;
-}
-article .productoAgregado h4{
+div .prod{
     font-size: 20px;
-    text-align: left;
-    margin-left: 10%;
-    margin-left: 18%;
-    color:rgb(0, 0, 0)
+   
 }
-article .cantidades{
-display: flex;
-flex-direction: column;
-text-align: left;
-margin-left: 55%;
-margin-right: 50%;
-height: 60px;
 
+div .prec{
+    font-size: 20px;
 }
-article .productoAgregado img{
-display:block;
-box-sizing: border-box;
- margin-left:15%;
+div .cant{
+    font-size: 20px;
 }
+div .tot{
+    font-size: 20px;
+}
+
+.titlog{
+display:flex;
+align-items: baseline;
+}
+.titlog .fa-shopping-cart{
+font-size: 50px;
+margin-right: 20px;
+}
+.tit{
+    font-size: 50px;
+    text-decoration: underline var(--verde);
+}
+.prod2{
+    display: flex;
+    background-color:whitesmoke;
+ border:solid  whitesmoke 20px;
+}
+
+.prod2 img{
+    margin-right: 40%;
+    margin-left: 5%;
+}
+.prod2 input{
+    height: 50px;
+    width: 80px;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 5%;
+}
+
 
 /*Fin carrito de compras*/
 

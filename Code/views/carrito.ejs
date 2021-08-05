@@ -11,48 +11,27 @@
     <%- include('./partials/header', {selected: ''}) %>
     <!-- /header --> 
     <main>
-        <section class="logo-carrito">
-            <div class="carrito-logo">
-                <i class="fas fa-shopping-cart"></i>
-                </div>
-                <div class="car"> 
-                <h1 >Tu Carrito</h1>
-                </div>
-                
-                <article>
-                <span class="productoscomprados">
-                        <span>Productos</span>
-                </span>
-                
-                    <span class="precio">
-                        <span>Precio</span>
-                    </span>
-                    <span class="cantidad"> 
-                    <span>Cantidad</span>
-                    </span>
-                    <span class="total-de-compra">
-                    <span>Total</span>
-                    </span>
-                    <hr>
-                    <article class="productoAgregado">
-                        <div class="proag"> 
-                    <img src="/images/imagenprueba.png" alt="imagen-prueba">
-                        </div>
-                    <h4>Playera Node JS</h4>
-                    <div class="cantidades">
-                    <input type="number" name="cantidad">
-                    </div>                    
-                        </a>
-                    </article>
-                </article>
-               
-             
-                <p>aun no es full responsive</p>
-                
-                
-                </section>
+       
+        <div class="titlog">
+            <i class="fas fa-shopping-cart"></i>
+        <h1 class="tit">    Tu carrito     </h1>
+        
+        </div>
 
-            </section> 
+        <div class="enc1">
+     <div class="prod">Productos </div>
+     <div class="prec">Precio </div>
+     <div class="cant">Cantidad </div>
+     <div class="tot" >Total</div>
+        </div>
+        <hr class="grunder">
+        <div class="prod2">
+            <img src="/images/imagenprueba.png" alt="imagenprueba">
+            <input type="number" name="cantidad">
+        </div>
+    </main>
+
+            
     </main>
     <!-- footer --> 
     <%- include('./partials/footer') %>
