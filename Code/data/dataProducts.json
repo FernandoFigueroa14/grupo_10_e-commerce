@@ -1,74 +1,114 @@
 [
   {
-    "id": 1626977204187,
-    "name": "Playera node Hombre",
-    "price": "1250",
-    "description": "descripcion 1",
+    "id": 1627222918042,
+    "name": "Playera para hombre con estampado",
+    "price": "750",
+    "description": "Playera azul para hombre con estampado.",
     "category": "male",
-    "img": "producto-prueba.jpg"
+    "img": "img-product-1627222918038.jpeg"
   },
   {
-    "id": 1626977204185,
-    "name": "Playera node Mujer",
-    "price": "1250",
-    "description": "descripcion 2",
-    "category": "female",
-    "img": "producto-prueba.jpg"
-  },
-  {
-    "id": 1626977204186,
-    "name": "Playera node Niño",
-    "price": "1250",
-    "description": "descripcion 3",
-    "category": "kid",
-    "img": "producto-prueba.jpg"
-  },
-  {
-    "id": 1626977203287,
-    "name": "Playera node Hombre 2",
-    "price": "12050",
-    "description": "descripcion 1",
+    "id": 1627222976898,
+    "name": "Playera para hombre sin estampado",
+    "price": "700",
+    "description": "Playera amarilla, sin estampado.",
     "category": "male",
-    "img": "producto-prueba.jpg"
+    "img": "img-product-1627222976895.jpeg"
   },
   {
-    "id": 1626972304185,
-    "name": "Playera node Mujer 2",
-    "price": "1500",
-    "description": "descripcion 2",
+    "id": 1627223017473,
+    "name": "Playera para hombre con estampado",
+    "price": "800",
+    "description": "Playera negra, con estampado al frente.",
+    "category": "male",
+    "img": "img-product-1627223017469.jpeg"
+  },
+  {
+    "id": 1627223103124,
+    "name": "Playera para mujer con estampado",
+    "price": "850",
+    "description": "Playera blanca para mujer con estampado.",
     "category": "female",
-    "img": "producto-prueba.jpg"
+    "img": "img-product-1627223103120.jpeg"
   },
   {
-    "id": 1096977204186,
-    "name": "Playera node Niño 2",
-    "price": "125",
-    "description": "descripcion 3",
-    "category": "kid",
-    "img": "producto-prueba.jpg"
+    "id": 1627223149206,
+    "name": "Playera para mujer con estampado",
+    "price": "800",
+    "description": "Playera para mujer con estampado.",
+    "category": "female",
+    "img": "img-product-1627223149202.jpeg"
   },
   {
-    "id": 1627005388175,
-    "name": "Producto de prueba",
+    "id": 1627223185815,
+    "name": "Playera para mujer con estampado",
+    "price": "1000",
+    "description": "Playera verde para mujer con estampado.",
+    "category": "female",
+    "img": "img-product-1627223185811.jpeg"
+  },
+  {
+    "id": 1627223262060,
+    "name": "Playera para niño con estampado",
     "price": "500",
-    "description": "Producto creado desde el formulario",
-    "category": "male",
-    "img": "producto-prueba.jpg"
-  },
-  {
-    "id": 1627070134385,
-    "name": "torage: storage });",
-    "price": "torage: storage });",
-    "description": "torage: storage });",
+    "description": "Playera para niño con estampado naranja",
     "category": "kid",
-    "img": "img-product-1627070134380.jpeg"
+    "img": "img-product-1627223262057.jpeg"
   },
   {
-    "id": 1627087075952,
-    "name": "React T-shirt",
-    "price": "1200",
-    "description": "Playera de React",
+    "id": 1627223309617,
+    "name": "Playera para niño con estampado",
+    "price": "550",
+    "description": "Playera para niño con estampado, pez espada.",
+    "category": "kid",
+    "img": "img-product-1627223341881.jpeg"
+  },
+  {
+    "id": 1627233814884,
+    "name": "Playera de hombre color verde",
+    "price": "800",
+    "description": "Playera de hombre color verde con estampado",
     "category": "male",
-    "img": "img-product-1627087075945.jfif"
+    "img": "img-product-1627233814880.jpeg"
+  },
+  {
+    "id": 1627233889901,
+    "name": "Playera de hombre color verde",
+    "price": "900",
+    "description": "Playera de hombre sin estampado, color verde.",
+    "category": "male",
+    "img": "img-product-1627233889898.jpeg"
+  },
+  {
+    "id": 1627233974312,
+    "name": "Playeras de hombre color blanco",
+    "price": "1500",
+    "description": "Pack de 3 playeras para hombre sin estampado, de color blanco.  ",
+    "category": "male",
+    "img": "img-product-1627233974308.jpeg"
+  },
+  {
+    "id": 1627234039827,
+    "name": "Playera con estampado de pez",
+    "price": "500",
+    "description": "Playera color azul, con estampado de pez.",
+    "category": "kid",
+    "img": "img-product-1627234039822.jpeg"
+  },
+  {
+    "id": 1627234098935,
+    "name": "Playera con estampado",
+    "price": "495",
+    "description": "Playera de color verde, con estampado. ",
+    "category": "kid",
+    "img": "img-product-1627234098931.jpeg"
+  },
+  {
+    "id": 1627223227927,
+    "name": "Playera para niño con estampado de oso",
+    "price": "450",
+    "description": "Playera para niño con estampado rosa",
+    "category": "kid",
+    "img": "img-product-1627223227923.jpeg"
   }
 ]

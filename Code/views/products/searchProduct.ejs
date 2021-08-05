@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- head --> 
+    <%- include('../partials/head') %>
+    <!-- /head -->
+    <title>DH-Clothes : Resultados de la busqueda</title>
+</head>
+<body>
+    <!-- header --> 
+    <%- include('../partials/header', {selected: ''}) %>
+    <!-- /head --> 
+    <main>
+        <section class="articulos">
+            <h3 class="titular">Resultados de la busqueda para: <%= keyWord %></h3>
+
+            <% if (products != '') { %>
+                <% for(let i = 0; i < products.length; i++) { %>
+                    <%- include('../partials/producto', {product: products[i], toThousand: toThousand} ) %>
+                <% } %>
+            <% } else { %>
+                <h2 style="color: red;">No existen productos con los parametros de busqueda</h2>
+            <% }%>
+
+        </section>
+    </main>
+    <!-- footer --> 
+    <%- include('../partials/footer') %>
+    <!-- /footer --> 
+</body>
+</html>

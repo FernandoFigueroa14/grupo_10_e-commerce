@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- head -->
+    <%- include('../partials/head') %>
+    <!-- /head -->
+    <title> DH-Clothes : <%= product.name %></title>
+</head>
+<body>
+    <!-- header -->
+    <%- include('../partials/header', {selected: ''}) %>
+    <!-- /header -->
+    <main>
+        <section class="producto">
+            <div class="producto-img">
+                <img src="/images/img-products/<%= product.img %>" alt="producto-prueba">
+                <!--<div class="producto-img-buttons">
+                    <input type="radio" name="img-buttons" checked>
+                    <input type="radio" name="img-buttons">
+                    <input type="radio" name="img-buttons">
+                    <input type="radio" name="img-buttons">
+                    <input type="radio" name="img-buttons">
+                </div>-->
+            </div>
+            <div class="producto-descripcion">
+                <div class="top-info">
+                    <h2 class="producto-nombre"> <%= product.name %> </h2>
+                    <p class="precio"> $ <%= toThousand(product.price) %> </p>
+                </div>
+                <form action="" method="POST" class="form-talla">
+                    <h3>Talla</h3>
+                    <div class="talla-button">
+                        <input type="radio" name="talla" id="chica" value="chica">
+                        <label for="chica" class="chica"> CH </label>
+                    </div>
+                    <div class="talla-button">
+                        <input type="radio" name="talla" id="mediana" value="mediana">
+                        <label for="mediana" class="mediana"> M </label>
+                    </div>
+                    <div class="talla-button">
+                        <input type="radio" name="talla" id="grande" value="grande">
+                        <label for="grande" class="grande"> G </label>
+                    </div>
+                </form>
+                <div class="producto-info">
+                    <h3>Descripción: </h3>
+                    <p> <%= product.description %> </p>
+                </div>
+                <div class="producto-info">
+                    <h3>Categoria: </h3>
+                    <% if (product.category == 'male') { %> 
+                        <p> Playera para hombre </p>
+                    <% } else if (product.category == 'female') { %>
+                        <p> Playera para mujer </p>
+                    <% } else { %>
+                        <p> Playera para  niño </p>
+                    <% } %>
+                </div>
+                <div class="producto-info">
+                    <p> ID del producto: <%= product.id %> </p>
+                </div>
+                <div id="carrito">
+                    <button type="submit" class="añadir-carrito-button">
+                        <i class="fas fa-cart-plus"></i>
+                        <span>Añadir al carrito</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+    <!-- /footer -->
+</body>
+</html>

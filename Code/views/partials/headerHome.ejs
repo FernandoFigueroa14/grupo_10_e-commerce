@@ -1,0 +1,61 @@
+<header>
+    <div class="header-logo">
+        <a href="/home">
+            <img src="/images/logo.png" alt="logo">
+        </a>
+    </div>
+    <nav class="header-nav">
+        <ul type='none'>
+            <% if (selected == 'home') { %> 
+                <li>
+                    <a href="/" class="selected">Todos</a>
+                </li>
+            <% } else { %>
+                <li>
+                    <a href="/">Todos</a>
+                </li>
+            <% } %>
+            <% if (selected == 'women') { %> 
+                <li>
+                    <a href="/women" class="selected">Mujeres</a>
+                </li>
+            <% } else { %>
+                <li>
+                    <a href="/women">Mujeres</a>
+                </li>
+            <% } %>
+            <% if (selected == 'men') { %> 
+                <li>
+                    <a href="/men" class="selected">Hombre</a>
+                </li>
+            <% } else { %>
+                <li>
+                    <a href="/men">Hombre</a>
+                </li>
+            <% } %>
+            <% if (selected == 'kids') { %> 
+                <li>
+                    <a href="/kids" class="selected">Niños</a>
+                </li>
+            <% } else { %>
+                <li>
+                    <a href="/kids">Niños</a>
+                </li>
+            <% } %>
+            <li>
+                <a href="#">Tenis</a>
+            </li>
+        </ul>
+    </nav>
+    <form action="product/search" method="GET">
+        <input type="text" name="keyWord" placeholder="Buscar productos...">
+        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+    </form>
+    <div class="header-icons">
+        <a href="/login"><i class="fas fa-user"></i></a>
+        <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+    <div class="burger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+</header>

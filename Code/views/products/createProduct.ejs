@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- head --> 
+    <%- include('../partials/head') %>
+    <!-- /head -->
+    <title>Registrar nuevo producto</title>
+</head>
+<body>
+    <!-- header --> 
+    <%- include('../partials/header', {selected: ''}) %>
+    <!-- /header --> 
+    <main>
+        <h1 id="create-product-title">Registrar producto</h1>
+        <div id="main-register">
+            <div id="form-container-register">
+                <form action="/product/create" method="POST" id="form-register" enctype="multipart/form-data">
+                    <div class="form-control-create">
+                        <input type="text" name="name" placeholder="Nombre del producto" minlength="5" value="<%= locals.oldData ? oldData.name : '' %>">
+                    </div>
+                    <% if (locals.errors && errors.name) { %>
+                        <p class="errors-style"> <%= errors.name.msg %> </p>
+                    <% } %> 
+                    <div class="form-control-create">
+                        <input type="text" name="price" placeholder="Precio" value="<%= locals.oldData ? oldData.price : '' %>">
+                    </div>
+                    <% if (locals.errors && errors.price) { %>
+                        <p class="errors-style"> <%= errors.price.msg %> </p>
+                    <% } %> 
+                    <div class="form-control-create">
+                        <textarea type="text" name="description" placeholder="Descripción" minlength="5"><%= locals.oldData ? oldData.description : '' %></textarea>
+                    </div>
+                    <% if (locals.errors && errors.description) { %>
+                        <p class="errors-style"> <%= errors.description.msg %> </p>
+                    <% } %> 
+                    <h3 class="titles-create-product">Categoria</h3>
+                    <div id="form-control-create-select"> 
+                        <select name="category">
+                            <option value="male" selected="selected">Hombre</option>
+                            <option value="female" >Mujer</option>
+                            <option value="kid" >Niño</option>
+                        </select>
+                    </div>
+                    <div class="form-control-create">
+                        <h3 id="img-title-create-product">Sube imagen para el producto</h3>
+                        <input type="file" name="img">
+                    </div>
+                    <div id="button-register">
+                        <button type="submit">enviar</button>
+                        <button type="reset">borrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- footer --> 
+    <%- include('../partials/footer') %>
+    <!-- /footer --> 
+</body>
+</html>

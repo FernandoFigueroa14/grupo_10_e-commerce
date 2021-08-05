@@ -25,22 +25,24 @@ header {
     display: flex;
     justify-content: space-around;
     font-size: 2rem;
+    align-items: center;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
 
 .header-logo{
     width: 33%;
+
 }
 
 .header-logo img{
     width: 75%;
     padding: 20px;
     /* animation: rotacion 3s infinite alternate; */
-}
+} 
 
 /* @keyframes rotacion {
     0%{
@@ -74,7 +76,6 @@ a{
 .header-nav ul{
     display: flex;
     padding-bottom: 35px;
-    align-items: flex-end;
 }
 
 .header-nav li {
@@ -95,7 +96,6 @@ header form {
     justify-content: space-between;
     padding: 10px 0;
     margin-left: 10px;
-    position: absolute;
     top: 20px;
     right: 20px;
 }
@@ -136,8 +136,8 @@ main{
     padding-top: 10px;
 }
 
-.banner-img img{
-    width: 100%;
+.banner-img img {
+    width: 70%;
     margin: auto;
     padding: 10px;
 }
@@ -186,6 +186,8 @@ main{
     width: 100%;
     background-color: white;
     padding: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .producto img {
@@ -371,6 +373,7 @@ main h2 {
 }
 
 #form-container-register img, #form-container-login img {
+    margin-top: 25px;
     width: 25%;
 }
 
@@ -455,7 +458,7 @@ main h2 {
     color: rgb(0, 0, 0);
 }
 
-.form-control-register input:invalid, .form-control-register textarea:invalid, .form-control-login input:invalid {
+.form-control-register input:invalid, .form-control-register textarea:invalid, .form-control-login input:invalid, .form-control-create input:invalid {
     border: 3px solid rgb(255, 0, 0);
 }
 
@@ -472,15 +475,38 @@ main h2 {
 .form-control-login-pass a:hover {
     color: rgb(0, 0, 0);
 }
+
+.errors-style {
+    font-size: 1.3em;
+    color:rgb(255, 0, 0);
+    margin-bottom: 15px;
+}
 /* form-register/form-login */
 
 /* form-create */
 .titles-create-product {
     text-align: left;
+    font-size: 2em;
 } 
 
 .form-control-create {
     margin-bottom: 15px;
+}
+
+.form-control-delete input {
+    margin-bottom: 15px;
+    margin-top: 25px;
+    font-size: 2em;
+}
+
+.form-control-create {
+    font-size: 2em;
+}
+
+.form-control-create input, .form-control-delete input, .form-control-create textarea {
+    width: 95%;
+    padding: 5px;
+    resize: none;
 }
 
 #form-control-create-select {
@@ -489,10 +515,8 @@ main h2 {
     text-align: left;
 }
 
-.form-control-create input, .form-control-create textarea {
-    width: 95%;
-    padding: 5px;
-    resize: none;
+#create-product-title {
+    font-size: 3em;
 }
 
 #img-title-create-product {
@@ -503,6 +527,10 @@ main h2 {
 
 
 /*carrito de compras*/
+main h1 .car{
+font-size: 50px;
+text-align: left;
+}
 .productoscomprados{
     font-size: 30px;
 }
@@ -514,6 +542,8 @@ main h2 {
 .precio {
     padding-top: 15px;
     font-size:30px;
+    margin-left: 10%;
+    
 }
 .cantidad{
     font-size:30px;
@@ -528,23 +558,29 @@ main h2 {
 main section i{
     width: 100px;
 }
-article h4{
+article .productoAgregado h4{
     font-size: 20px;
     text-align: left;
     margin-left: 10%;
+    margin-left: 18%;
     color:rgb(0, 0, 0)
 }
-article .producto-añadido img{
-   
-    display: flex;
-        justify-content: left;
-        width: 10%;
-        padding: 5px;
-        margin-left: 10% ;
+article .cantidades{
+display: flex;
+flex-direction: column;
+text-align: left;
+margin-left: 55%;
+margin-right: 50%;
+height: 60px;
+
+}
+article .productoAgregado img{
+display:block;
+box-sizing: border-box;
+ margin-left:15%;
 }
 
-
-/*carrito de compras*/
+/*Fin carrito de compras*/
 
 @media (max-width: 942px) {
     .header-icons{
