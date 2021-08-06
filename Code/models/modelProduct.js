@@ -10,8 +10,20 @@ const modelProduct = {
     searchProductById: function(idProduct) {
         return this.getProducts().find(product => product.id == parseInt(idProduct, 10));
     },
-    filterProductsById: function(idProductToIgnore) {
-        return this.getProducts().filter(product => product.id != parseInt(idProductToIgnore));
+    discardProductById: function(idProductToIgnore) {
+        return this.getProducts().filter(product => product.id != parseInt(idProductToIgnore, 10));
+    }, 
+    saveProduct: function(req) {
+        const newProduct = req.body;
+        const allProducts = this.getProducts();
+
+        newProduct.id = Date.now();
+        newProduct.img = req.file ? req.file.filename : "producto-prueba.jpg" 
+        allProducts.push(newProduct);
+        this.writeProductsInJSON(allProducts);
+    }, 
+    writeProductsInJSON: function(products) {
+        fs.writeFileSync(pathProductsJSON, JSON.stringify(products, null, 2));
     }
 };
 

@@ -24,20 +24,11 @@ const productController = {
     },
     processCreate: (req, res) => {
         const validationResults = validationResult(req);
-        const newProduct = {
-            id: Date.now(),
-            name: req.body.name,
-            price: req.body.price,
-            description: req.body.description,
-            category: req.body.category,
-            img: req.file ? req.file.filename : "producto-prueba.jpg" 
-        };
 
         if (!validationResults.isEmpty()) {
             res.render(pathCreateProductView, {errors: validationResults.mapped(), oldData: req.body});
         } else {
-            products.push(newProduct);
-            fs.writeFileSync(pathProductsJSON, JSON.stringify(products, null, 2));
+            modelProduct.saveProduct(req);
             res.redirect('/');
         }
     }, 
@@ -45,29 +36,33 @@ const productController = {
         res.render(pathDeleteProductView);
     },
     delete: (req, res) => {
-        if (modelProduct.searchProductById(req.body.id)) {
-            fs.writeFileSync(pathProductsJSON, JSON.stringify(modelProduct.filterProductsById(req.body.id), null, 2));
+        const idProduct = req.body.id;
+
+        if (modelProduct.searchProductById(idProduct)) {
+            modelProduct.writeProductsInJSON(modelProduct.discardProductById(idProduct));
             res.redirect('/');
         } else {
-            res.render(pathDeleteProductView, {id: req.body.id});
+            res.render(pathDeleteProductView, {id: idProduct});
         }
     }, 
     showFormEditId: (req, res) => {
         res.render(pathSelectProductToEditByIdView, {id: ''});
     }, 
     editProductById: (req, res) => {
-        const productEdit = modelProduct.searchProductById(req.query.id);
+        const idProduct = req.query.id;
+        const productEdit = modelProduct.searchProductById(idProduct);
 
         if (productEdit) {
             res.render(pathSelectedProductToEditView, {product: productEdit});
         } else {
-            res.render(pathSelectProductToEditByIdView, {id: req.query.id});
+            res.render(pathSelectProductToEditByIdView, {id: idProduct});
         }
     }, 
     update: (req, res) => {
-        const product = products.find(product => product.id == parseInt(req.body.id));
+        const idProduct = req.body.id;
+        const product = modelProduct.searchProductById(idProduct);
         const updatedProduct = {
-            id: parseInt(req.body.id, 10),
+            id: parseInt(idProduct, 10),
             name: req.body.name,
             price: req.body.price,
             description: req.body.description,
@@ -75,9 +70,9 @@ const productController = {
             img: req.file ? req.file.filename : product.img 
         };
 
-        const filterProducts = modelProduct.filterProductsById(req.body.id)
+        const filterProducts = modelProduct.discardProductById(idProduct);
 		filterProducts.push(updatedProduct);
-		fs.writeFileSync(pathProductsJSON, JSON.stringify(filterProducts, null, 2));
+        modelProduct.writeProductsInJSON(filterProducts);
 		res.redirect('/');
     }, 
     search: (req, res) => {

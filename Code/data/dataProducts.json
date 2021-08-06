@@ -8,14 +8,6 @@
     "img": "img-product-1627222918038.jpeg"
   },
   {
-    "id": 1627222976898,
-    "name": "Playera para hombre sin estampado",
-    "price": "700",
-    "description": "Playera amarilla, sin estampado.",
-    "category": "male",
-    "img": "img-product-1627222976895.jpeg"
-  },
-  {
     "id": 1627223017473,
     "name": "Playera para hombre con estampado",
     "price": "800",
@@ -38,14 +30,6 @@
     "description": "Playera para mujer con estampado.",
     "category": "female",
     "img": "img-product-1627223149202.jpeg"
-  },
-  {
-    "id": 1627223185815,
-    "name": "Playera para mujer con estampado",
-    "price": "1000",
-    "description": "Playera verde para mujer con estampado.",
-    "category": "female",
-    "img": "img-product-1627223185811.jpeg"
   },
   {
     "id": 1627223262060,
@@ -126,5 +110,29 @@
     "description": "Playera con franjas rojas para mujer.",
     "category": "female",
     "img": "img-product-1628185126444.jpeg"
+  },
+  {
+    "name": "Playera con estampado",
+    "price": "800",
+    "description": "Playera go out side para niño con estampado de color. ",
+    "category": "kid",
+    "id": 1628267815902,
+    "img": "img-product-1628267815894.jpeg"
+  },
+  {
+    "id": 1627223185815,
+    "name": "Playera para mujer con estampado",
+    "price": "1010",
+    "description": "Playera verde para mujer con estampado.",
+    "category": "female",
+    "img": "img-product-1627223185811.jpeg"
+  },
+  {
+    "id": 1627222976898,
+    "name": "Playera para hombre sin estampado",
+    "price": "750",
+    "description": "Playera amarilla, sin estampado.",
+    "category": "male",
+    "img": "img-product-1627222976895.jpeg"
   }
 ]
