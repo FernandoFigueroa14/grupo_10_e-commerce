@@ -582,8 +582,37 @@ margin-right: 20px;
     text-align: center;
     font-size: 30px;
     margin-top: 5%;
+    margin-left:10px;
 }
-
+.return1 {
+    display:flex;
+    font-size: 20px;
+    margin-left:20px;
+  
+}
+.pago{
+    display: flex;
+    margin-top:20px;
+}
+.pago div {
+    width:50px;
+    height:30px;
+    background:whitesmoke;
+    font-size: 25px;
+    
+}
+.pago p{
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-left:50%;
+    font-size: 20px;
+}
+.pago button{
+    margin-left: 100px;
+    width: 100px;
+    font-size: 25px;
+    background-color: white;
+}
 
 /*Fin carrito de compras*/
 
