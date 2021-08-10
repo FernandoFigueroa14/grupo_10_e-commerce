@@ -58,31 +58,16 @@ const productController = {
             res.render(pathSelectProductToEditByIdView, {id: idProduct});
         }
     }, 
-    update: (req, res) => {
-        const idProduct = req.body.id;
-        const product = modelProduct.searchProductById(idProduct);
-        const updatedProduct = {
-            id: parseInt(idProduct, 10),
-            name: req.body.name,
-            price: req.body.price,
-            description: req.body.description,
-            category: req.body.category,
-            img: req.file ? req.file.filename : product.img 
-        };
-
-        const filterProducts = modelProduct.discardProductById(idProduct);
-		filterProducts.push(updatedProduct);
-        modelProduct.writeProductsInJSON(filterProducts);
+    updateProduct: (req, res) => {
+        modelProduct.updateProduct(req);
 		res.redirect('/');
     }, 
     search: (req, res) => {
         if (/\s/.exec(req.query.keyWord) || req.query.keyWord == '') {
             res.render(pathSearchProducts, {products: '', keyWord: req.query.keyWord, toThousand: toThousand});
-        }
-
-        const filterProducts = products.filter(product => product.name.toLowerCase().includes(req.query.keyWord.toLowerCase()));
-
-        res.render(pathSearchProducts, {products: filterProducts, keyWord: req.query.keyWord, toThousand: toThousand});
+        } else {
+            res.render(pathSearchProducts, {products: modelProduct.searchProductByFieldIncludesValue('name', req.query.keyWord.toLowerCase()), keyWord: req.query.keyWord, toThousand: toThousand});
+        }   
     }
 };
 

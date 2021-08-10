@@ -16,14 +16,6 @@
     "img": "img-product-1627223017469.jpeg"
   },
   {
-    "id": 1627223103124,
-    "name": "Playera para mujer con estampado",
-    "price": "850",
-    "description": "Playera blanca para mujer con estampado.",
-    "category": "female",
-    "img": "img-product-1627223103120.jpeg"
-  },
-  {
     "id": 1627223149206,
     "name": "Playera para mujer con estampado",
     "price": "800",
@@ -134,5 +126,13 @@
     "description": "Playera amarilla, sin estampado.",
     "category": "male",
     "img": "img-product-1627222976895.jpeg"
+  },
+  {
+    "id": "1627223103124",
+    "name": "Playera para mujer con estampado de oso",
+    "price": "650",
+    "description": "Playera blanca para mujer con estampado de oso. [colores]",
+    "category": "female",
+    "img": "img-product-1627223103120.jpeg"
   }
 ]
