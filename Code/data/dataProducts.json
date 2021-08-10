@@ -134,5 +134,45 @@
     "description": "Playera color azul, con estampado de pez.",
     "category": "kid",
     "img": "img-product-1627234039822.jpeg"
+  },
+  {
+    "name": "Sudadera para niño",
+    "price": "1350",
+    "description": "Sudadera multicolor para niño.",
+    "category": "kid",
+    "id": 1628605551171,
+    "img": "img-product-1628605551159.jpeg"
+  },
+  {
+    "name": "Playera blanca para mujer ",
+    "price": "600",
+    "description": "Playera con estampado para mujer.",
+    "category": "female",
+    "id": 1628605603078,
+    "img": "img-product-1628605603070.jpeg"
+  },
+  {
+    "name": "Playera azul para hombre ",
+    "price": "600",
+    "description": "Playera con estampado para hombre, de color azul.",
+    "category": "male",
+    "id": 1628605641202,
+    "img": "img-product-1628605641194.jpeg"
+  },
+  {
+    "name": "Playera azul para hombre con estampado",
+    "price": "610",
+    "description": "Playera con estampado para hombre, de color azul.",
+    "category": "male",
+    "id": 1628605663216,
+    "img": "img-product-1628605663209.jpeg"
+  },
+  {
+    "name": "Playera azul para hombre con estampado de color",
+    "price": "600",
+    "description": "Playera con estampado para hombre, de color azul.",
+    "category": "male",
+    "id": 1628605739289,
+    "img": "img-product-1628605739280.jpeg"
   }
 ]
