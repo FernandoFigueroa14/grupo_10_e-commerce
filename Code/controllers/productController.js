@@ -2,8 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const { validationResult } = require('express-validator');
 
-const pathProductsJSON = path.resolve('./data/dataProducts.json');
-const products = JSON.parse(fs.readFileSync(pathProductsJSON, 'utf-8'));
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const modelProduct = require('../models/modelProduct');
@@ -59,8 +57,14 @@ const productController = {
         }
     }, 
     updateProduct: (req, res) => {
-        modelProduct.updateProduct(req);
-		res.redirect('/');
+        const validationsResults = validationResult(req);
+
+        if (!validationsResults.isEmpty()) {
+            res.render(pathSelectedProductToEditView, {product: modelProduct.searchProductById(req.body.id), errors: validationsResults.mapped(), oldData: req.body});
+        } else {
+            modelProduct.updateProduct(req);
+		    res.redirect('/');
+        }
     }, 
     search: (req, res) => {
         if (/\s/.exec(req.query.keyWord) || req.query.keyWord == '') {

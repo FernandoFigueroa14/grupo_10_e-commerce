@@ -24,14 +24,6 @@
     "img": "img-product-1627223149202.jpeg"
   },
   {
-    "id": 1627223262060,
-    "name": "Playera para niño con estampado",
-    "price": "500",
-    "description": "Playera para niño con estampado naranja",
-    "category": "kid",
-    "img": "img-product-1627223262057.jpeg"
-  },
-  {
     "id": 1627223309617,
     "name": "Playera para niño con estampado",
     "price": "550",
@@ -62,14 +54,6 @@
     "description": "Pack de 3 playeras para hombre sin estampado, de color blanco.  ",
     "category": "male",
     "img": "img-product-1627233974308.jpeg"
-  },
-  {
-    "id": 1627234039827,
-    "name": "Playera con estampado de pez",
-    "price": "500",
-    "description": "Playera color azul, con estampado de pez.",
-    "category": "kid",
-    "img": "img-product-1627234039822.jpeg"
   },
   {
     "id": 1627234098935,
@@ -128,11 +112,27 @@
     "img": "img-product-1627222976895.jpeg"
   },
   {
-    "id": "1627223103124",
+    "id": 1627223103124,
     "name": "Playera para mujer con estampado de oso",
     "price": "650",
     "description": "Playera blanca para mujer con estampado de oso. [colores]",
     "category": "female",
     "img": "img-product-1627223103120.jpeg"
+  },
+  {
+    "id": 1627223262060,
+    "name": "Playera para niño de color naranja",
+    "price": "500",
+    "description": "Playera para niño con estampado naranja",
+    "category": "kid",
+    "img": "img-product-1627223262057.jpeg"
+  },
+  {
+    "id": 1627234039827,
+    "name": "Playera con estampado de pez",
+    "price": "510",
+    "description": "Playera color azul, con estampado de pez.",
+    "category": "kid",
+    "img": "img-product-1627234039822.jpeg"
   }
 ]

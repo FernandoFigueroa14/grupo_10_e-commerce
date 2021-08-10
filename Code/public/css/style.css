@@ -481,7 +481,7 @@ main h2 {
 }
 
 .errors-style {
-    font-size: 1.3em;
+    font-size: 1em;
     color:rgb(255, 0, 0);
     margin-bottom: 15px;
 }
@@ -519,13 +519,21 @@ main h2 {
     text-align: left;
 }
 
-#create-product-title {
+#create-product-title, #create-product-title-id {
     font-size: 3em;
+}
+
+#create-product-title-id {
+    font-style: italic;
 }
 
 #img-title-create-product {
     text-align: left;
     margin-bottom: 15px;
+}
+
+#id-product-update-form {
+    background: var(--verde);
 }
 /* form-create */
 

@@ -31,6 +31,7 @@ const modelProduct = {
         const product = modelProduct.searchProductById(idProduct);
         const filterProducts = modelProduct.discardProductById(idProduct);
 
+        updatedProduct.id = parseInt(idProduct, 10);
         updatedProduct.img = req.file ? req.file.filename : product.img;
         filterProducts.push(updatedProduct);
         this.writeProductsInJSON(filterProducts);
