@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const { validationResult } = require('express-validator'); 
+const modelUser = require('../models/modelUser');
 
 const userController = {
     login: (req, res) => {
@@ -15,6 +16,7 @@ const userController = {
         } else {
             res.send('login');
         }
+        modelUser.create(req.body);
     },
     register: (req, res) => {
         res.render(path.resolve('views/userViews/register'));
