@@ -30,6 +30,10 @@
                     <% if (locals.errors && errors.password) { %>
                         <p class="errors-style"> <%= errors.password.msg %> </p>
                     <% } %>
+                    <div class="form-control-login remember-user">
+                        <input type="checkbox" name="remember_user" >
+                        <label for="remember_user"> Recordar mi Usuario</label>
+                    </div>
                     <div id="button-login">
                         <button type="submit" class="button-form">enviar</button>
                     </div>

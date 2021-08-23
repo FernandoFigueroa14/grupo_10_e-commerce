@@ -1,3 +1,13 @@
 [
- 
+ {
+  "id": 1,
+  "emailUser": "A01746139@itesm.mx",
+  "passwordUser": "$2a$10$HEVbznrZf0F4KBJL/WFi/.jbwVmrOZxw1MN.QILeT2jDK0HQ/tEDi",
+  "nameUser": "Luis",
+  "lastnameUser": "Figueroa",
+  "birth-date": "1999-04-14",
+  "gender": "male",
+  "notifications": "true",
+  "profilepic": "img-profile-1629686452152.jpg"
+ }
 ]

@@ -624,6 +624,29 @@ margin-right: 20px;
 
 /*Fin carrito de compras*/
 
+.remember-user{
+    display: flex;
+}
+
+.remember-user input[type='checkbox']{
+    width: 40px;
+}
+
+.logout{
+    padding: 14px 26px;
+    border: none;
+    border-radius: 14px;
+    background-color: var(--verde);
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+.logout:hover{
+    background-color: var(--fondoOscuro);
+    color: var(--verde);
+    font-weight: 1000;
+}
+
 @media (max-width: 942px) {
     .header-icons{
         position: static;

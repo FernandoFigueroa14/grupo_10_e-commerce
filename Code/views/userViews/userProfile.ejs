@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- head --> 
+    <%- include('../partials/head') %>
+    <!-- /head -->
+    <title>DH-Clothes</title>
+</head>
+<body>
+    <!-- header --> 
+    <%- include('../partials/header', {selected: ''}) %>
+    <!-- /header --> 
+    <main>
+        <section class="userProfile">
+            <h1>Hi <%= user.nameUser %></h1>
+            <img src="images/img-profiles/<%= user.profilepic %>" alt="profile-pic">
+            <br>
+            <br>
+            <h2><%= user.emailUser %></h2>
+            <br>
+            <form action="/logout" method="POST">
+                <button type="submit" class="logout">Logout</button>
+            </form>
+        </section>
+    </main>
+    <!-- footer --> 
+    <%- include('../partials/footer') %>
+    <!-- /footer --> 
+</body>
+</html>
