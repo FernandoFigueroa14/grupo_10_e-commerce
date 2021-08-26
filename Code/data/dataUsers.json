@@ -9,5 +9,16 @@
   "gender": "male",
   "notifications": "true",
   "profilepic": "img-profile-1629686452152.jpg"
+ },
+ {
+  "id": 2,
+  "emailUser": "a@hotmail.com",
+  "passwordUser": "$2a$10$yFPW/okStl80DDK.z1EjUeAqLLKT6I7PoUlu5sHH8CRMjD.yqTbrO",
+  "nameUser": "federico",
+  "lastnameUser": "federico",
+  "birth-date": "1999-07-16",
+  "gender": "male",
+  "notifications": "true",
+  "profilepic": "img-profile-1629990428437.jpg"
  }
 ]
