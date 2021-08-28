@@ -64,3 +64,19 @@ Se agrego al proyecto la parte del CRUD para poder crear, eliminar y modificar p
     Stop: 
             -Atrasos con entregas de sprints pasados.
             -No comunicar los avances realizados.
+            
+#Retroalimentación Sprint 5
+
+En este quinto entregable se implemento la funcionalidad de login en el sistema, permitiendo de esta manera al usuario acceder con usuario y contraseña. Para lograr dicho objetivo, se emplearon los mecanismos de session y cookies. El equipo puede observar que:  
+
+    Puntos que tiene contento al equipo: 
+
+        Visión de las funcionalidades de la pagina
+        Funcionamiento del proyecto
+        Entregar el sprint en tiempo y forma.
+        Avance del proyecto
+
+    Puntos que hacen dudar al equipo:
+
+        Tamaño del proyecto
+        Escalabilidad del proyecto
