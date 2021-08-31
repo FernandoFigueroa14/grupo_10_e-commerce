@@ -3,7 +3,6 @@ const fs = require('fs');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator'); 
 const modelUser = require('../models/modelUser');
-const { use } = require('../routers/user');
 
 const userController = {
     login: (req, res) => {
@@ -13,17 +12,14 @@ const userController = {
         let userToLogin = modelUser.findByField('emailUser', req.body.user);
 
         if(userToLogin){
-            let validationPassword = bcryptjs.compareSync(req.body.password, userToLogin.passwordUser);
-            if(validationPassword){
+            if(bcryptjs.compareSync(req.body.password, userToLogin.passwordUser)) {
                 delete userToLogin.passwordUser;
                 req.session.userLogged = userToLogin;
-
-                if(req.body.remember_user){
+                if(req.body.remember_user) {
                     res.cookie('emailUser', req.body.user, {maxAge: (1000*60)*60});
                 }
-
                 return res.redirect('/profile');
-            }else{
+            } else {
                 return res.render(path.resolve('views/userViews/login'), {
                     errors: {
                         user: {
@@ -42,15 +38,15 @@ const userController = {
             }
         })
 
-        const resultValidation = validationResult(req);
+        // const resultValidation = validationResult(req);
 
-        if (!resultValidation.isEmpty()) {
-            console.log(resultValidation);
-            res.render(path.resolve('views/userViews/login'), {errors: resultValidation.mapped(), oldData: req.body});
-        } else {
-            res.send('login');
-        }
-        modelUser.create(req.body);
+        // if (!resultValidation.isEmpty()) {
+        //     console.log(resultValidation);
+        //     res.render(path.resolve('views/userViews/login'), {errors: resultValidation.mapped(), oldData: req.body});
+        // } else {
+        //     res.send('login');
+        // }
+        // modelUser.create(req.body);
     },
     register: (req, res) => {
         res.render(path.resolve('views/userViews/register'));
@@ -85,9 +81,7 @@ const userController = {
         res.render(path.resolve('views/carrito'));
     },
     profile: (req, res) => {
-
-        console.log(req.cookies.emailUser);
-
+        // console.log(req.cookies.emailUser);
         res.render(path.resolve('views/userViews/userProfile'), {user: req.session.userLogged});
     },
     logout: (req, res) => {
