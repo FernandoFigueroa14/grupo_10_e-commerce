@@ -2,7 +2,8 @@ module.exports=(sequelize, dataTypes)=>{
     let alias ="Products";
     let cols = {
         products_id: {
-         type: dataTypes.INTEGER
+         type: dataTypes.INTEGER,
+         primaryKey: true
         },
         name:{
             type: dataTypes.STRING
