@@ -1,3 +1,4 @@
+let db = require("../database/models");
 const { validationResult } = require('express-validator')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
