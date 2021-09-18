@@ -2,22 +2,22 @@ module.exports=(sequelize, dataTypes)=>{
     let alias ="Products";
     let cols = {
         products_id: {
-
+         type: dataTypes.INTEGER
         },
         name:{
-
+            type: dataTypes.STRING
         },
         price:{
-
+            type: dataTypes.STRING
         },
         description:{
-
+            type: dataTypes.STRING       
         },
         category:{
-
+             type: dataTypes.STRING
         },
         img:{
-
+             
         }
 
     }
@@ -27,38 +27,5 @@ module.exports=(sequelize, dataTypes)=>{
     }
     const Product= sequelize.define(alias,cols, config)
     return Product;
-    let alias ="Users"
-    let cols={
-       user_id:{
-
-       },
-       emailUser:{
-
-       },
-       passwordUser:{
-
-       },
-       nameUser:{
-
-       },
-       lastNameUser:{
-
-       },
-       birth-date:{
-
-       },
-       gender:{
-    
-       },
-       profilePic:{
-           
-       }
-    }
-    let config ={
-        tableName="user",
-        timestamps=false
-    }
-        const User= sequelize.define(alias,cols, config)
-    return User;
-    }
+   
 }
