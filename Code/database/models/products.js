@@ -9,7 +9,7 @@ module.exports=(sequelize, dataTypes)=>{
             type: dataTypes.STRING
         },
         price:{
-            type: dataTypes.STRING
+            type: dataTypes.DECIMAL
         },
         description:{
             type: dataTypes.STRING       
