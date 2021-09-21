@@ -2,7 +2,7 @@ module.exports=(sequelize, dataTypes) => {
   let alias ='Products'
   let cols = {
     products_id: {
-      type: dataTypes.INTEGER,
+      type: dataTypes.BIGINT(10),
       primaryKey: true
     },
     name: {

@@ -2,7 +2,7 @@ module.exports=(sequelize, dataTypes) => {
   const alias = 'Users'
   const cols = {
     user_id: {
-      type: dataTypes.INTEGER,
+      type: dataTypes.BIGINT(10),
       primaryKey: true
     },
     emailUser: {
@@ -33,5 +33,14 @@ module.exports=(sequelize, dataTypes) => {
     tableName: 'users',
     timestamps: false
   }
-  return sequelize.define(alias, cols, config)
+  const User = sequelize.define(alias, cols, config)
+
+  User.associate = function(models) {
+    User.belongsto(models.User, {
+      as: 'purchase',
+      foreignKey: 'user_id'
+    })
+  }
+
+  return User
 }
