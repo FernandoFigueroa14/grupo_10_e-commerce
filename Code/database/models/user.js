@@ -19,14 +19,14 @@ module.exports=(sequelize, dataTypes) => {
       type: dataTypes.STRING
     },
     birthDate: {
-      type: dataTypes.date
+      type: dataTypes.STRING
     },
     gender: {
       type: dataTypes.STRING
 
     },
     profilePic: {
-
+      type: dataTypes.STRING
     }
   }
   const config ={
@@ -36,11 +36,10 @@ module.exports=(sequelize, dataTypes) => {
   const User = sequelize.define(alias, cols, config)
 
   User.associate = function(models) {
-    User.belongsto(models.User, {
+    User.hasMany(models.Purchase, {
       as: 'purchase',
       foreignKey: 'user_id'
     })
   }
-
   return User
 }

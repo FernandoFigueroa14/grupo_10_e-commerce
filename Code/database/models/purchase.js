@@ -3,7 +3,7 @@
 module.exports = (sequelize, dataTypes) => {
   const alias = 'Purchase'
   const cols = {
-    id: {
+    purchase_id: {
       type: dataTypes.INTEGER,
       primaryKey: true,
       allowNull: false
@@ -16,11 +16,11 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING,
       allowNull: false
     },
-    id_user: {
+    user_id: {
       type: dataTypes.BIGINT(10),
       allowNull: false
     },
-    id_product: {
+    product_id: {
       type: dataTypes.BIGINT(10),
       allowNull: false
     }
@@ -33,11 +33,17 @@ module.exports = (sequelize, dataTypes) => {
   const Purchase = sequelize.define(alias, cols, config)
 
   Purchase.associate = function(models) {
-    Purchase.belongsto(models.User, {
+    Purchase.belongsTo(models.Users, {
       as: 'user',
-      foreignKey: 'id_user'
+      foreignKey: 'user_id'
+    })
+    Purchase.belongsToMany(models.Products, {
+      as: 'purchase',
+      through: 'purchase_table',
+      foreignKey: 'purchase_id',
+      otherKey: 'product_id',
+      timestamps: false
     })
   }
-
   return Purchase
 }

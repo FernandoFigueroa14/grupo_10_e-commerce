@@ -10,6 +10,7 @@ const routerUser = require('./routers/user')
 const routerProduct = require('./routers/product')
 const routerCategories = require('./routers/categories')
 const userLoggedMiddleware = require('./js/userLoggedMiddleware')
+const middleware = require('./utils/aux')
 
 const PORT = process.env.PORT || 3000
 
@@ -29,10 +30,14 @@ app.use(cookies())
 app.use(session( { secret: 'Acceso seguro', resave: false, saveUninitialized: false } ))
 app.use(userLoggedMiddleware)
 
+app.use(middleware.errorHandler)
+
 app.use(routerMain)
 app.use(routerUser)
 app.use('/product', routerProduct)
 app.use(routerCategories)
+
+app.use(middleware.unkownEndPoint)
 
 app.listen(PORT, () => {
   console.log('Server running on port: ' + PORT + ' :D')
