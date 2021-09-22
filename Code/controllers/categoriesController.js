@@ -23,7 +23,7 @@ const categoriesController = {
     RenderCategory('kid', 'kids', res, next)
     // const kidsProducts = products.filter(product => product.category === 'kid')
     // res.render(path.resolve('views/categories/kids'), { products: kidsProducts, toThousand: toThousand })
-  },
+  }
 }
 
 const RenderCategory = (category, view, res, next) => {
