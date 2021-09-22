@@ -38,7 +38,6 @@ const userController = {
     })
 
     // const resultValidation = validationResult(req);
-
     // if (!resultValidation.isEmpty()) {
     //     console.log(resultValidation);
     //     res.render(path.resolve('views/userViews/login'), {errors: resultValidation.mapped(), oldData: req.body});

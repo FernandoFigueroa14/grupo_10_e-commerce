@@ -18,11 +18,11 @@ const productController = {
     db.Products.findByPk(req.params.id)
       .then((product) => {
         res.render(pathDetailProductView, { product: product, toThousand: toThousand })
+        // res.render(pathDetailProductView, { product: modelProduct.searchProductById(req.params.id), toThousand: toThousand })
       })
       .catch((error) => {
         next(error)
       })
-    // res.render(pathDetailProductView, { product: modelProduct.searchProductById(req.params.id), toThousand: toThousand })
   },
   showFormCreate: (req, res) => {
     res.render(pathCreateProductView)
@@ -84,12 +84,11 @@ const productController = {
       })
         .then((productsDB) => {
           res.render(pathSearchProducts, { products: productsDB, keyWord: req.query.keyWord, toThousand: toThousand })
+          // res.render(pathSearchProducts, { products: modelProduct.searchProductByFieldIncludesValue('name', req.query.keyWord.toLowerCase()), keyWord: req.query.keyWord, toThousand: toThousand })
         })
         .catch((error) => {
           next(error)
         })
-
-      // res.render(pathSearchProducts, { products: modelProduct.searchProductByFieldIncludesValue('name', req.query.keyWord.toLowerCase()), keyWord: req.query.keyWord, toThousand: toThousand })
     }
   }
 }
