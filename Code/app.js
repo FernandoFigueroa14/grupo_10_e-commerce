@@ -30,13 +30,12 @@ app.use(cookies())
 app.use(session( { secret: 'Acceso seguro', resave: false, saveUninitialized: false } ))
 app.use(userLoggedMiddleware)
 
-app.use(middleware.errorHandler)
-
 app.use(routerMain)
 app.use(routerUser)
 app.use('/product', routerProduct)
 app.use(routerCategories)
 
+app.use(middleware.errorHandler)
 app.use(middleware.unkownEndPoint)
 
 app.listen(PORT, () => {
@@ -44,6 +43,5 @@ app.listen(PORT, () => {
 })
 
 // Cuenta de amdin [add, edit, delete]
-
 // root@gmail.com
 // root00

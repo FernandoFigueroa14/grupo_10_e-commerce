@@ -13,8 +13,15 @@ const pathSelectedProductToEditView = '../views/products/editProductForm'
 const pathSearchProducts = '../views/products/searchProduct'
 
 const productController = {
-  detail: (req, res) => {
-    res.render(pathDetailProductView, { product: modelProduct.searchProductById(req.params.id), toThousand: toThousand })
+  detail: (req, res, next) => {
+    db.Products.findByPk(req.params.id)
+      .then((product) => {
+        res.render(pathDetailProductView, { product: product, toThousand: toThousand })
+      })
+      .catch((error) => {
+        next(error)
+      })
+    // res.render(pathDetailProductView, { product: modelProduct.searchProductById(req.params.id), toThousand: toThousand })
   },
   showFormCreate: (req, res) => {
     res.render(pathCreateProductView)

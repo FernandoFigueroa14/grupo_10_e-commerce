@@ -4,7 +4,7 @@ const unkownEndPoint = (req, res) => {
 
 const errorHandler = (error, req, res, next) => {
   console.log(error.message)
-  next(error)
+  next()
 }
 
 module.exports = { errorHandler, unkownEndPoint }
