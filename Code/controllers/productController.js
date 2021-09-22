@@ -1,5 +1,6 @@
 let db = require('../database/models')
 const { validationResult } = require('express-validator')
+const { Op } = require('sequelize')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
@@ -72,11 +73,23 @@ const productController = {
       res.redirect('/')
     }
   },
-  search: (req, res) => {
-    if (/\s/.exec(req.query.keyWord) || req.query.keyWord == '') {
+  search: (req, res, next) => {
+    if (/\s/.exec(req.query.keyWord) || req.query.keyWord === '') {
       res.render(pathSearchProducts, { products: '', keyWord: req.query.keyWord, toThousand: toThousand })
     } else {
-      res.render(pathSearchProducts, { products: modelProduct.searchProductByFieldIncludesValue('name', req.query.keyWord.toLowerCase()), keyWord: req.query.keyWord, toThousand: toThousand })
+      db.Products.findAll({
+        where: {
+          name: { [Op.substring]: req.query.keyWord.toLowerCase() }
+        }
+      })
+        .then((productsDB) => {
+          res.render(pathSearchProducts, { products: productsDB, keyWord: req.query.keyWord, toThousand: toThousand })
+        })
+        .catch((error) => {
+          next(error)
+        })
+
+      // res.render(pathSearchProducts, { products: modelProduct.searchProductByFieldIncludesValue('name', req.query.keyWord.toLowerCase()), keyWord: req.query.keyWord, toThousand: toThousand })
     }
   }
 }
