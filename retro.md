@@ -80,3 +80,19 @@ En este quinto entregable se implemento la funcionalidad de login en el sistema,
 
         Tamaño del proyecto
         Escalabilidad del proyecto
+
+#Retroalimentación Sprint 6
+
+En este sexto entregable se implementó la funcionalidad de crub utilizando una base de datos, para esto se tuvo que hacer el modelo/diagrama entidad-relación, los modelos y emplear la biblioteca sequelize.
+ 
+Puntos que tiene contento al equipo:
+ 
+       Avance del proyecto
+       Funcionalidad del proyecto
+ 
+   Puntos que hacen dudar al equipo:
+ 
+       Tiempo de los entregables
+       Complejidad del proyecto
+       Algunos ligeros retrasos en el avance del sprint
+
