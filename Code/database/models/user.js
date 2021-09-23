@@ -18,7 +18,7 @@ module.exports=(sequelize, dataTypes) => {
     lastNameUser: {
       type: dataTypes.STRING
     },
-    birthDate: {
+    birth_date: {
       type: dataTypes.STRING
     },
     gender: {
