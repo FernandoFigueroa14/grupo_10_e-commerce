@@ -1,10 +1,19 @@
 const path = require('path')
 const bcryptjs = require('bcryptjs')
 const { validationResult } = require('express-validator')
+let db = require('../database/models')
+
 const modelUser = require('../models/modelUser')
 
 const userController = {
-  login: (req, res) => {
+  login: (req, res, next) => {
+    db.Users.findAll()
+      .then((users) => {
+        console.log(users)
+      })
+      .catch((error) => {
+        next(error)
+      })
     res.render(path.resolve('views/userViews/login'))
   },
   processLogin: (req, res) => {
