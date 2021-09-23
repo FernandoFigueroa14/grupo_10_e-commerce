@@ -10,7 +10,6 @@ const routerUser = require('./routers/user')
 const routerProduct = require('./routers/product')
 const routerCategories = require('./routers/categories')
 const userLoggedMiddleware = require('./js/userLoggedMiddleware')
-const middleware = require('./utils/aux')
 
 const PORT = process.env.PORT || 3000
 
@@ -35,8 +34,13 @@ app.use(routerUser)
 app.use('/product', routerProduct)
 app.use(routerCategories)
 
-app.use(middleware.errorHandler)
-app.use(middleware.unkownEndPoint)
+app.use((error, req, res, next) => {
+  console.log(error.message)
+  next()
+})
+app.use((req, res) => {
+  res.status(404).send({ error: 'unknown endpoint' })
+})
 
 app.listen(PORT, () => {
   console.log('Server running on port: ' + PORT + ' :D')
