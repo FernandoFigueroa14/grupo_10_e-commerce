@@ -33,9 +33,18 @@ const productController = {
     if (!validationResults.isEmpty()) {
       res.render(pathCreateProductView, { errors: validationResults.mapped(), oldData: req.body })
     } else {
-      modelProduct.saveProduct(req)
-      res.redirect('/')
-    }
+          db.Products.create({
+                  name: req.body.name,
+                  price: req.body.price,
+                  description: req.body.description,
+                  category: req.body.category,
+                  img: req.files.img[0].filename,
+              }
+          )
+          .then(()=> {
+              return res.redirect('/')})            
+          .catch(error => res.send(error));
+        }
   },
   showFormDelete: (req, res) => {
     res.render(pathDeleteProductView)
