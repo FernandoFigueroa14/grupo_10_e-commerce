@@ -55,29 +55,31 @@ const userController = {
     register: (req, res) => {
         res.render(path.resolve('views/userViews/register'));
     }, 
-    processRegister: (req, res) => {
-        const resultValidation = validationResult(req);
+        processRegister: (req, res) => {
+            const resultValidation = validationResult(req);
 
-        if (!resultValidation.isEmpty()) {
-            res.render(path.resolve('views/userViews/register'), {errors: resultValidation.mapped(), oldData: req.body});
-        } else {
+            console.log(resultValidation.mapped());
 
-            let userInDB = modelUser.findByField('emailUser', req.body.emailUser);
+            if (!resultValidation.isEmpty()) {
+                res.render(path.resolve('views/userViews/register'), {errors: resultValidation.mapped(), oldData: req.body});
+            } else {
 
-            if(userInDB){
-                return res.render(path.resolve('views/userViews/register'), {errors: {emailUser: {msg: 'Este correo electronico ya está registrado'}}, oldData: req.body});
+                let userInDB = modelUser.findByField('emailUser', req.body.emailUser);
+
+                if(userInDB){
+                    return res.render(path.resolve('views/userViews/register'), {errors: {emailUser: {msg: 'Este correo electronico ya está registrado'}}, oldData: req.body});
+                }
+
+                let userToCreate = {
+                    ...req.body,
+                    passwordUser: bcryptjs.hashSync(req.body.passwordUser, 10),
+                    profilepic: req.file.filename
+                }
+
+                let userCreated = modelUser.create(userToCreate);
+                res.redirect('/login');
             }
-
-            let userToCreate = {
-                ...req.body,
-                passwordUser: bcryptjs.hashSync(req.body.passwordUser, 10),
-                profilepic: req.file.filename
-            }
-
-            let userCreated = modelUser.create(userToCreate);
-            res.redirect('/login');
-        }
-    }, 
+        }, 
     recoverPassword: (req, res) => {
         res.render(path.resolve('views/userViews/recoverPassword'));
     },
