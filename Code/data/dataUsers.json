@@ -9,5 +9,26 @@
   "gender": "male",
   "notifications": "true",
   "profilepic": "img-profile-1629686452152.jpg"
+ },
+ {
+  "id": 2,
+  "emailUser": "root@gmail.com",
+  "passwordUser": "$2a$10$mZrKJhPo5k7GYRfcBUt3..N/2u4K50bIcwZhicg/CEvuPGBaKEGb6",
+  "nameUser": "Root",
+  "lastnameUser": "---",
+  "birth-date": "2000-01-01",
+  "gender": "male",
+  "notifications": "true",
+  "profilepic": "img-profile-1629686452152.jpg"
+ },
+ {
+  "id": 3,
+  "emailUser": "a@hotmail.com",
+  "passwordUser": "$2a$10$d3zubRi/TZe51vSWvQ32Qe6VxV6UADmQAlPAVL1CLnMvjzD9KxE9K",
+  "nameUser": "AAA",
+  "lastnameUser": "AAA",
+  "birth-date": "2000-01-01",
+  "gender": "male",
+  "profilepic": "img-profile-1630374683361.png"
  }
 ]

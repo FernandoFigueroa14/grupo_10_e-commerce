@@ -12,12 +12,25 @@
     <!-- /header --> 
     <main>
         <section class="userProfile">
-            <h1>Hi <%= user.nameUser %></h1>
-            <img src="images/img-profiles/<%= user.profilepic %>" alt="profile-pic">
-            <br>
-            <br>
+            <h1>Hola <%= user.nameUser %></h1>
             <h2><%= user.emailUser %></h2>
-            <br>
+            <img src="images/img-profiles/<%= user.profilepic %>" alt="profile-pic">
+            <br><br>
+            <% if (locals.isAdmin) { %>
+                <h2 class="admin">Perfil de administrador</h2>
+                <div class="admin-buttons">
+                    <h3 class="admin">Productos</h3>
+                    <form action="product/create" method="GET">
+                        <button class="logout">Agregar</button>
+                    </form>
+                    <form action="product/edit" method="GET">
+                        <button class="logout">Editar</button>
+                    </form>
+                    <form action="product/delete" method="GET">
+                        <button class="logout">Eliminar</button>
+                    </form>
+                </div> 
+            <% } %>
             <form action="/logout" method="POST">
                 <button type="submit" class="logout">Logout</button>
             </form>
