@@ -16,7 +16,9 @@ const PORT = process.env.PORT || 3000
 const app = express()
 
 if (process.env.NODE_ENV !== 'production')
-  require('dotenv').config()
+  process.env['ADMIN'] = 'root@gmail.com root00'  
+  require('dotenv').config();
+  console.log(process.env.ADMIN);
 
 app.set('view engine', 'ejs')
 

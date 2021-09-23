@@ -33,12 +33,13 @@ const productController = {
     if (!validationResults.isEmpty()) {
       res.render(pathCreateProductView, { errors: validationResults.mapped(), oldData: req.body })
     } else {
+          // console.log(req.file);
           db.Products.create({
                   name: req.body.name,
                   price: req.body.price,
                   description: req.body.description,
                   category: req.body.category,
-                  img: req.files.img[0].filename,
+                  img: req.file.filename,
               }
           )
           .then(()=> {
