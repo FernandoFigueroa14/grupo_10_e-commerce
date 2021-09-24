@@ -30,8 +30,7 @@ const userController = {
           return res.render(path.resolve('views/userViews/login'), { errors: { user: { msg: 'Las credenciales son inválidas' } } })
         }
       })
-      .catch((error) => {
-        console.log(error)
+      .catch(() => {
         return res.render(path.resolve('views/userViews/login'), { errors: { user: { msg: 'No se encuentra este correo electronico en nuestra base de datos' } } })
       })
   },
@@ -68,7 +67,7 @@ const userController = {
     res.render(path.resolve('views/carrito'))
   },
   profile: (req, res) => {
-    // console.log(req.cookies.emailUser);
+    console.log(req.session.userLogged)
     res.render(path.resolve('views/userViews/userProfile'), { user: req.session.userLogged })
   },
   logout: (req, res) => {

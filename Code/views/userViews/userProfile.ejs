@@ -14,7 +14,7 @@
         <section class="userProfile">
             <h1>Hola <%= user.nameUser %></h1>
             <h2><%= user.emailUser %></h2>
-            <img src="images/img-profiles/<%= user.profilepic %>" alt="profile-pic">
+            <img src="images/img-profiles/<%= user.profilePic %>" alt="profile-pic">
             <br><br>
             <% if (locals.isAdmin) { %>
                 <h2 class="admin">Perfil de administrador</h2>

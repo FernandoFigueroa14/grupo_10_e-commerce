@@ -20,7 +20,7 @@ DROP DATABASE IF EXISTS dh_db;
    `price` decimal(10,0) NOT NULL,
    `description` varchar(1000) NOT NULL,
    `category` varchar(45) NOT NULL,
-   `img` mediumblob,
+   `img` varchar(100),
    PRIMARY KEY (`product_id`)
  ) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -49,7 +49,7 @@ DROP DATABASE IF EXISTS dh_db;
    `birth_date` date NOT NULL,
    `gender` varchar(45) NOT NULL,
    `notifications` int NOT NULL,
-   `profilePic` mediumblob,
+   `profilePic` varchar(100),
    PRIMARY KEY (`user_id`)
  ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
