@@ -49,12 +49,16 @@ const productController = {
   },
   delete: (req, res) => {
     const idProduct = req.body.id
-    if (modelProduct.searchProductById(idProduct)) {
-      modelProduct.writeProductsInJSON(modelProduct.discardProductById(idProduct))
-      res.redirect('/')
-    } else {
-      res.render(pathDeleteProductView, { id: idProduct })
-    }
+    db.Products.findByPk(idProduct)
+      .then(() => {
+        db.Products.destroy({
+          where: { product_id: idProduct }
+        })
+        res.redirect('/')
+      })
+      .catch(() => {
+        res.render(pathDeleteProductView, { id: idProduct })
+      })
   },
   showFormEditId: (req, res) => {
     res.render(pathSelectProductToEditByIdView, { id: '' })
