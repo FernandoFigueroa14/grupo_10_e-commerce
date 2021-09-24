@@ -12,24 +12,32 @@
     <!-- /header --> 
     <main>
         <section class="userProfile">
-            <h1>Hola <%= user.nameUser %></h1>
+            <h1 style="margin-top: 25px;">Hola <%= user.nameUser %></h1>
             <h2><%= user.emailUser %></h2>
             <img src="images/img-profiles/<%= user.profilePic %>" alt="profile-pic">
             <br><br>
             <% if (locals.isAdmin) { %>
-                <h2 class="admin">Perfil de administrador</h2>
-                <div class="admin-buttons">
-                    <h3 class="admin">Productos</h3>
-                    <form action="product/create" method="GET">
-                        <button class="logout">Agregar</button>
-                    </form>
-                    <form action="product/edit" method="GET">
-                        <button class="logout">Editar</button>
-                    </form>
-                    <form action="product/delete" method="GET">
-                        <button class="logout">Eliminar</button>
-                    </form>
-                </div> 
+                <div id="admin-container">
+                    <h2 class="admin">Perfil de administrador</h2>
+                    <div class="admin-buttons">
+                        <h3 class="admin" style="margin-bottom: 15px;">Menu para Productos</h3>
+                        <form action="product/create" method="GET">
+                            <button class="logout">Agregar</button>
+                        </form>
+                        <form action="product/edit" method="GET">
+                            <button class="logout">Editar</button>
+                        </form>
+                        <form action="product/delete" method="GET">
+                            <button class="logout">Eliminar</button>
+                        </form>
+                    </div> 
+                </div>
+            <% } %>
+            <h3>Tu ID de usuario es: <b><%= user.user_id %></b></h3>
+            <% if (!locals.isAdmin) { %>
+                <form action="/history" method="POST">
+                    <button type="submit" class="logout">Historial compras</button>
+                </form>
             <% } %>
             <form action="/logout" method="POST">
                 <button type="submit" class="logout">Logout</button>

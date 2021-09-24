@@ -49,9 +49,7 @@ const userController = {
         }
       })
         .then((dataUser) => {
-          console.log(dataUser)
           if (!dataUser.length) {
-            console.log(req.body)
             db.Users.create({
               ...req.body,
               passwordUser: bcryptjs.hashSync(req.body.passwordUser, 10),
@@ -75,7 +73,6 @@ const userController = {
     res.render(path.resolve('views/carrito'))
   },
   profile: (req, res) => {
-    console.log(req.session.userLogged)
     res.render(path.resolve('views/userViews/userProfile'), { user: req.session.userLogged })
   },
   logout: (req, res) => {

@@ -60,8 +60,10 @@ DROP DATABASE IF EXISTS dh_db;
  LOCK TABLES `users` WRITE;
 
  INSERT INTO `users` VALUES
-   (1628632503078, 'A01746139@itesm.mx', '$2a$10$HEVbznrZf0F4KBJL/WFi/.jbwVmrOZxw1MN.QILeT2jDK0HQ/tEDi', 'Luis', 'Figueroa', '1999-04-14', 'male', 1, 'img-profile-1629686452152.jpg'),
-   (1628605603218, 'root@gmail.com', '$2a$10$mZrKJhPo5k7GYRfcBUt3..N/2u4K50bIcwZhicg/CEvuPGBaKEGb6', 'Root', '---', '2000-01-01', 'male', 1, 'img-profile-1629686452152.jpg');
+   (1628632503078, 'A01746139@itesm.mx', '$2a$10$HEVbznrZf0F4KBJL/WFi/.jbwVmrOZxw1MN.QILeT2jDK0HQ/tEDi', 'Luis', 'Figueroa', '1999-04-14', 'male', 1, 'img-profile-1629685539274.jpg'),
+   (1628605603218, 'root@gmail.com', '$2a$10$mZrKJhPo5k7GYRfcBUt3..N/2u4K50bIcwZhicg/CEvuPGBaKEGb6', 'Root', 'Admin', '2000-01-01', 'male', 1, 'img-profile-1629685539274.jpg'),
+   (1628632503079, 'federico@hotmail.com', '$2a$10$cZWKrQ6x/xENog5ty.JOJO5.74BdTqlOJYZ9OVuTWLQXTHM2rI5e2', 'Federico', 'Villegas', '1997-10-10', 'male', 1, 'img-profile-1632497131570.jpeg');
+
 
  UNLOCK TABLES;
 
