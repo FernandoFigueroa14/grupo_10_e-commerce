@@ -4,9 +4,6 @@ const { validationResult } = require('express-validator')
 const { Op } = require('sequelize')
 
 let db = require('../database/models')
-const modelUser = require('../models/modelUser')
-const { nextTick } = require('process')
-// const { Cipher } = require('crypto')
 
 const userController = {
   login: (req, res) => {
