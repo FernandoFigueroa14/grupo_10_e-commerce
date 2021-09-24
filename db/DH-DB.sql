@@ -46,7 +46,7 @@ DROP DATABASE IF EXISTS dh_db;
    `passwordUser` varchar(70) NOT NULL,
    `nameUser` varchar(45) NOT NULL,
    `lastNameUser` varchar(45) NOT NULL,
-   `birth-date` date NOT NULL,
+   `birth_date` date NOT NULL,
    `gender` varchar(45) NOT NULL,
    `notifications` int NOT NULL,
    `profilePic` mediumblob,

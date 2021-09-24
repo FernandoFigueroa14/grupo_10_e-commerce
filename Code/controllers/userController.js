@@ -1,9 +1,11 @@
 const path = require('path')
 const bcryptjs = require('bcryptjs')
 const { validationResult } = require('express-validator')
-let db = require('../database/models')
+const { Op } = require('sequelize')
 
+let db = require('../database/models')
 const modelUser = require('../models/modelUser')
+const { Cipher } = require('crypto')
 
 const userController = {
   login: (req, res, next) => {
@@ -17,43 +19,29 @@ const userController = {
     res.render(path.resolve('views/userViews/login'))
   },
   processLogin: (req, res) => {
-    let userToLogin = modelUser.findByField('emailUser', req.body.user)
-
-    if(userToLogin){
-      if(bcryptjs.compareSync(req.body.password, userToLogin.passwordUser)) {
-        delete userToLogin.passwordUser
-        req.session.userLogged = userToLogin
-        if(req.body.remember_user) {
-          res.cookie('emailUser', req.body.user, { maxAge: (1000*60)*60 })
-        }
-        return res.redirect('/profile')
-      } else {
-        return res.render(path.resolve('views/userViews/login'), {
-          errors: {
-            user: {
-              msg: 'Las credenciales son inválidas'
-            }
-          }
-        })
-      }
-    }
-
-    return res.render(path.resolve('views/userViews/login'), {
-      errors: {
-        user: {
-          msg: 'No se encuentra este correo electronico en nuestra base de datos'
-        }
+    const emailUserToLogin = req.body.user
+    //let userToLogin = modelUser.findByField('emailUser', req.body.user)
+    db.Products.findAll({
+      where: {
+        emailUser: { [Op.eq]: emailUserToLogin }
       }
     })
-
-    // const resultValidation = validationResult(req);
-    // if (!resultValidation.isEmpty()) {
-    //     console.log(resultValidation);
-    //     res.render(path.resolve('views/userViews/login'), {errors: resultValidation.mapped(), oldData: req.body});
-    // } else {
-    //     res.send('login');
-    // }
-    // modelUser.create(req.body);
+      .then((userToLogin) => {
+        console.log(userToLogin)
+        if(bcryptjs.compareSync(req.body.password, userToLogin.passwordUser)) {
+          delete userToLogin.passwordUser
+          req.session.userLogged = userToLogin
+          if(req.body.remember_user) {
+            res.cookie('emailUser', emailUserToLogin, { maxAge: (1000*60)*60 })
+          }
+          return res.redirect('/profile')
+        } else {
+          return res.render(path.resolve('views/userViews/login'), { errors: { user: { msg: 'Las credenciales son inválidas' } } })
+        }
+      })
+      .catch(() => {
+        return res.render(path.resolve('views/userViews/login'), { errors: { user: { msg: 'No se encuentra este correo electronico en nuestra base de datos' } } })
+      })
   },
   register: (req, res) => {
     res.render(path.resolve('views/userViews/register'))
