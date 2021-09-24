@@ -60,8 +60,8 @@ DROP DATABASE IF EXISTS dh_db;
  LOCK TABLES `users` WRITE;
 
  INSERT INTO `users` VALUES
-   (1628632503078, 'A01746139@itesm.mx', '$2a$10$HEVbznrZf0F4KBJL/WFi/.jbwVmrOZxw1MN.QILeT2jDK0HQ/tEDi', 'Luis', 'Figueroa', '1999-04-14', 'male', 1, null),
-   (1628605603218, 'root@gmail.com', '$2a$10$mZrKJhPo5k7GYRfcBUt3..N/2u4K50bIcwZhicg/CEvuPGBaKEGb6', 'Root', '---', '2000-01-01', 'male', 1, null);
+   (1628632503078, 'A01746139@itesm.mx', '$2a$10$HEVbznrZf0F4KBJL/WFi/.jbwVmrOZxw1MN.QILeT2jDK0HQ/tEDi', 'Luis', 'Figueroa', '1999-04-14', 'male', 1, 'img-profile-1629686452152.jpg'),
+   (1628605603218, 'root@gmail.com', '$2a$10$mZrKJhPo5k7GYRfcBUt3..N/2u4K50bIcwZhicg/CEvuPGBaKEGb6', 'Root', '---', '2000-01-01', 'male', 1, 'img-profile-1629686452152.jpg');
 
  UNLOCK TABLES;
 

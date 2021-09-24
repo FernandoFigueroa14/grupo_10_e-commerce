@@ -5,32 +5,23 @@ const { Op } = require('sequelize')
 
 let db = require('../database/models')
 const modelUser = require('../models/modelUser')
-const { Cipher } = require('crypto')
+// const { Cipher } = require('crypto')
 
 const userController = {
-  login: (req, res, next) => {
-    db.Users.findAll()
-      .then((users) => {
-        console.log(users)
-      })
-      .catch((error) => {
-        next(error)
-      })
+  login: (req, res) => {
     res.render(path.resolve('views/userViews/login'))
   },
   processLogin: (req, res) => {
     const emailUserToLogin = req.body.user
-    //let userToLogin = modelUser.findByField('emailUser', req.body.user)
-    db.Products.findAll({
+    db.Users.findAll({
       where: {
         emailUser: { [Op.eq]: emailUserToLogin }
       }
     })
       .then((userToLogin) => {
-        console.log(userToLogin)
-        if(bcryptjs.compareSync(req.body.password, userToLogin.passwordUser)) {
-          delete userToLogin.passwordUser
-          req.session.userLogged = userToLogin
+        if(bcryptjs.compareSync(req.body.password, userToLogin[0].dataValues.passwordUser)) {
+          delete userToLogin[0].dataValues.passwordUser
+          req.session.userLogged = userToLogin[0].dataValues
           if(req.body.remember_user) {
             res.cookie('emailUser', emailUserToLogin, { maxAge: (1000*60)*60 })
           }
@@ -39,7 +30,8 @@ const userController = {
           return res.render(path.resolve('views/userViews/login'), { errors: { user: { msg: 'Las credenciales son inválidas' } } })
         }
       })
-      .catch(() => {
+      .catch((error) => {
+        console.log(error)
         return res.render(path.resolve('views/userViews/login'), { errors: { user: { msg: 'No se encuentra este correo electronico en nuestra base de datos' } } })
       })
   },
