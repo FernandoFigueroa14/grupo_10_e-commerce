@@ -48,7 +48,7 @@ DROP DATABASE IF EXISTS dh_db;
    `lastNameUser` varchar(45) NOT NULL,
    `birth_date` date NOT NULL,
    `gender` varchar(45) NOT NULL,
-   `notifications` int NOT NULL,
+   `notifications` int DEFAULT 0,
    `profilePic` varchar(100),
    PRIMARY KEY (`user_id`)
  ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

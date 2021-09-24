@@ -10,7 +10,7 @@ const validations = [
   body('nameUser')
     .notEmpty()
     .withMessage('El campo de nombre no puede estar vacio'),
-  body('lastnameUser')
+  body('lastNameUser')
     .notEmpty()
     .withMessage('El campo de apellido no puede estar vacio')
 ]

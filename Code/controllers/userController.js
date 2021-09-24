@@ -5,6 +5,7 @@ const { Op } = require('sequelize')
 
 let db = require('../database/models')
 const modelUser = require('../models/modelUser')
+const { nextTick } = require('process')
 // const { Cipher } = require('crypto')
 
 const userController = {
@@ -37,27 +38,34 @@ const userController = {
   register: (req, res) => {
     res.render(path.resolve('views/userViews/register'))
   },
-  processRegister: (req, res) => {
+  processRegister: (req, res, next) => {
     const resultValidation = validationResult(req)
-
     if (!resultValidation.isEmpty()) {
       res.render(path.resolve('views/userViews/register'), { errors: resultValidation.mapped(), oldData: req.body })
     } else {
-
-      let userInDB = modelUser.findByField('emailUser', req.body.emailUser)
-
-      if(userInDB){
-        return res.render(path.resolve('views/userViews/register'), { errors: { emailUser: { msg: 'Este correo electronico ya está registrado' } }, oldData: req.body })
-      }
-
-      let userToCreate = {
-        ...req.body,
-        passwordUser: bcryptjs.hashSync(req.body.passwordUser, 10),
-        profilepic: req.file.filename
-      }
-
-      modelUser.create(userToCreate)
-      res.redirect('/login')
+      db.Users.findAll({
+        where: {
+          emailUser: { [Op.eq]: req.body.emailUser }
+        }
+      })
+        .then((dataUser) => {
+          console.log(dataUser)
+          if (!dataUser.length) {
+            console.log(req.body)
+            db.Users.create({
+              ...req.body,
+              passwordUser: bcryptjs.hashSync(req.body.passwordUser, 10),
+              profilePic: req.file.filename
+            })
+            res.redirect('/login')
+          } else {
+            return res.render(path.resolve('views/userViews/register'), { errors: { emailUser: { msg: 'Este correo electronico ya está registrado' } }, oldData: req.body })
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+          next(error)
+        })
     }
   },
   recoverPassword: (req, res) => {
