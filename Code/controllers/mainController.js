@@ -10,6 +10,7 @@ const controller = {
   home: (req, res, next) => {
     db.Products.findAll()
       .then((productsDB) => {
+        console.log(productsDB)
         res.render(path.resolve('views/home'), { products: productsDB, toThousand: toThousand })
       }).catch((error) => {
         next(error)
