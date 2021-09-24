@@ -76,6 +76,6 @@ DROP DATABASE IF EXISTS dh_db;
    PRIMARY KEY (`purchase_id`),
    KEY `purchase_user_id_foreign` (`user_id`),
    KEY `purchase_product_id_foreign` (`product_id`),
-   CONSTRAINT `purchase_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
-   CONSTRAINT `purchase_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`)
+   CONSTRAINT `purchase_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
+   CONSTRAINT `purchase_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE
  ) ENGINE=InnoDB AUTO_INCREMENT=229 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

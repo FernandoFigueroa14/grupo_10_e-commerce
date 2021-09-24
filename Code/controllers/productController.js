@@ -29,30 +29,26 @@ const productController = {
   },
   processCreate: (req, res) => {
     const validationResults = validationResult(req)
-
     if (!validationResults.isEmpty()) {
       res.render(pathCreateProductView, { errors: validationResults.mapped(), oldData: req.body })
     } else {
-          // console.log(req.file);
-          db.Products.create({
-                  name: req.body.name,
-                  price: req.body.price,
-                  description: req.body.description,
-                  category: req.body.category,
-                  img: req.file.filename,
-              }
-          )
-          .then(()=> {
-              return res.redirect('/')})            
-          .catch(error => res.send(error));
-        }
+      db.Products.create({
+        name: req.body.name,
+        price: req.body.price,
+        description: req.body.description,
+        category: req.body.category,
+        img: req.file.filename,
+      })
+        .then(() => {
+          return res.redirect('/')})
+        .catch(error => res.send(error))
+    }
   },
   showFormDelete: (req, res) => {
     res.render(pathDeleteProductView)
   },
   delete: (req, res) => {
     const idProduct = req.body.id
-
     if (modelProduct.searchProductById(idProduct)) {
       modelProduct.writeProductsInJSON(modelProduct.discardProductById(idProduct))
       res.redirect('/')
@@ -75,7 +71,6 @@ const productController = {
   },
   updateProduct: (req, res) => {
     const validationsResults = validationResult(req)
-
     if (!validationsResults.isEmpty()) {
       res.render(pathSelectedProductToEditView, { product: modelProduct.searchProductById(req.body.id), errors: validationsResults.mapped(), oldData: req.body })
     } else {
