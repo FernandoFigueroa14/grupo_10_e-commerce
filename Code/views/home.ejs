@@ -24,14 +24,15 @@
                 <input type="radio" name="banner">
             </div>
         </section>
-
         <section class="articulos">
-            <h3 class="titular">¡Lo más vendido en D-HC!</h3>
-
-            <% for(let i = 0; i < products.length; i++) { %>
-                <%- include('./partials/producto', {product: products[i], toThousand: toThousand}) %>
+            <% if (!products.length) { %>
+                <h1 style="color: red;"> Error al cargar productos <strong> [Base de datos desconectada] </strong></h1>    
+            <% } else { %>
+                <h3 class="titular">¡Lo más vendido en D-HC!</h3>
+                <% for(let i = 0; i < products.length; i++) { %>
+                    <%- include('./partials/producto', {product: products[i], toThousand: toThousand}) %>
+                <% } %>
             <% } %>
-
         </section>
     </main>
     <!-- footer --> 
