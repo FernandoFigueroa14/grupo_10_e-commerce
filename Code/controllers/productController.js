@@ -92,8 +92,18 @@ const productController = {
         }
       })
         .then((productsDB) => {
-          res.render(pathSearchProducts, { products: productsDB, keyWord: req.query.keyWord, toThousand: toThousand })
-          // res.render(pathSearchProducts, { products: modelProduct.searchProductByFieldIncludesValue('name', req.query.keyWord.toLowerCase()), keyWord: req.query.keyWord, toThousand: toThousand })
+          if (/^[0-9]+$/.exec(req.query.keyWord)) {
+            db.Products.findByPk(parseInt(req.query.keyWord))
+              .then((productsDB) => {
+                console.log(productsDB.dataValues)
+                res.render(pathSearchProducts, { products: [productsDB.dataValues], keyWord: req.query.keyWord, toThousand: toThousand })
+              })
+              .catch((error) => {
+                console.log(error)
+              })
+          } else {
+            res.render(pathSearchProducts, { products: productsDB, keyWord: req.query.keyWord, toThousand: toThousand })
+          }
         })
         .catch((error) => {
           next(error)
