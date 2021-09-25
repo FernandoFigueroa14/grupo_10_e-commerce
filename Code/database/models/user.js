@@ -3,7 +3,9 @@ module.exports=(sequelize, dataTypes) => {
   const cols = {
     user_id: {
       type: dataTypes.BIGINT(10),
-      primaryKey: true
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true
     },
     emailUser: {
       type: dataTypes.STRING
@@ -36,9 +38,12 @@ module.exports=(sequelize, dataTypes) => {
   const User = sequelize.define(alias, cols, config)
 
   User.associate = function(models) {
-    User.hasMany(models.Purchase, {
-      as: 'purchase',
-      foreignKey: 'user_id'
+    User.belongsToMany(models.Products, {
+      as: 'product',
+      through: 'purchase',
+      foreignKey: 'user_id_FK',
+      otherKey: 'product_id_FK',
+      timestamps: false
     })
   }
   return User

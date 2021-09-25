@@ -39,10 +39,10 @@
                         <p class='errors-style'><%= errors.nameUser.msg %></p>
                     <% } %>
                     <div class="form-control-register">
-                        <input type="text" name="lastnameUser" placeholder="Apellido" minlength="3" value="<%=locals.oldData ? oldData.lastnameUser : ''%>">
+                        <input type="text" name="lastNameUser" placeholder="Apellido" minlength="3" value="<%=locals.oldData ? oldData.lastnameUser : ''%>">
                     </div>
-                    <% if (locals.errors && errors.lastnameUser) { %>
-                        <p class='errors-style'><%= errors.lastnameUser.msg %></p>
+                    <% if (locals.errors && errors.lastNameUser) { %>
+                        <p class='errors-style'><%= errors.lastNameUser.msg %></p>
                     <% } %>
                     <div class="form-control-register">
                         <label class="title-register">Foto de Perfil</label>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-control-register">
                         <label class="title-register">Fecha de nacimiento</label>
-                        <input type="date" name="birth-date" value="2000-01-01" min="1921-01-01" max="2005-01-01">
+                        <input type="date" name="birth_date" value="2000-01-01" min="1921-01-01" max="2005-01-01">
                     </div>
                     <div class="form-control-check">
                         <label class="title-register">Genero</label>

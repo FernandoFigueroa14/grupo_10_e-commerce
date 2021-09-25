@@ -25,3 +25,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
+=======
+#config DB
+config.js
+>>>>>>> e5176e17fa76818de926b42c7af9e81065dd9140
