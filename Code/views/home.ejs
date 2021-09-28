@@ -11,17 +11,24 @@
     <%- include('./partials/headerHome', {selected: 'home'}) %>
     <!-- /head --> 
     <main>
-        <section class="banner">
-            <div class="banner-img">
-                <img src="/images/muestra.png" alt="banner">
-            </div>
-
-            <div class="banner-buttons">
-                <input type="radio" name="banner" checked>
-                <input type="radio" name="banner">
-                <input type="radio" name="banner">
-                <input type="radio" name="banner">
-                <input type="radio" name="banner">
+        <section>
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100 banner-img" id="ex" src="/images/1.jpeg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 banner-img" src="/images/2.jpeg" alt="Second slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
             </div>
         </section>
         <section class="articulos">
