@@ -95,8 +95,11 @@ const productController = {
           if (/^[0-9]+$/.exec(req.query.keyWord)) {
             db.Products.findByPk(parseInt(req.query.keyWord))
               .then((productsDB) => {
-                console.log(productsDB.dataValues)
-                res.render(pathSearchProducts, { products: [productsDB.dataValues], keyWord: req.query.keyWord, toThousand: toThousand })
+                if (productsDB) {
+                  res.render(pathSearchProducts, { products: [productsDB.dataValues], keyWord: req.query.keyWord, toThousand: toThousand })
+                } else {
+                  res.render(pathSearchProducts, { products: [], keyWord: req.query.keyWord, toThousand: toThousand })
+                }
               })
               .catch((error) => {
                 console.log(error)
