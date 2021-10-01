@@ -83,8 +83,21 @@ const productController = {
     }
   },
   search: (req, res, next) => {
+    const tallas = ['CH', 'ch', 'M', 'm', 'g', 'G', 'XL', 'xl']
     if (/\s/.exec(req.query.keyWord) || req.query.keyWord === '') {
       res.render(pathSearchProducts, { products: '', keyWord: req.query.keyWord, toThousand: toThousand })
+    } else if (tallas.includes(req.query.keyWord)) {
+      db.Products.findAll({
+        where: {
+          size: { [Op.substring]: req.query.keyWord.toUpperCase() }
+        }
+      })
+        .then((products) => {
+          res.render(pathSearchProducts, { products: products, keyWord: 'Productos talla ' + req.query.keyWord.toUpperCase(), toThousand: toThousand })
+        })
+        .catch((error) => {
+          console.log(error)
+        })
     } else {
       db.Products.findAll({
         where: {
