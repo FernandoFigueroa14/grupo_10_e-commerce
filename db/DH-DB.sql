@@ -21,6 +21,7 @@ DROP DATABASE IF EXISTS dh_db;
    `description` varchar(1000) NOT NULL,
    `category` varchar(45) NOT NULL,
    `img` varchar(100),
+   `size` varchar(10),
    PRIMARY KEY (`product_id`)
  ) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -30,7 +31,31 @@ DROP DATABASE IF EXISTS dh_db;
 
  LOCK TABLES `products` WRITE;
 
- INSERT INTO `products` VALUES (1627222918042,'Playera para hombre con estampado',750,'Playera azul para hombre con estampado.','male','img-product-1627222918038.jpeg'),(1627222976898,'Playera para hombre sin estampado',750,'Playera amarilla, sin estampado.','male','img-product-1627222976895.jpeg'),(1627223017473,'Playera para hombre con estampado ',800,'Playera negra, con estampado al frente.','male','img-product-1627223017469.jpeg'),(1627223103124,'Playera para mujer con estampado de oso',650,'Playera blanca para mujer con estampado de oso.','female','img-product-1627223103120.jpeg'),(1627223149206,'Playera para mujer con estampado',800,'Playera para mujer con estampado.','female','img-product-1627223149202.jpeg'),(1627223185815,'Playera para mujer con estampado',1010,'Playera verde para mujer con estampado.','female','img-product-1627223185811.jpeg'),(1627223227927,'Playera para niño con estampado de oso',450,'Playera para niño con estampado rosa','kid','img-product-1627223227923.jpeg'),(1627223262060,'Playera para niño de color naranja',500,'Playera para niño con estampado naranja.','kid','img-product-1627223262057.jpeg'),(1627223309617,'Playera para niño con estampado',550,'Playera para niño con estampado, pez espada.','kid','img-product-1627223341881.jpeg'),(1627233814884,'Playera de hombre color verde',800,'Playera de hombre color verde con estampado.','male','img-product-1627233814880.jpeg'),(1627233889901,'Playera de hombre color verde',900,'Playera de hombre sin estampado, color verde.','male','img-product-1627233889898.jpeg'),(1627233974312,'Playeras de hombre color blanco',1500,'Pack de 3 playeras para hombre sin estampado, de color blanco.','male','img-product-1627233974308.jpeg'),(1627234039827,'Playera con estampado de pez',510,'Playera color azul, con estampado de pez.','kid','img-product-1627234039822.jpeg'),(1627234098935,'Playera con estampado',495,'Playera de color verde, con estampado.','kid','img-product-1627234098931.jpeg'),(1628185126464,'Playera para mujer de color rojo',975,'Playera con franjas rojas para mujer.','female','img-product-1628185126444.jpeg'),(1628185186759,'Playera para mujer',785,'Playera con estampado circular de color negro','female','img-product-1628185186755.jpeg'),(1628267815902,'Playera con estampado',860,'Playera go out side para niño con estampado de color.','kid','img-product-1628267815894.jpeg'),(1628605551171,'Sudadera para niño',1350,'Sudadera multicolor para niño.','kid','img-product-1628605551159.jpeg'),(1628605603078,'Playera blanca para mujer',600,'Playera con estampado para mujer.','female','img-product-1628605603070.jpeg'),(1628605641202,'Playera azul para hombre',600,'Playera con estampado para hombre, de color azul.','male','img-product-1628605641194.jpeg'),(1628605663216,'Playera azul para hombre con estampado',610,'Playera con estampado para hombre, de color azul.','male','img-product-1628605663209.jpeg'),(1628605739289,'Playera azul para hombre con estampado de color',600,'Playera con estampado para hombre, de color azul.','male','img-product-1628605739280.jpeg'),(1628605739290,'Playera prueba create',5000,'Playera prueba CRUD','male','img-product-1632379524194.jfif'),(1628605739291,'Playera prueba create 2',1200,'Segunda prueba CRUD','female','img-product-1632380164425.jpg');
+ INSERT INTO `products` VALUES 
+  (1627222918042,'Playera para hombre con estampado',750,'Playera azul para hombre con estampado.','male','img-product-1627222918038.jpeg', 'M'),
+  (1627222976898,'Playera para hombre sin estampado',750,'Playera amarilla, sin estampado.','male','img-product-1627222976895.jpeg', 'CH'),
+  (1627223017473,'Playera para hombre con estampado ',800,'Playera negra, con estampado al frente.','male','img-product-1627223017469.jpeg', 'XL'),
+  (1627223103124,'Playera para mujer con estampado de oso',650,'Playera blanca para mujer con estampado de oso.','female','img-product-1627223103120.jpeg', 'M'),
+  (1627223149206,'Playera para mujer con estampado',800,'Playera para mujer con estampado.','female','img-product-1627223149202.jpeg', 'M'),
+  (1627223185815,'Playera para mujer con estampado',1010,'Playera verde para mujer con estampado.','female','img-product-1627223185811.jpeg', 'XL'),
+  (1627223227927,'Playera para niño con estampado de oso',450,'Playera para niño con estampado rosa','kid','img-product-1627223227923.jpeg', 'G'),
+  (1627223262060,'Playera para niño de color naranja',500,'Playera para niño con estampado naranja.','kid','img-product-1627223262057.jpeg', 'G'),
+  (1627223309617,'Playera para niño con estampado',550,'Playera para niño con estampado, pez espada.','kid','img-product-1627223341881.jpeg', 'M'),
+  (1627233814884,'Playera de hombre color verde',800,'Playera de hombre color verde con estampado.','male','img-product-1627233814880.jpeg', 'G'),
+  (1627233889901,'Playera de hombre color verde',900,'Playera de hombre sin estampado, color verde.','male','img-product-1627233889898.jpeg', 'M'),
+  (1627233974312,'Playeras de hombre color blanco',1500,'Pack de 3 playeras para hombre sin estampado, de color blanco.','male','img-product-1627233974308.jpeg', 'XL'),
+  (1627234039827,'Playera con estampado de pez',510,'Playera color azul, con estampado de pez.','kid','img-product-1627234039822.jpeg', 'M'),
+  (1627234098935,'Playera con estampado',495,'Playera de color verde, con estampado.','kid','img-product-1627234098931.jpeg', 'G'),
+  (1628185126464,'Playera para mujer de color rojo',975,'Playera con franjas rojas para mujer.','female','img-product-1628185126444.jpeg', 'M'),
+  (1628185186759,'Playera para mujer',785,'Playera con estampado circular de color negro','female','img-product-1628185186755.jpeg', 'G'),
+  (1628267815902,'Playera con estampado',860,'Playera go out side para niño con estampado de color.','kid','img-product-1628267815894.jpeg', 'M'),
+  (1628605551171,'Sudadera para niño',1350,'Sudadera multicolor para niño.','kid','img-product-1628605551159.jpeg', 'XL'),
+  (1628605603078,'Playera blanca para mujer',600,'Playera con estampado para mujer.','female','img-product-1628605603070.jpeg', 'M'),
+  (1628605641202,'Playera azul para hombre',600,'Playera con estampado para hombre, de color azul.','male','img-product-1628605641194.jpeg', 'G'),
+  (1628605663216,'Playera azul para hombre con estampado',610,'Playera con estampado para hombre, de color azul.','male','img-product-1628605663209.jpeg', 'CH'),
+  (1628605739289,'Playera azul para hombre con estampado de color',600,'Playera con estampado para hombre, de color azul.','male','img-product-1628605739280.jpeg', 'G'),
+  (1628605739290,'Playera prueba create',5000,'Playera prueba CRUD','male','img-product-1632379524194.jfif', 'M'),
+  (1628605739291,'Playera prueba create 2',1200,'Segunda prueba CRUD','female','img-product-1632380164425.jpg', 'G');
 
  UNLOCK TABLES;
 

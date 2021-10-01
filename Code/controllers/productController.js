@@ -18,7 +18,6 @@ const productController = {
     db.Products.findByPk(req.params.id)
       .then((product) => {
         res.render(pathDetailProductView, { product: product, toThousand: toThousand })
-        // res.render(pathDetailProductView, { product: modelProduct.searchProductById(req.params.id), toThousand: toThousand })
       })
       .catch((error) => {
         next(error)
@@ -38,6 +37,7 @@ const productController = {
         description: req.body.description,
         category: req.body.category,
         img: req.file.filename,
+        size: req.body.size
       })
         .then(() => {
           return res.redirect('/')})
