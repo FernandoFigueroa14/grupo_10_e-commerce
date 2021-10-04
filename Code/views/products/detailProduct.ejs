@@ -28,26 +28,18 @@
                     <p class="precio"> $ <%= toThousand(product.price) %> </p>
                 </div>
                 <form action="" method="POST" class="form-talla">
-                    <h3>Talla</h3>
+                    <h3>Solo disponible en talla: </h3>
                     <div class="talla-button">
-                        <input type="radio" name="talla" id="chica" value="chica">
-                        <label for="chica" class="chica"> CH </label>
-                    </div>
-                    <div class="talla-button">
-                        <input type="radio" name="talla" id="mediana" value="mediana">
-                        <label for="mediana" class="mediana"> M </label>
-                    </div>
-                    <div class="talla-button">
-                        <input type="radio" name="talla" id="grande" value="grande">
-                        <label for="grande" class="grande"> G </label>
+                        <input type="radio" name="talla" id="chica" value="chica" disabled>
+                        <label for="chica" class="chica"> <%= product.size %> </label>
                     </div>
                 </form>
                 <div class="producto-info">
-                    <h3>Descripción: </h3>
+                    <h3><strong>Descripción:</strong> </h3>
                     <p> <%= product.description %> </p>
                 </div>
                 <div class="producto-info">
-                    <h3>Categoria: </h3>
+                    <h3><strong>Categoria:</strong>  </h3>
                     <% if (product.category == 'male') { %> 
                         <p> Playera para hombre </p>
                     <% } else if (product.category == 'female') { %>
@@ -57,7 +49,7 @@
                     <% } %>
                 </div>
                 <div class="producto-info">
-                    <p> ID del producto: <%= product.product_id %> </p>
+                    <p> <strong>ID del producto:</strong> <i><%= product.product_id %></i></p>
                 </div>
                 <div id="carrito">
                     <button type="submit" class="añadir-carrito-button">

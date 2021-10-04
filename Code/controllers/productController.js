@@ -18,7 +18,6 @@ const productController = {
     db.Products.findByPk(req.params.id)
       .then((product) => {
         res.render(pathDetailProductView, { product: product, toThousand: toThousand })
-        // res.render(pathDetailProductView, { product: modelProduct.searchProductById(req.params.id), toThousand: toThousand })
       })
       .catch((error) => {
         next(error)
@@ -38,6 +37,7 @@ const productController = {
         description: req.body.description,
         category: req.body.category,
         img: req.file.filename,
+        size: req.body.size
       })
         .then(() => {
           return res.redirect('/')})
@@ -83,8 +83,21 @@ const productController = {
     }
   },
   search: (req, res, next) => {
+    const tallas = ['CH', 'ch', 'M', 'm', 'g', 'G', 'XL', 'xl']
     if (/\s/.exec(req.query.keyWord) || req.query.keyWord === '') {
       res.render(pathSearchProducts, { products: '', keyWord: req.query.keyWord, toThousand: toThousand })
+    } else if (tallas.includes(req.query.keyWord)) {
+      db.Products.findAll({
+        where: {
+          size: { [Op.substring]: req.query.keyWord.toUpperCase() }
+        }
+      })
+        .then((products) => {
+          res.render(pathSearchProducts, { products: products, keyWord: 'Productos talla ' + req.query.keyWord.toUpperCase(), toThousand: toThousand })
+        })
+        .catch((error) => {
+          console.log(error)
+        })
     } else {
       db.Products.findAll({
         where: {
@@ -95,8 +108,11 @@ const productController = {
           if (/^[0-9]+$/.exec(req.query.keyWord)) {
             db.Products.findByPk(parseInt(req.query.keyWord))
               .then((productsDB) => {
-                console.log(productsDB.dataValues)
-                res.render(pathSearchProducts, { products: [productsDB.dataValues], keyWord: req.query.keyWord, toThousand: toThousand })
+                if (productsDB) {
+                  res.render(pathSearchProducts, { products: [productsDB.dataValues], keyWord: req.query.keyWord, toThousand: toThousand })
+                } else {
+                  res.render(pathSearchProducts, { products: [], keyWord: req.query.keyWord, toThousand: toThousand })
+                }
               })
               .catch((error) => {
                 console.log(error)
