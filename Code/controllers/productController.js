@@ -125,6 +125,14 @@ const productController = {
           next(error)
         })
     }
+  },
+  edit: function (req, res){
+    db.Products.findByPk(req.params.id)
+    .then(function(product){
+      res.render("editarProducto",{product:product})
+    }
+    )
+
   }
 }
 

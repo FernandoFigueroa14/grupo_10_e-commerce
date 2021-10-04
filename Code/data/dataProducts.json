@@ -8,14 +8,6 @@
     "img": "img-product-1627222918038.jpeg"
   },
   {
-    "id": 1627223017473,
-    "name": "Playera para hombre con estampado",
-    "price": "800",
-    "description": "Playera negra, con estampado al frente.",
-    "category": "male",
-    "img": "img-product-1627223017469.jpeg"
-  },
-  {
     "id": 1627223149206,
     "name": "Playera para mujer con estampado",
     "price": "800",
@@ -174,5 +166,14 @@
     "description": "Playera go out side para niño con estampado de color. ",
     "category": "kid",
     "img": "img-product-1628267815894.jpeg"
+  },
+  {
+    "id": 1627223017473,
+    "name": "Playera para hombre con estampado",
+    "price": "800",
+    "description": "Playera negra, con estampado al frente.",
+    "category": "male",
+    "size": "CH",
+    "img": "img-product-1627223017469.jpeg"
   }
 ]
