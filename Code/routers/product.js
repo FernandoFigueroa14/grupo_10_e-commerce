@@ -22,6 +22,6 @@ router.put('/edit', multer.single('img'), updateProductValidations, productContr
 
 router.get('/search', productController.search)
 
-router.get("/edit/:id", productController.edit)
-
+router.get("/edit/ProductById:id", productController.edit);
+router.post("/edit/:id", productController.update);
 module.exports = router

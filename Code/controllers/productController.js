@@ -133,6 +133,21 @@ const productController = {
     }
     )
 
+  },
+  update:function (req,res){
+    db.Products.update({
+      name: req.body.name,
+      price: req.body.price,
+      description: req.body.description,
+      category: req.body.category,
+      img: req.file.filename,
+      size: req.body.size
+    },{ 
+    where: {
+     id:  req.params.id
+    }
+  }),
+  res.redirect("/detailProduct/" + req.params.id)
   }
 }
 
