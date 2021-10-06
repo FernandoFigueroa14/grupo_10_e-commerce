@@ -4,8 +4,6 @@ const { validationResult } = require('express-validator')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
-const modelProduct = require('../models/modelProduct')
-
 const pathDetailProductView = '../views/products/detailProduct'
 const pathCreateProductView = '../views/products/createProduct'
 const pathDeleteProductView = '../views/products/deleteProduct'
@@ -65,21 +63,37 @@ const productController = {
   },
   editProductById: (req, res) => {
     const idProduct = req.query.id
-    const productEdit = modelProduct.searchProductById(idProduct)
-
-    if (productEdit) {
-      res.render(pathSelectedProductToEditView, { product: productEdit })
-    } else {
-      res.render(pathSelectProductToEditByIdView, { id: idProduct })
-    }
+    db.Products.findByPk(idProduct)
+      .then((productEdit) => {
+        if (productEdit) {
+          res.render(pathSelectedProductToEditView, { product: productEdit })
+        } else {
+          res.render(pathSelectProductToEditByIdView, { id: idProduct })
+        }
+      })
   },
   updateProduct: (req, res) => {
     const validationsResults = validationResult(req)
+    console.log(req.body.name)
     if (!validationsResults.isEmpty()) {
-      res.render(pathSelectedProductToEditView, { product: modelProduct.searchProductById(req.body.id), errors: validationsResults.mapped(), oldData: req.body })
+      db.Products.findByPk(req.body.id)
+        .then((productEdit) => {
+          res.render(pathSelectedProductToEditView, { product: productEdit, errors: validationsResults.mapped(), oldData: req.body })
+        })
     } else {
-      modelProduct.updateProduct(req)
-      res.redirect('/')
+      db.Products.findByPk(req.body.id)
+        .then((productEdit) => {
+          const img_product = req.file ? req.file.filename : productEdit.img
+          db.Products.update({
+            name: req.body.name,
+            price: req.body.price,
+            description: req.body.description,
+            category: req.body.category,
+            img: img_product,
+            size: req.body.size
+          }, { where: { product_id: req.body.id } })
+        })
+      res.redirect('/home')
     }
   },
   search: (req, res, next) => {
@@ -125,29 +139,6 @@ const productController = {
           next(error)
         })
     }
-  },
-  edit: function (req, res){
-    db.Products.findByPk(req.params.id)
-    .then(function(product){
-      res.render("editarProducto",{product:product})
-    }
-    )
-
-  },
-  update:function (req,res){
-    db.Products.update({
-      name: req.body.name,
-      price: req.body.price,
-      description: req.body.description,
-      category: req.body.category,
-      img: req.file.filename,
-      size: req.body.size
-    },{ 
-    where: {
-     id:  req.params.id
-    }
-  }),
-  res.redirect("/detailProduct/" + req.params.id)
   }
 }
 

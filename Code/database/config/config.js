@@ -1,11 +1,10 @@
 module.exports= {
   'development': {
     'username': 'root',
-    'password': 'perro123',
+    'password': '',
     'database': 'dh_db',
     'host': '127.0.0.1',
-    'dialect': 'mysql',
-    "port": "4550"
+    'dialect': 'mysql'
   },
   'test': {
     'username': 'root',

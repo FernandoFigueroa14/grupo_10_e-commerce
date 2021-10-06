@@ -12,12 +12,12 @@
     <!-- /header --> 
     <main>
         <h1 id="create-product-title">Editar producto: <%= product.name %></h1>
-        <h1 id="create-product-title-id">ID: <%= product.id %></h1>
+        <h1 id="create-product-title-id">ID: <%= product.product_id %></h1>
         <div id="main-register">
             <div id="form-container-register">
                 <form action="/product/edit?_method=PUT" method="POST" id="form-register" enctype="multipart/form-data">
                     <div class="form-control-create">
-                        <input type="text" name="id" value="<%= locals.oldData ? oldData.id : product.id %>" minlength="5" readonly id="id-product-update-form">
+                        <input type="text" name="id" value="<%= locals.oldData ? oldData.product_id : product.product_id %>" minlength="5" readonly id="id-product-update-form">
                     </div>
                     <div class="form-control-create">
                         <input type="text" name="name" placeholder="Nombre del producto" minlength="5" value='<%= locals.oldData ? oldData.name : product.name %>''>
