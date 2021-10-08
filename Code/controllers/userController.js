@@ -76,6 +76,25 @@ const userController = {
         next(error)
       })
   },
+  saveUpdatedUser: (req, res, next) => {
+    const resultValidation = validationResult(req)
+    if (!resultValidation.isEmpty()) {
+      db.Users.findAll({
+        where: {
+          emailUser: { [Op.eq]: req.session.userLogged.emailUser }
+        }
+      })
+        .then((user) => {
+          console.log(resultValidation.mapped())
+          res.render(path.resolve('views/userViews/editUserForm'), { errors: resultValidation.mapped(), oldData: req.body, user: user[0].dataValues })
+        })
+        .catch((error) => {
+          next(error)
+        })
+    } else {
+      console.log('exito')
+    }
+  },
   recoverPassword: (req, res) => {
     res.render(path.resolve('views/userViews/recoverPassword'))
   },

@@ -3,6 +3,7 @@ const express = require('express')
 const userController = require('../controllers/userController')
 const createUserValidations = require('../js/validations/userRegisterValidations')
 const loginUserValidations = require('../js/validations/userLoginValidations')
+const updateUserValidations = require('../js/validations/userUpdateValidations')
 const multer = require('../js/multerUser')
 const guestMiddleware = require('../js/guestMiddleware')
 const authMiddleware = require('../js/authMiddleware')
@@ -23,6 +24,7 @@ router.post('/logout', userController.logout)
 router.get('/carrito', userController.cart)
 
 router.post('/editProfile', userController.editUser)
+router.put('/edit', multer.single('profile-pic'), updateUserValidations, userController.saveUpdatedUser)
 
 router.get('/recoverPassword', userController.recoverPassword)
 
