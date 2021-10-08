@@ -181,7 +181,7 @@ main{
 .titular{
     width: 100%;
     font-size: 4rem;
-    padding-bottom: 15px;
+    padding: 25px;
 }
 
 .articulo {

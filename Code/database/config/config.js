@@ -1,4 +1,4 @@
-module.exports= {
+module.exports = {
   'development': {
     'username': 'root',
     'password': '',
@@ -22,6 +22,7 @@ module.exports= {
   }
 }
 
+// FV config
 /* 'development': {
   'username': 'root',
   'password': '',
