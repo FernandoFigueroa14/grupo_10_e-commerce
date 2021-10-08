@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- head --> 
+    <%- include('../partials/head') %>
+    <!-- /head -->
+    <title>Editar usuario</title>
+</head>
+<body>
+    <!-- header --> 
+    <%- include('../partials/header', {selected: ''}) %>
+    <!-- /header --> 
+    <main>
+        <h1 id="create-product-title">Editar Usuario: <%= user.emailUser %></h1>
+        <h1 id="create-product-title-id">ID: <%= user.user_id %></h1>
+        <div id="main-register">
+            <div id="form-container-register">
+                <form action="/user/edit?_method=PUT" method="POST" id="form-register" enctype="multipart/form-data">
+                    <div class="form-control-create">
+                        <input type="text" name="id" value="<%= locals.oldData ? oldData.user_id : user.user_id %>" readonly id="id-product-update-form">
+                    </div>
+                    <div class="form-control-create">
+                        <input type="text" name="name" placeholder="Nombre de usuario" minlength="5" value='<%= locals.oldData ? oldData.name : user.name %>''>
+                        <% if (locals.errors && errors.name) { %>
+                            <p class="errors-style"> <%= errors.name.msg %> </p>
+                        <% } %>
+                    </div>
+                    <h3 class="titles-create-product">Genero</h3>
+                    <div id="form-control-create-select"> 
+                        <select name="size">
+                            <option value="H" selected="selected">H</option>
+                            <option value="M" >M</option>
+                        </select>
+                    </div>
+                    <div id="button-register">
+                        <button type="submit">enviar</button>
+                        <button type="reset">borrar</button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- footer --> 
+    <%- include('../partials/footer') %>
+    <!-- /footer --> 
+</body>
+</html>

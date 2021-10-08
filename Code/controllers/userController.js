@@ -63,6 +63,19 @@ const userController = {
         })
     }
   },
+  editUser: (req, res, next) => {
+    db.Users.findAll({
+      where: {
+        emailUser: { [Op.eq]: req.session.userLogged.emailUser }
+      }
+    })
+      .then((user) => {
+        res.render(path.resolve('views/userViews/editUserForm'), { user: user[0].dataValues })
+      })
+      .catch((error) => {
+        next(error)
+      })
+  },
   recoverPassword: (req, res) => {
     res.render(path.resolve('views/userViews/recoverPassword'))
   },
@@ -80,3 +93,14 @@ const userController = {
 }
 
 module.exports = userController
+
+
+/* dataValues: {
+user_id: 1628632503079,
+emailUser: 'federico@hotmail.com',
+passwordUser: '$2a$10$cZWKrQ6x/xENog5ty.JOJO5.74BdTqlOJYZ9OVuTWLQXTHM2rI5e2',
+nameUser: 'Federico',
+lastNameUser: 'Villegas',
+birth_date: '1997-10-10',
+gender: 'male',
+profilePic: 'img-profile-1632497131570.jpeg' */

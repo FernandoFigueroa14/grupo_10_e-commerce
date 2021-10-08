@@ -22,6 +22,8 @@ router.post('/logout', userController.logout)
 
 router.get('/carrito', userController.cart)
 
+router.post('/editProfile', userController.editUser)
+
 router.get('/recoverPassword', userController.recoverPassword)
 
 module.exports = router
