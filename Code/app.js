@@ -21,6 +21,7 @@ const app = express()
 if (process.env.NODE_ENV !== 'production')
   process.env['ADMIN'] = 'root@gmail.com root00'
 
+
 app.set('view engine', 'ejs')
 
 app.use(express.static(path.resolve('./public')))
@@ -53,6 +54,7 @@ const checkConectionDB = async () => {
   const userConfigDB_Development = userConfigDB.development
   const sequelize = new Sequelize(userConfigDB_Development.database, userConfigDB_Development.username, userConfigDB_Development.password, {
     host: userConfigDB_Development.host,
+    port: userConfigDB_Development.port,
     dialect: userConfigDB_Development.dialect
   })
   try {
