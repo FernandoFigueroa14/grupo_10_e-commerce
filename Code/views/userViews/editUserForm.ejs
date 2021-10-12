@@ -36,13 +36,13 @@
                     </div>
                     <h3 class="titles-create-product">Genero</h3>
                     <div id="form-control-create-select"> 
-                        <select name="size">
+                        <select name="gender">
                             <% if (user.gender === 'male') { %>
-                                <option value="H" selected="selected">H</option>
-                                <option value="M">M</option>
+                                <option value="male" selected="selected">H</option>
+                                <option value="female">M</option>
                             <% } else { %>
-                                <option value="H">H</option>
-                                <option value="M" selected="selected">M</option>
+                                <option value="male">H</option>
+                                <option value="female" selected="selected">M</option>
                             <%} %> 
                         </select>
                     </div>
@@ -52,9 +52,9 @@
                     </div>
                     <div id="button-register">
                         <button type="submit">enviar</button>
-                        <button type="reset">borrar</button>
                     </div>
                 </form>
+                <p style="font-size: 1.5em"><i><b>Los cambios que realices a tu perfil, se veran reflejados la próxima vez que inicies sesión.</b></i></p>
             </div>
         </div>
     </main>

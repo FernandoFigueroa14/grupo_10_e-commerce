@@ -92,7 +92,22 @@ const userController = {
           next(error)
         })
     } else {
-      console.log('exito')
+      const userID = req.session.userLogged.user_id
+      db.Users.findByPk(userID)
+        .then((userEdit) => {
+          const user_pic = req.file ? req.file.filename : userEdit.profilePic
+          db.Users.update({
+            ...userEdit.dataValues,
+            nameUser: req.body.name,
+            lastNameUser: req.body.lastname,
+            gender: req.body.gender,
+            profilePic: user_pic
+          }, { where: { user_id: userID } })
+        })
+        .catch((error) => {
+          next(error)
+        })
+      res.redirect('/profile')
     }
   },
   recoverPassword: (req, res) => {
