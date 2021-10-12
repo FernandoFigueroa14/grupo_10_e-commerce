@@ -23,7 +23,11 @@ const userController = {
           if(req.body.remember_user) {
             res.cookie('emailUser', emailUserToLogin, { maxAge: (1000*60)*60 })
           }
-          return res.redirect('/profile')
+          if (userToLogin[0].dataValues.gender === 'male') {
+            return res.redirect('/men')
+          } else {
+            return res.redirect('/women')
+          }
         } else {
           return res.render(path.resolve('views/userViews/login'), { errors: { user: { msg: 'Las credenciales son inválidas' } } })
         }
@@ -122,7 +126,7 @@ const userController = {
   logout: (req, res) => {
     res.clearCookie('emailUser')
     req.session.destroy()
-    res.redirect('/')
+    res.redirect('/login')
   }
 }
 
