@@ -6,14 +6,15 @@
     <!-- /head -->
     <title>DH-Clothes</title>
 </head>
-<body>
+<body style="background-color: rgb(235, 235, 235)">
     <!-- header --> 
     <%- include('../partials/header', {selected: ''}) %>
     <!-- /header --> 
     <main>
         <section class="userProfile">
-            <h1 style="margin-top: 25px;">Hola <%= user.nameUser %></h1>
-            <h2><%= user.emailUser %></h2>
+            <h1 style="margin-top: 25px;"><b>Hola :D</b></h1>
+            <h2 style="margin-top: 25px;"><%= user.nameUser %> <%= user.lastNameUser %> <%= user.gender%> </h2>
+            <h2 style="margin: 25px;"><%= user.emailUser %></h2>
             <img src="images/img-profiles/<%= user.profilePic %>" alt="profile-pic">
             <br><br>
             <% if (locals.isAdmin) { %>
@@ -34,9 +35,12 @@
                 </div>
             <% } %>
             <h3>Tu ID de usuario es: <b><%= user.user_id %></b></h3>
+            <form action="/editProfile" method="POST">
+                <button action="submit" class="logout">Editar perfil</button>
+            </form>
             <% if (!locals.isAdmin) { %>
                 <form action="/history" method="POST">
-                    <button type="submit" class="logout">Historial compras</button>
+                    <button type="submit" class="logout" disabled>Historial compras</button>
                 </form>
             <% } %>
             <form action="/logout" method="POST">

@@ -23,7 +23,11 @@ const userController = {
           if(req.body.remember_user) {
             res.cookie('emailUser', emailUserToLogin, { maxAge: (1000*60)*60 })
           }
-          return res.redirect('/profile')
+          if (userToLogin[0].dataValues.gender === 'male') {
+            return res.redirect('/men')
+          } else {
+            return res.redirect('/women')
+          }
         } else {
           return res.render(path.resolve('views/userViews/login'), { errors: { user: { msg: 'Las credenciales son inválidas' } } })
         }
@@ -63,6 +67,53 @@ const userController = {
         })
     }
   },
+  editUser: (req, res, next) => {
+    db.Users.findAll({
+      where: {
+        emailUser: { [Op.eq]: req.session.userLogged.emailUser }
+      }
+    })
+      .then((user) => {
+        res.render(path.resolve('views/userViews/editUserForm'), { user: user[0].dataValues })
+      })
+      .catch((error) => {
+        next(error)
+      })
+  },
+  saveUpdatedUser: (req, res, next) => {
+    const resultValidation = validationResult(req)
+    if (!resultValidation.isEmpty()) {
+      db.Users.findAll({
+        where: {
+          emailUser: { [Op.eq]: req.session.userLogged.emailUser }
+        }
+      })
+        .then((user) => {
+          console.log(resultValidation.mapped())
+          res.render(path.resolve('views/userViews/editUserForm'), { errors: resultValidation.mapped(), oldData: req.body, user: user[0].dataValues })
+        })
+        .catch((error) => {
+          next(error)
+        })
+    } else {
+      const userID = req.session.userLogged.user_id
+      db.Users.findByPk(userID)
+        .then((userEdit) => {
+          const user_pic = req.file ? req.file.filename : userEdit.profilePic
+          db.Users.update({
+            ...userEdit.dataValues,
+            nameUser: req.body.name,
+            lastNameUser: req.body.lastname,
+            gender: req.body.gender,
+            profilePic: user_pic
+          }, { where: { user_id: userID } })
+        })
+        .catch((error) => {
+          next(error)
+        })
+      res.redirect('/profile')
+    }
+  },
   recoverPassword: (req, res) => {
     res.render(path.resolve('views/userViews/recoverPassword'))
   },
@@ -75,8 +126,19 @@ const userController = {
   logout: (req, res) => {
     res.clearCookie('emailUser')
     req.session.destroy()
-    res.redirect('/')
+    res.redirect('/login')
   }
 }
 
 module.exports = userController
+
+
+/* dataValues: {
+user_id: 1628632503079,
+emailUser: 'federico@hotmail.com',
+passwordUser: '$2a$10$cZWKrQ6x/xENog5ty.JOJO5.74BdTqlOJYZ9OVuTWLQXTHM2rI5e2',
+nameUser: 'Federico',
+lastNameUser: 'Villegas',
+birth_date: '1997-10-10',
+gender: 'male',
+profilePic: 'img-profile-1632497131570.jpeg' */

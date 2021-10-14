@@ -19,7 +19,7 @@
                 </a>
                 <form action="/login" method="POST" id="form-login">
                     <div class="form-control-login">
-                        <input type="email" name="user" placeholder="Usuario" minlength="3" value="<%= locals.oldData ? oldData.user : ''%>">
+                        <input type="email" name="user" id="user" placeholder="Usuario" minlength="3" value="<%= locals.oldData ? oldData.user : ''%>">
                     </div>
                     <% if (locals.errors && errors.user) { %>
                         <p class="errors-style"> <%= errors.user.msg %> </p>
@@ -50,5 +50,6 @@
     <!-- footer --> 
     <%- include('../partials/footer') %>
     <!-- /footer --> 
+    <script src="/js/validations/loginValidations.js"></script>
 </body>
 </html>

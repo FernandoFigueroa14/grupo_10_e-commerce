@@ -20,21 +20,24 @@
                         <input type="text" name="id" value="<%= locals.oldData ? oldData.product_id : product.product_id %>" minlength="5" readonly id="id-product-update-form">
                     </div>
                     <div class="form-control-create">
-                        <input type="text" name="name" placeholder="Nombre del producto" minlength="5" value='<%= locals.oldData ? oldData.name : product.name %>''>
+                        <input type="text" name="name" placeholder="Nombre del producto" minlength="5" value='<%= locals.oldData ? oldData.name : product.name %>'' id="name">
+                        <p class="errors-style" id="nameError"> </p>
                         <% if (locals.errors && errors.name) { %>
-                            <p class="errors-style"> <%= errors.name.msg %> </p>
+                            <p class="errors-style"><i class="fas fa-exclamation-circle"></i> <%= errors.name.msg %> </p>
                         <% } %>
                     </div>
                     <div class="form-control-create">
-                        <input type="text" name="price" placeholder="Precio" value="<%= locals.oldData ? oldData.price : product.price %>">
+                        <input type="text" name="price" placeholder="Precio" value="<%= locals.oldData ? oldData.price : product.price %>" id="price">
+                        <p class="errors-style" id="priceError"> </p>
                         <% if (locals.errors && errors.price) { %>
-                            <p class="errors-style"> <%= errors.price.msg %> </p>
+                            <p class="errors-style" ><i class="fas fa-exclamation-circle"></i> <%= errors.price.msg %> </p>
                         <% } %>
                     </div>
                     <div class="form-control-create">
-                        <textarea type="text" name="description" placeholder="Descripción" minlength="5"><%= locals.oldData ? oldData.description : product.description %></textarea>
+                        <textarea type="text" name="description" placeholder="Descripción" minlength="5" id="description"><%= locals.oldData ? oldData.description : product.description %></textarea>
+                        <p class="errors-style" id="descriptionError"> </p>
                         <% if (locals.errors && errors.description) { %>
-                            <p class="errors-style"> <%= errors.description.msg %> </p>
+                            <p class="errors-style"><i class="fas fa-exclamation-circle"></i> <%= errors.description.msg %> </p>
                         <% } %>
                     </div>
                     <h3 class="titles-create-product">Categoria</h3>
@@ -56,8 +59,12 @@
                     </div>
                     <div class="form-control-create">
                         <h3 id="img-title-create-product">Sube imagen para el producto</h3>
-                        <input type="file" name="img">
+                        <input type="file" name="img" accept=".jpg, .jpeg, .png, .gif" id="img">
                     </div>
+                    <p class="errors-style" id="imgError"> </p>
+                    <%if(locals.errors && errors.img){%>
+                        <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.img.msg %></p>
+                    <%}%>
                     <div id="button-register">
                         <button type="submit">enviar</button>
                         <button type="reset">borrar</button>
@@ -69,5 +76,6 @@
     <!-- footer --> 
     <%- include('../partials/footer') %>
     <!-- /footer --> 
+    <script src="/js/validations/productsValidations.js"></script>
 </body>
 </html>

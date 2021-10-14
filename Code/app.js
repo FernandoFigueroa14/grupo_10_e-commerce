@@ -5,7 +5,9 @@ const logger = require('morgan')
 const methodOverride = require('method-override')
 const session = require('express-session')
 const cookies = require('cookie-parser')
+const { Sequelize } = require('sequelize')
 
+const userConfigDB = require('./database/config/config')
 const routerMain = require('./routers/main')
 const routerUser = require('./routers/user')
 const routerProduct = require('./routers/product')
@@ -18,6 +20,7 @@ const app = express()
 
 if (process.env.NODE_ENV !== 'production')
   process.env['ADMIN'] = 'root@gmail.com root00'
+
 
 app.set('view engine', 'ejs')
 
@@ -46,6 +49,23 @@ app.use((req, res) => {
 app.listen(PORT, () => {
   console.log('Server running on port: ' + PORT + ' :D')
 })
+
+const checkConectionDB = async () => {
+  const userConfigDB_Development = userConfigDB.development
+  const sequelize = new Sequelize(userConfigDB_Development.database, userConfigDB_Development.username, userConfigDB_Development.password, {
+    host: userConfigDB_Development.host,
+    port: userConfigDB_Development.port,
+    dialect: userConfigDB_Development.dialect
+  })
+  try {
+    await sequelize.authenticate()
+    console.log('Connection to MySQL DataBase has been established successfully')
+  } catch (error) {
+    console.error('Unable to connect to the database: ', error)
+  }
+}
+
+checkConectionDB()
 
 // Cuenta de amdin [add, edit, delete]
 // ---

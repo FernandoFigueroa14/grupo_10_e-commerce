@@ -12,6 +12,7 @@
 /build
 /database/config
 Code/database/config/config.js
+/Code/database/config/config.js
 
 # misc
 .env
