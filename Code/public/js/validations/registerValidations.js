@@ -25,15 +25,15 @@ form.addEventListener(submit, function (e){
     }
 
     let  picture = document.querySelector("#picture")
-    if (pass.value == ""){
+    if (picture.value == ""){
         alert ("¿Olvidas algo? ¿o te lo recuerdo?")
     }
     let  birthDate = document.querySelector("#birthDate") 
-    if (pass.value == ""){
+    if (birthDate.value == ""){
         alert ("¿Olvidas algo? ¿o te lo recuerdo?")
     }
     let  genre = document.querySelector("#genre")
-    if (pass.value == ""){
+    if (genre.value == ""){
         alert ("¿Olvidas algo? ¿o te lo recuerdo?")
     }
 })
