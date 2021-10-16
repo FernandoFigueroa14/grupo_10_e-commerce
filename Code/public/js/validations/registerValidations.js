@@ -10,44 +10,45 @@ window.addEventListener('load', function() {
   let  genre = document.querySelector('#genre')
   let ulErrores = document.querySelector('div.errores ul')
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault()
-    console.log('se previene el envio')
+  
 
     let errores = []
+    form.addEventListener('submit', function (e) {
+        e.preventDefault()
+        console.log('se previene el envio')
 
 
-    if (email.value === ''){
-      errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
+    if (email.value == ''){
+     errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
     }
 
-    if (pass.value === ''){
+    if (pass.value == ''){
       errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
     }else if (pass.value.length<8){
       errores.push ('Te faltan letras de la contraseña')
     }
 
-    if (name.value === ''){
+    if (name.value == ''){
       errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
     } else if (name.value.length<2){
       errores.push ('Te faltan letras del nombre')
     }
 
-    if (firstName.value === ''){
+    if (firstName.value == ''){
       errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
     }else if (firstName.value.length<2){
       errores.push ('Te faltan letras del apellido')
     }
 
-    if (picture.value === ''){
+    if (picture.value == ''){
       errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
     }
 
-    if (birthDate.value === ''){
+    if (birthDate.value == ''){
       errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
     }
 
-    if (genre.value === ''){
+    if (genre.value == ''){
       errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
     }
 
