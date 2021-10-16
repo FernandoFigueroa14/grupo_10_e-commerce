@@ -1,12 +1,12 @@
 window.addEventListener('load', function() {
 
   const form = document.querySelector('form-control-register')
-  let  email = document.querySelector('#e-mail')
-  let  pass = document.querySelector('#password')
-  let  name = document.querySelector('#name')
-  let  firstName = document.querySelector('#firstName')
-  let  picture = document.querySelector('#picture')
-  let  birthDate = document.querySelector('#birthDate')
+  let  email = document.querySelector('#emailUser')
+  let  pass = document.querySelector('#passwordUser')
+  let  name = document.querySelector('#nameUser')
+  let  firstName = document.querySelector('#lastNameUser')
+  let  picture = document.querySelector('#profile-pic')
+  let  birthDate = document.querySelector('#birth_Date')
   let  genre = document.querySelector('#genre')
   let ulErrores = document.querySelector('div.errores ul')
 
