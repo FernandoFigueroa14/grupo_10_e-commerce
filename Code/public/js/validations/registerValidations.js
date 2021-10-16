@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
 
-  const form = document.querySelector('form-control-register')
+  let form = document.querySelector('form')
   let  email = document.querySelector('#emailUser')
   let  pass = document.querySelector('#passwordUser')
   let  name = document.querySelector('#nameUser')
@@ -12,6 +12,7 @@ window.addEventListener('load', function() {
 
   form.addEventListener('submit', function (e) {
     e.preventDefault()
+    console.log('se previene el envio')
 
     let errores = []
 
@@ -55,6 +56,8 @@ window.addEventListener('load', function() {
       for (let index = 0; index < errores.length; index++){
         ulErrores.innerHTML += '<li>' + errores[index] + '</li>'
       }
+      c
+    
     }
   })
 })
