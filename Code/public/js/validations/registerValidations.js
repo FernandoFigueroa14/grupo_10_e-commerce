@@ -2,12 +2,19 @@ window.addEventListener('load', function() {
 
   let form = document.querySelector('form')
   let  email = document.querySelector('#emailUser')
+  let nameError = document.querySelector('#emailError')
   let  pass = document.querySelector('#passwordUser')
+  let nameError = document.querySelector('#passwordError')
   let  name = document.querySelector('#nameUser')
+  let nameError = document.querySelector('#nameError')
   let  firstName = document.querySelector('#lastNameUser')
+  let nameError = document.querySelector('#lastNameError')
   let  picture = document.querySelector('#profile-pic')
+  let nameError = document.querySelector('#profile-picError')
   let  birthDate = document.querySelector('#birth_Date')
+  let nameError = document.querySelector('#birth_dateError')
   let  genre = document.querySelector('#genre')
+  let nameError = document.querySelector('#genreError')
   let ulErrores = document.querySelector('div.errores ul')
 
   
@@ -16,6 +23,13 @@ window.addEventListener('load', function() {
     form.addEventListener('submit', function (e) {
         e.preventDefault()
         console.log('se previene el envio')
+
+
+
+    if (email.value == ''){
+     errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
+
+    }
 
     if (pass.value == ''){
       errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
