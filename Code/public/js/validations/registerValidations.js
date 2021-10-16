@@ -1,56 +1,60 @@
-Window.addEventListener("load",function() {
-    const form = document.querySelector("form-control-register")
-   
-form.addEventListener(submit, function (e){
-    e.preventDefault();
+window.addEventListener('load', function() {
 
-    let errores = [];
-     
-    let  email = document.querySelector("#e-mail")
-    if (email.value == ""){
-        errores.push ("¿Olvidas algo? ¿o te lo recuerdo?")
-    } 
-    let  pass = document.querySelector("#password")
-    if (pass.value == ""){
-        errores.push ("¿Olvidas algo? ¿o te lo recuerdo?")
-    }else if (pass.value.length<8){ 
-        errores.push ("Te faltan letras de la contraseña")
+  const form = document.querySelector('form-control-register')
+  let  email = document.querySelector('#e-mail')
+  let  pass = document.querySelector('#password')
+  let  name = document.querySelector('#name')
+  let  firstName = document.querySelector('#firstName')
+  let  picture = document.querySelector('#picture')
+  let  birthDate = document.querySelector('#birthDate')
+  let  genre = document.querySelector('#genre')
+  let ulErrores = document.querySelector('div.errores ul')
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault()
+
+    let errores = []
+
+
+    if (email.value === ''){
+      errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
     }
-    let  name = document.querySelector("#name")
-    if (name.value ==""){
-        errores.push ("¿Olvidas algo? ¿o te lo recuerdo?")
-    } else if (name.value.length<2){ 
-        errores.push ("Te faltan letras del nombre")
+
+    if (pass.value === ''){
+      errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
+    }else if (pass.value.length<8){
+      errores.push ('Te faltan letras de la contraseña')
+    }
+
+    if (name.value === ''){
+      errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
+    } else if (name.value.length<2){
+      errores.push ('Te faltan letras del nombre')
+    }
+
+    if (firstName.value === ''){
+      errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
+    }else if (firstName.value.length<2){
+      errores.push ('Te faltan letras del apellido')
+    }
+
+    if (picture.value === ''){
+      errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
+    }
+
+    if (birthDate.value === ''){
+      errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
+    }
+
+    if (genre.value === ''){
+      errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
+    }
+
+    if (errores.length < 0){
+      e.preventDefault()
+      for (let index = 0; index < errores.length; index++){
+        ulErrores.innerHTML += '<li>' + errores[index] + '</li>'
       }
-    let  firstName = document.querySelector("#firstName")
-    if (firstName.value == ""){
-        errores.push ("¿Olvidas algo? ¿o te lo recuerdo?")
-    }else if (firstName.value.length<2){ 
-        errores.push ("Te faltan letras del apellido")
-
-    let  picture = document.querySelector("#picture")
-    if (picture.value == ""){
-        errores.push ("¿Olvidas algo? ¿o te lo recuerdo?")
     }
-    let  birthDate = document.querySelector("#birthDate") 
-    if (birthDate.value == ""){
-        errores.push ("¿Olvidas algo? ¿o te lo recuerdo?")
-    }
-    let  genre = document.querySelector("#genre")
-    if (genre.value == ""){
-        errores.push ("¿Olvidas algo? ¿o te lo recuerdo?")
-    }
-    let ulErrores = document.querySelector("div.errores ul")
-    if (errores.length < 0){ 
-        e.preventDefault();
-        for (let index = 0; index < errores.length; index++){
-           ulErrores.innerHTML += "<li>" + errores[li] + "</li>"            
-        }
-
-            
-        
-    }
+  })
 })
-})
-
-
