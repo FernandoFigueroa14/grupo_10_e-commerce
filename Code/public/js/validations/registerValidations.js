@@ -17,11 +17,6 @@ window.addEventListener('load', function() {
         e.preventDefault()
         console.log('se previene el envio')
 
-
-    if (email.value == ''){
-     errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
-    }
-
     if (pass.value == ''){
       errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
     }else if (pass.value.length<8){
@@ -52,7 +47,7 @@ window.addEventListener('load', function() {
       errores.push ('¿Olvidas algo? ¿o te lo recuerdo?')
     }
 
-    if (errores.length < 0){
+    if (errores.length < 0) {
       e.preventDefault()
       for (let index = 0; index < errores.length; index++){
         ulErrores.innerHTML += '<li>' + errores[index] + '</li>'
@@ -60,5 +55,6 @@ window.addEventListener('load', function() {
       c
     
     }
+
   })
 })
