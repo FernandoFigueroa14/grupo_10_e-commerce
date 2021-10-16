@@ -783,4 +783,7 @@ margin-right: 20px;
     .talla-button {
         width: 25%;
     }
+    div.errores {
+        color : red;
+    }
 }
