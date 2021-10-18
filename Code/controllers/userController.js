@@ -54,7 +54,7 @@ const userController = {
             db.Users.create({
               ...req.body,
               passwordUser: bcryptjs.hashSync(req.body.passwordUser, 10),
-              profilePic: req.file.filename
+              profilePic: req.file ? req.file.filename : 'img-profile-1634002700663.png'
             })
             res.redirect('/login')
           } else {

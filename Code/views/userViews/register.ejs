@@ -21,41 +21,42 @@
                 </a>
                 <form action="/register" method="POST" id="form-register" enctype="multipart/form-data">
                     <div class="form-control-register">
-                        <input type="email" name="emailUser" placeholder="E-mail" minlength="8" value="<%=locals.oldData ? oldData.emailUser : ''%>">
+                        <input type="email" name="emailUser" id="emailUser" placeholder="E-mail" minlength="8" value="<%=locals.oldData ? oldData.emailUser : ''%>">
                     </div>
-                    <p class="errors-style" id="nameError"> </p>
+                    <p class="errors-style" id="emailError"> </p>
                     <% if (locals.errors && errors.emailUser) { %>
                         <p class='errors-style'><%= errors.emailUser.msg %></p>
                     <% } %>
                     <div class="form-control-register">
-                        <input type="password" name="passwordUser" placeholder="Contraseña" minlength="6">
+                        <input type="password" name="passwordUser" id="passwordUser" placeholder="Contraseña" minlength="8">
                     </div>
                     <p class="errors-style" id="passwordError"> </p>
                     <% if (locals.errors && errors.passwordUser) { %>
                         <p class='errors-style'><%= errors.passwordUser.msg %></p>
                     <% } %>
                     <div class="form-control-register">
-                        <input type="text" name="nameUser" placeholder="Nombre" minlength="3" value="<%=locals.oldData ? oldData.nameUser : ''%>">
+                        <input type="text" name="nameUser" placeholder="Nombre" id="nameUser" minlength="3" value="<%=locals.oldData ? oldData.nameUser : ''%>">
                     </div>
                     <p class="errors-style" id="nameError"> </p>
                     <% if (locals.errors && errors.nameUser) { %>
                         <p class='errors-style'><%= errors.nameUser.msg %></p>
                     <% } %>
                     <div class="form-control-register">
-                        <input type="text" name="lastNameUser" placeholder="Apellido" minlength="3" value="<%=locals.oldData ? oldData.lastnameUser : ''%>">
+                        <input type="text" name="lastNameUser" id="lastNameUser" placeholder="Apellido" minlength="3" value="<%=locals.oldData ? oldData.lastNameUser : ''%>">
                     </div>
                     <p class="errors-style" id="lastNameError"> </p>
                     <% if (locals.errors && errors.lastNameUser) { %>
                         <p class='errors-style'><%= errors.lastNameUser.msg %></p>
                     <% } %>
+                    <p class="errors-style" id="imgError"> </p>
                     <div class="form-control-register">
                         <label class="title-register">Foto de Perfil</label>
-                        <input type="file" name="profile-pic"  accept=".jpg, .png, .svg">
+                        <input type="file" name="profile-pic" id="img" accept=".jpg, .png, .svg">
                     </div>
                     <p class="errors-style" id="profile-picError"> </p>
                     <div class="form-control-register">
                         <label class="title-register">Fecha de nacimiento</label>
-                        <input type="date" name="birth_date" value="2000-01-01" min="1921-01-01" max="2005-01-01">
+                        <input type="date" name="birth_date" value="2000-01-01" min="1950-01-01" max="2003-01-01">
                     </div>
                     <p class="errors-style" id="birth_dateError"> </p>
                     <div class="form-control-check">
@@ -80,6 +81,7 @@
                     <div class="form-control-register">
                         <a href="login">¿Ya eres miembro? Iniciar Sesion</a>
                     </div>
+                    <p class="errors-style" id="formError"> </p>
                     <div id="button-register">
                         <button type="submit">enviar</button>
                         <button type="reset">borrar</button>

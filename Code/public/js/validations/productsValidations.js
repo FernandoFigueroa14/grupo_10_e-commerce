@@ -1,5 +1,4 @@
 window.addEventListener('load', function(){
-  // console.log('se cargo la pagina');
   let form = document.querySelector('form')
   let name = document.querySelector('#name')
   let nameError = document.querySelector('#nameError')
