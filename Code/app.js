@@ -13,6 +13,7 @@ const routerUser = require('./routers/user')
 const routerProduct = require('./routers/product')
 const routerCategories = require('./routers/categories')
 const routerUserAPI = require('./routers/apiUser')
+const routerProductAPI = require('./routers/apiProducts')
 const userLoggedMiddleware = require('./js/userLoggedMiddleware')
 
 const PORT = process.env.PORT || 3000
@@ -37,6 +38,7 @@ app.use(userLoggedMiddleware)
 app.use(routerMain)
 app.use(routerUser)
 app.use('/api/users', routerUserAPI)
+app.use('/api/products', routerProductAPI)
 app.use('/product', routerProduct)
 app.use(routerCategories)
 
