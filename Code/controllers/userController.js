@@ -23,7 +23,11 @@ const userController = {
           if(req.body.remember_user) {
             res.cookie('emailUser', emailUserToLogin, { maxAge: (1000*60)*60 })
           }
-          return res.redirect('/profile')
+          if (userToLogin[0].dataValues.gender === 'male') {
+            return res.redirect('/men')
+          } else {
+            return res.redirect('/women')
+          }
         } else {
           return res.render(path.resolve('views/userViews/login'), { errors: { user: { msg: 'Las credenciales son inválidas' } } })
         }
@@ -50,7 +54,7 @@ const userController = {
             db.Users.create({
               ...req.body,
               passwordUser: bcryptjs.hashSync(req.body.passwordUser, 10),
-              profilePic: req.file.filename
+              profilePic: req.file ? req.file.filename : 'img-profile-1634002700663.png'
             })
             res.redirect('/login')
           } else {
@@ -92,7 +96,22 @@ const userController = {
           next(error)
         })
     } else {
-      console.log('exito')
+      const userID = req.session.userLogged.user_id
+      db.Users.findByPk(userID)
+        .then((userEdit) => {
+          const user_pic = req.file ? req.file.filename : userEdit.profilePic
+          db.Users.update({
+            ...userEdit.dataValues,
+            nameUser: req.body.name,
+            lastNameUser: req.body.lastname,
+            gender: req.body.gender,
+            profilePic: user_pic
+          }, { where: { user_id: userID } })
+        })
+        .catch((error) => {
+          next(error)
+        })
+      res.redirect('/profile')
     }
   },
   recoverPassword: (req, res) => {
@@ -107,7 +126,7 @@ const userController = {
   logout: (req, res) => {
     res.clearCookie('emailUser')
     req.session.destroy()
-    res.redirect('/')
+    res.redirect('/login')
   }
 }
 

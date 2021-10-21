@@ -53,9 +53,7 @@ DROP DATABASE IF EXISTS dh_db;
   (1628605603078,'Playera blanca para mujer',600,'Playera con estampado para mujer.','female','img-product-1628605603070.jpeg', 'M'),
   (1628605641202,'Playera azul para hombre',600,'Playera con estampado para hombre, de color azul.','male','img-product-1628605641194.jpeg', 'G'),
   (1628605663216,'Playera azul para hombre con estampado',610,'Playera con estampado para hombre, de color azul.','male','img-product-1628605663209.jpeg', 'CH'),
-  (1628605739289,'Playera azul para hombre con estampado de color',600,'Playera con estampado para hombre, de color azul.','male','img-product-1628605739280.jpeg', 'G'),
-  (1628605739290,'Playera prueba create',5000,'Playera prueba CRUD','male','img-product-1632379524194.jfif', 'M'),
-  (1628605739291,'Playera prueba create 2',1200,'Segunda prueba CRUD','female','img-product-1632380164425.jpg', 'G');
+  (1628605739289,'Playera azul para hombre con estampado de color',600,'Playera con estampado para hombre, de color azul.','male','img-product-1628605739280.jpeg', 'G');
 
  UNLOCK TABLES;
 
