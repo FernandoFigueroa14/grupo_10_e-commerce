@@ -16,7 +16,7 @@ const routerUserAPI = require('./routers/apiUser')
 const routerProductAPI = require('./routers/apiProducts')
 const userLoggedMiddleware = require('./js/userLoggedMiddleware')
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001
 
 const app = express()
 
