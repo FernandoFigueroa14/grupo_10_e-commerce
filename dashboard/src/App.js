@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react' 
 import axios from 'axios'
+import SideBar from './components/SideBar'
 
 function App() {
   useEffect(() => {
@@ -13,7 +14,7 @@ function App() {
   }, [])
 
   return (
-    <p>React</p>
+    <SideBar />
   );
 }
 
