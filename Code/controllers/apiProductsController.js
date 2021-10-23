@@ -15,7 +15,7 @@ const apiProductsController = {
 
     const products = allProducts.map((product) => {
       const { product_id, name, description } = product.dataValues
-      const detail = 'http://localhost:3000/api/products/' + product_id
+      const detail = 'http://localhost:3001/api/products/' + product_id
       return { product_id, name, description, detail }
     })
 
@@ -39,7 +39,7 @@ const apiProductsController = {
   },
   getProduct: async (req, res) => {
     const product = await db.Products.findByPk(req.params.id)
-    product.dataValues.imgProduct = 'http://localhost:3000/api/products/img/' + product.dataValues.img
+    product.dataValues.imgProduct = 'http://localhost:3001/api/products/img/' + product.dataValues.img
     res.json({
       meta: {
         status: 200,

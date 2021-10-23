@@ -6,7 +6,7 @@ const apiController = {
     const data = await db.Users.findAll()
     const users = data.map((user) => {
       const { user_id, nameUser, emailUser } = user.dataValues
-      const detail = 'http://localhost:3000/api/users/' + user_id
+      const detail = 'http://localhost:3001/api/users/' + user_id
       return { user_id, nameUser, emailUser, detail }
     })
     res.json({
@@ -21,7 +21,7 @@ const apiController = {
   getUser: async (req, res) => {
     const data = await db.Users.findByPk(req.params.id)
     delete data.dataValues.passwordUser
-    data.dataValues.profilePic = 'http://localhost:3000/api/users/img/' + data.dataValues.profilePic
+    data.dataValues.profilePic = 'http://localhost:3001/api/users/img/' + data.dataValues.profilePic
     res.json({
       meta: {
         status: 200,
