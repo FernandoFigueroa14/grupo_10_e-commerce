@@ -11,9 +11,9 @@ function SideBar(){
         <React.Fragment>
             <ul className="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar" style={{backgroundColor: 'rgb(148, 255, 142)'}}>
             {/*<!-- Sidebar - Brand -->*/}
-            <a className="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <a className="sidebar-brand d-flex align-items-center justify-content-center">
                 <div className="sidebar-brand-icon">
-                <Link to='/'><img className="w-50" src={image} alt="DH-Clothes" style={{padding: '10px'}}/></Link>
+                    <Link to='/'><img className="w-50" src={image} alt="DH-Clothes" style={{padding: '10px'}}/></Link>
                 </div>
             </a>
 
@@ -25,7 +25,7 @@ function SideBar(){
 
             {/*<!-- Nav Item - Pages -->*/}
             <li className="nav-item">
-                <a className="nav-link collapsed" href="#">
+                <a className="nav-link collapsed">
                     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
                     <Link to='/users'><span style={textStyle}>Usuarios en base de datos</span></Link>
                 </a>
@@ -33,7 +33,7 @@ function SideBar(){
 
             {/*<!-- Nav Item - Charts -->*/}
             <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link">
                     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
                     <Link to='/products'><span style={textStyle}>Productos en base de datos</span></Link>
                 </a>
@@ -41,9 +41,10 @@ function SideBar(){
 
             {/*<!-- Nav Item - Tables -->*/}
             <li className="nav-item">
-                <a className="nav-link" href="/">
-                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                    <span style={textStyle}>Page 3</span></a>
+                <a className="nav-link">
+                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                    <Link to='/search'><span style={textStyle}>Buscar producto</span></Link>
+                </a>  
             </li>
 
             {/*<!-- Divider -->*/}

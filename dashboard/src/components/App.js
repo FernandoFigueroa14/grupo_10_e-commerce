@@ -1,7 +1,9 @@
-import React from 'react';
-import SideBar from './SideBar';
-import ContentWrapperUsersInDB from './ContentWrapperUsersInDB';
-import ContentWrapperProductsInDB from './ContentWrapperProductsInDB';
+import React from 'react'
+import SideBar from './SideBar'
+import ContentWrapperUsersInDB from './ContentWrapperUsersInDB'
+import ContentWrapperProductsInDB from './ContentWrapperProductsInDB'
+import ContentWrapperHome from './ContentWrapperHome'
+import ContentWrapperSearch from './ContentWrapperSearch'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
@@ -17,8 +19,11 @@ function App() {
               <Route path="/products">
                 <ContentWrapperProductsInDB />
               </Route>
+              <Route path="/search">
+                <ContentWrapperSearch />
+              </Route>
               <Route path="/">
-
+                <ContentWrapperHome />
               </Route>
             </Switch>
         </Router>
