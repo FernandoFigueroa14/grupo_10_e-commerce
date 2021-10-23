@@ -1,6 +1,6 @@
 import React from 'react';
 import image from '../assets/images/logo.png';
-import {  BrowserRouter as Router,Link } from "react-router-dom"
+import {  BrowserRouter as Router, Link } from "react-router-dom"
 
 function SideBar(){
     const textStyle = {
