@@ -1,6 +1,5 @@
 import React from 'react';
 import image from '../assets/images/logo.png';
-import Footer from './Footer'
 
 const SideBar = () => {
   const textStyle = {
@@ -17,7 +16,6 @@ const SideBar = () => {
                 <img className="w-50" src={image} alt="DH-Clothes" style={{padding: '10px'}}/>
             </div>
         </a>
-
 
         {/*<!-- Nav Item - Dashboard -->*/}
 
@@ -54,7 +52,6 @@ const SideBar = () => {
         </ul>
         {/*<!-- End of Sidebar -->*/}
       </div>
-      <Footer/>
     </div>
   )
 }
