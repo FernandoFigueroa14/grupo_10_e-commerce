@@ -1,9 +1,6 @@
 import React from 'react';
 import image from '../assets/images/logo.png';
-import {
-    BrowserRouter as Router,
-    Switch, Route, Link
-  } from "react-router-dom"
+import {  BrowserRouter as Router,Link } from "react-router-dom"
 
 function SideBar(){
     const textStyle = {
@@ -13,14 +10,13 @@ function SideBar(){
         padding: '5px'
       }
     return(
-        <Router>
             <React.Fragment>
             {/*<!-- Sidebar -->*/}
         <ul className="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar" style={{backgroundColor: 'rgb(148, 255, 142)'}}>
         {/*<!-- Sidebar - Brand -->*/}
         <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
             <div className="sidebar-brand-icon">
-            <Link style={padding} to="/"><img className="w-50" src={image} alt="DH-Clothes" style={{padding: '10px'}}/></Link>
+            <img className="w-50" src={image} alt="DH-Clothes" style={{padding: '10px'}}/>
                 
             </div>
         </a>
@@ -33,17 +29,17 @@ function SideBar(){
 
         {/*<!-- Nav Item - Pages -->*/}
         <li className="nav-item">
-            <a className="nav-link collapsed" href="/">
+            <a className="nav-link collapsed" href="/users">
                 <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                <Link style={padding} to="/users"><span style={textStyle}>Usuarios en base de datos</span></Link>
+                <span style={textStyle}>Usuarios en base de datos</span>
             </a>
         </li>
 
         {/*<!-- Nav Item - Charts -->*/}
         <li className="nav-item">
-            <a className="nav-link" href="/">
+            <a className="nav-link" href="/products">
             <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                <span style={textStyle}>Page 2</span></a>
+                <span style={textStyle}>Productos en base de datos</span></a>
         </li>
 
         {/*<!-- Nav Item - Tables -->*/}
@@ -59,7 +55,6 @@ function SideBar(){
         {/*<!-- End of Sidebar -->*/}
             
         </React.Fragment>
-        </Router>
     )
 }
 export default SideBar;
