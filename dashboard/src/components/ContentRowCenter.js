@@ -1,17 +1,14 @@
 import React from 'react';
 import UsersInDB from './UsersInDb';
+import {
+    BrowserRouter as Router,
+    Switch, Route, Link
+  } from "react-router-dom"
 
 function ContentRowCenter(){
     return (
         <div className="row">
-            
-            {/*<!-- Last Movie in DB -->*/}
-           
-            {/*<!-- End content row last movie in Data Base -->*/}
-
-            {/*<!-- Genres in DB -->*/}
             <UsersInDB />
-
         </div>
     )
 }
