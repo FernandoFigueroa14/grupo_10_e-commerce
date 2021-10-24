@@ -5,7 +5,11 @@ import { Link } from "react-router-dom"
 function SideBar(){
     const textStyle = {
         color: 'black'
-      }
+    }
+
+      const iconColor = {
+        color: 'black'
+    }
 
     return (
         <React.Fragment>
@@ -25,35 +29,35 @@ function SideBar(){
 
             <li className="nav-item">
                 <a className="nav-link collapsed">
-                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <i class="fas fa-users" style={iconColor}></i>
                     <Link to='/users'><span style={textStyle}>Usuarios en BD</span></Link>
                 </a>
             </li>
 
             <li className="nav-item">
                 <a className="nav-link">
-                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <i class="fas fa-tshirt" style={iconColor}></i>
                     <Link to='/products'><span style={textStyle}>Productos en BD</span></Link>
                 </a>
             </li>
 
             <li className="nav-item">
                 <a className="nav-link">
-                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <i class="fas fa-search" style={iconColor}></i>
                     <Link to='/search'><span style={textStyle}>Buscar productos</span></Link>
                 </a>  
             </li>
 
             <li className="nav-item">
                 <a className="nav-link">
-                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <i class="fas fa-filter" style={iconColor}></i>
                     <Link to='/filter'><span style={textStyle}>Filtrar productos</span></Link>
                 </a>  
             </li>
 
             <li className="nav-item">
                 <a className="nav-link">
-                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <i class="fas fa-info-circle" style={iconColor}></i>
                     <Link to='/detail'><span style={textStyle}>Detalle de producto</span></Link>
                 </a>  
             </li>

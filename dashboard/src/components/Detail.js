@@ -32,8 +32,8 @@ function DetailProduct() {
   }, [])
 
   const handleInput = async (event) => {
-    const existsProduct = products.filter(product => product.product_id === parseInt(event.target.value))
-    if (existsProduct.length !== 0) {
+    const existsProduct = products.find(product => product.product_id === parseInt(event.target.value))
+    if (existsProduct) {
       const resProduct = await axios.get('/api/products/' + event.target.value)
       setProduct(resProduct.data.data)
     } else {
