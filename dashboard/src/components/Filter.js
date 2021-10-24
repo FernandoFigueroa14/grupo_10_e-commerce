@@ -41,7 +41,7 @@ const Filter = () => {
       <div className="card shadow mb-4">
         <div className="card-header py-3">
           <h5 className="m-0 font-weight-bold text-gray-800">
-            Filtrar productos | D-HC
+            Filtrar productos por categoria | D-HC
           </h5>
         </div>
         

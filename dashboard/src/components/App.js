@@ -5,6 +5,7 @@ import ContentWrapperProductsInDB from './ContentWrapperProductsInDB'
 import ContentWrapperHome from './ContentWrapperHome'
 import ContentWrapperSearch from './ContentWrapperSearch'
 import ContentWrapperFilter from './ContentWrapperFilter'
+import ContentWrapperDetail from './ContentWrapperDetail'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
               </Route>
               <Route path="/filter">
                 <ContentWrapperFilter />
+              </Route>
+              <Route path="/detail">
+                <ContentWrapperDetail />
               </Route>
               <Route path="/">
                 <ContentWrapperHome />

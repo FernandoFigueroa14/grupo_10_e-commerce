@@ -51,6 +51,13 @@ function SideBar(){
                 </a>  
             </li>
 
+            <li className="nav-item">
+                <a className="nav-link">
+                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                    <Link to='/detail'><span style={textStyle}>Detalle de producto</span></Link>
+                </a>  
+            </li>
+
             {/*<!-- Divider -->*/}
             <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
