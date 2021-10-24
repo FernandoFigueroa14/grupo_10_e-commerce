@@ -23,7 +23,7 @@ const validations = [
     .custom((value, { req }) => {
       console.log(req.file)
       if (!req.file) {
-        throw new Error('Debes de colocar una foto de perfil')
+        throw new Error('Debes de colocar una foto de producto')
       }
       // Indicates the success of this synchronous custom validator
       return true
