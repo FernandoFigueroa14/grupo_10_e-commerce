@@ -3,8 +3,7 @@ import axios from 'axios'
 
 const ProductBox = ({ product }) => {
   return (
-    <div className="row">
-      <div className="col-lg-6 mb-4">
+      <div className="col-lg-5 mb-4">
         <div className="card bg-dark text-white shadow">
           <div className="card-body">
             <div>id: {product.product_id}</div>
@@ -13,7 +12,6 @@ const ProductBox = ({ product }) => {
           </div>
         </div>
       </div>
-    </div>
   )
 }
 
@@ -54,17 +52,18 @@ function UsersInDB() {
           <input type="text" class="form-control" id="InputProduct" aria-describedby="product" placeholder="Buscar" onChange={handleInput}/>
         </form>
         <div className="card-body">
-          {keyword.length === 0 || result.length === 0
-            ? <h6 className="m-0 font-weight-bold text-gray-800"> Sin coincidencias </h6>
-            : result.map((item) => {
-              return <ProductBox key={item.product_id} product={item}/>
-              })
+          <div className="row">
+            {keyword.length === 0 || result.length === 0
+              ? <h6 className="m-0 font-weight-bold text-gray-800"> Sin coincidencias </h6>
+              : result.map((item) => {
+                return <ProductBox key={item.product_id} product={item}/>
+                })
             }
-          {}
+          </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default UsersInDB

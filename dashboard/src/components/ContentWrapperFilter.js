@@ -1,9 +1,10 @@
-import React from 'react';
-import TopBar from './TopBar';
-import ProductsInDB from './ProductsInDB';
-import Footer from './Footer';
+import React from 'react'
 
-function ContentWrapperProductsInDB() {
+import TopBar from './TopBar'
+import FilterProduct from './Filter'
+import Footer from './Footer'
+
+function ContentWrapperFilter () {
     return (
       <React.Fragment>
         <div id="content-wrapper" className="d-flex flex-column">
@@ -14,7 +15,7 @@ function ContentWrapperProductsInDB() {
                   <h1 className="h3 mb-0 text-gray-800">D-HC | Clothes</h1>
                 </div>
                 <div className="row">
-                  <ProductsInDB/>
+                  <FilterProduct />
                 </div>
               </div>
             <Footer />
@@ -23,4 +24,4 @@ function ContentWrapperProductsInDB() {
       </React.Fragment>
     )
 }
-export default ContentWrapperProductsInDB
+export default ContentWrapperFilter

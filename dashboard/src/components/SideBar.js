@@ -23,27 +23,31 @@ function SideBar(){
             {/*<!-- Heading -->*/}
             <div className="sidebar-heading" style={textStyle}>Dashboard | DH-Clothes</div>
 
-            {/*<!-- Nav Item - Pages -->*/}
             <li className="nav-item">
                 <a className="nav-link collapsed">
                     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                    <Link to='/users'><span style={textStyle}>Usuarios en base de datos</span></Link>
+                    <Link to='/users'><span style={textStyle}>Usuarios en BD</span></Link>
                 </a>
             </li>
 
-            {/*<!-- Nav Item - Charts -->*/}
             <li className="nav-item">
                 <a className="nav-link">
                     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                    <Link to='/products'><span style={textStyle}>Productos en base de datos</span></Link>
+                    <Link to='/products'><span style={textStyle}>Productos en BD</span></Link>
                 </a>
             </li>
 
-            {/*<!-- Nav Item - Tables -->*/}
             <li className="nav-item">
                 <a className="nav-link">
                     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                    <Link to='/search'><span style={textStyle}>Buscar producto</span></Link>
+                    <Link to='/search'><span style={textStyle}>Buscar productos</span></Link>
+                </a>  
+            </li>
+
+            <li className="nav-item">
+                <a className="nav-link">
+                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                    <Link to='/filter'><span style={textStyle}>Filtrar productos</span></Link>
                 </a>  
             </li>
 

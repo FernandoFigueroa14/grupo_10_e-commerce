@@ -8,7 +8,8 @@ const ProductBox = ({ product }) => {
         <div className="card-body">
           <div>id: {product.product_id}</div>
           <div>nombre: {product.name}</div>
-          <div>descripcion: {product.description}</div>
+          <div>descripción: {product.description}</div>
+          <div>categoría: {product.category === 'male' ? 'Hombre' : product.category === 'female' ? 'Mujer' : 'Niño'}</div>
         </div>
       </div>
     </div>

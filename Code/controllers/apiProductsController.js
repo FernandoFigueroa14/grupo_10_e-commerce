@@ -14,9 +14,9 @@ const apiProductsController = {
     const kids = await getData('kid')
 
     const products = allProducts.map((product) => {
-      const { product_id, name, description } = product.dataValues
+      const { product_id, name, description, category } = product.dataValues
       const detail = 'http://localhost:3001/api/products/' + product_id
-      return { product_id, name, description, detail }
+      return { product_id, name, description, detail, category }
     })
 
     res.json({

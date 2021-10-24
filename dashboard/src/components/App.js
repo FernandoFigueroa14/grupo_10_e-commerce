@@ -4,6 +4,7 @@ import ContentWrapperUsersInDB from './ContentWrapperUsersInDB'
 import ContentWrapperProductsInDB from './ContentWrapperProductsInDB'
 import ContentWrapperHome from './ContentWrapperHome'
 import ContentWrapperSearch from './ContentWrapperSearch'
+import ContentWrapperFilter from './ContentWrapperFilter'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
               </Route>
               <Route path="/search">
                 <ContentWrapperSearch />
+              </Route>
+              <Route path="/filter">
+                <ContentWrapperFilter />
               </Route>
               <Route path="/">
                 <ContentWrapperHome />
