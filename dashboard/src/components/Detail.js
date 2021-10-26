@@ -37,7 +37,7 @@ const UserBox = ({ user }) => {
         </div>
       </div>
     </div>
-)
+  )
 }
 
 function DetailProduct() {
@@ -45,6 +45,11 @@ function DetailProduct() {
   const [users, setUsers] = useState([])
   const [product, setProduct] = useState({})
   const [user, setUser] = useState({})
+  const [input, setInput] = useState('')
+  const [selection, setSelection] = useState(true)
+
+  // true => users
+  // false => products
 
   useEffect(() => {
     const getDataProducts = async () => {
@@ -56,24 +61,32 @@ function DetailProduct() {
     getDataProducts()
   }, [])
 
-  const handleInput = async (event) => {
-    const existsProduct = products.filter(product => product.product_id === parseInt(event.target.value))
-    if (existsProduct.length !== 0) {
-      const resProduct = await axios.get('/api/products/' + event.target.value)
-      setProduct(resProduct.data.data)
+  const search = async (event) => {
+    event.preventDefault()
+
+    setUser({})
+    setProduct({})
+
+    let existsUser = null
+    let existsProduct = null
+
+    if (selection) {
+      existsUser = users.find(user => user.user_id === parseInt(input))
+      if (existsUser) {
+        const resUser = await axios.get('/api/users/' + input)
+        setUser(resUser.data.data)
+      }
     } else {
-      setProduct({})
-    }
+      existsProduct = products.find(product => product.product_id === parseInt(input))
+      if (existsProduct) {
+        const resProduct = await axios.get('/api/products/' + input)
+        setProduct(resProduct.data.data)
+      }
+    } 
   }
 
-  const handleInputUser = async (event) => {
-    const existsUsers = users.filter(user => user.user_id === parseInt(event.target.value))
-    if (existsUsers.length !== 0) {
-      const resUser = await axios.get('/api/users/' + event.target.value)
-      setUser(resUser.data.data)
-    } else {
-      setUser({})
-    }
+  const handleChange = (event) => {
+    setInput(event.target.value)
   }
 
   return (
@@ -84,14 +97,29 @@ function DetailProduct() {
             Detalles | Usuariaos y Productos | D-HC
           </h5>
         </div>
-        <form style={{padding: '25px'}}>
-          <input type="text" class="form-control" id="InputProduct" aria-describedby="product" placeholder="ID de producto" onChange={handleInput} style={{marginBottom: '25px'}}/>
-          <input type="text" class="form-control" id="InputUser" aria-describedby="user" placeholder="ID de usuario" onChange={handleInputUser}/>
+        <form style={{padding: '25px'}} onSubmit={search}>
+          <div className="col-lg-7">
+            <input 
+              type="text" 
+              class="form-control" 
+              aria-describedby="product" 
+              placeholder={selection ? "ID de usuraio" : "ID de producto"} 
+              onChange={handleChange}
+              style={{marginBottom: '25px'}} 
+            />
+            <button type="submit" class="btn btn-primary">Buscar {selection ? "usuraio" : "producto"} </button>
+          </div>  
+          <div className="col-lg-2">
+              <select class="custom-select" aria-label="Default select example" onChange={() => {setSelection(!selection)}} style={{marginTop: '25px'}}>
+                <option selected>Usuarios</option>
+                <option >Productos</option>
+              </select>
+            </div>
         </form>
         <div className="card-body">
           <div className="row">
             {Object.keys(product).length === 0 && Object.keys(user).length === 0
-              ? <h6 className="m-0 font-weight-bold text-gray-800"> Sin coincidencias </h6>
+              ? <div className="col-lg-3 mb-4" style={{marginLeft: '20px'}}><h6 className="m-0 font-weight-bold text-gray-800"> {selection ? "usuraio no encontrado" : "producto no encontrado"} </h6></div>
               : <div>
                   <ProductBox product={product}/> <UserBox user={user}/>
                 </div>

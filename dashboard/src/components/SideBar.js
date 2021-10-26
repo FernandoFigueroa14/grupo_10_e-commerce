@@ -58,7 +58,7 @@ function SideBar(){
             <li className="nav-item">
                 <a className="nav-link">
                 <i class="fas fa-info-circle" style={iconColor}></i>
-                    <Link to='/detail'><span style={textStyle}>Detalle de producto</span></Link>
+                    <Link to='/detail'><span style={textStyle}>Usuarios y Productos</span></Link>
                 </a>  
             </li>
 
