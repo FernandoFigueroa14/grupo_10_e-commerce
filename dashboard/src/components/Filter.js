@@ -46,7 +46,6 @@ const Filter = () => {
         </div>
         
         <div className="card-body">
-
           <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" onChange={handleSelect}>
             <option value="sc" selected>Categoria</option>
             <option value="male">Hombres</option>
