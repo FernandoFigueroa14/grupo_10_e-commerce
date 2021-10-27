@@ -103,11 +103,11 @@ function DetailProduct() {
               type="text" 
               class="form-control" 
               aria-describedby="product" 
-              placeholder={selection ? "ID de usuraio" : "ID de producto"} 
+              placeholder={selection ? "ID de usuario" : "ID de producto"} 
               onChange={handleChange}
               style={{marginBottom: '25px'}} 
             />
-            <button type="submit" class="btn btn-primary">Buscar {selection ? "usuraio" : "producto"} </button>
+            <button type="submit" class="btn btn-primary">Buscar {selection ? "usuario" : "producto"} </button>
           </div>  
           <div className="col-lg-2">
               <select class="custom-select" aria-label="Default select example" onChange={() => {setSelection(!selection)}} style={{marginTop: '25px'}}>
@@ -119,7 +119,7 @@ function DetailProduct() {
         <div className="card-body">
           <div className="row">
             {Object.keys(product).length === 0 && Object.keys(user).length === 0
-              ? <div className="col-lg-3 mb-4" style={{marginLeft: '20px'}}><h6 className="m-0 font-weight-bold text-gray-800"> {selection ? "usuraio no encontrado" : "producto no encontrado"} </h6></div>
+              ? <div className="col-lg-3 mb-4" style={{marginLeft: '20px'}}><h6 className="m-0 font-weight-bold text-gray-800"> {selection ? "usuario no encontrado" : "producto no encontrado"} </h6></div>
               : <div>
                   <ProductBox product={product}/> <UserBox user={user}/>
                 </div>
