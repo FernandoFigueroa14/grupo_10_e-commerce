@@ -32,7 +32,8 @@ const userController = {
           return res.render(path.resolve('views/userViews/login'), { errors: { user: { msg: 'Las credenciales son inválidas' } } })
         }
       })
-      .catch(() => {
+      .catch((error) => {
+        console.log(error)
         return res.render(path.resolve('views/userViews/login'), { errors: { user: { msg: 'No se encuentra este correo electronico en nuestra base de datos' } } })
       })
   },
@@ -131,7 +132,6 @@ const userController = {
 }
 
 module.exports = userController
-
 
 /* dataValues: {
 user_id: 1628632503079,

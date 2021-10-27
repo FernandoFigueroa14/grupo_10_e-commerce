@@ -15,55 +15,55 @@ En este sprint, al ser el primero, solo se proponen las acciones que se deben se
 Se lograron implementar en código HTML y CSS de manera satisfactoria todas las vistas propuestas en los wireframes del sprint 1. A su vez se actualizo el Trello del equipo con las actividades desarrolladas a lo largo del sprint. Las acciones propuestas son:
 
     Start:  
-            -Mayor coordinación y comunicación.
-            -Reunirnos antes de la fecha de termino de cada sprint para verificar que el sprint está completo.
-            -Hacer las retrospectivas con más tiempo.
+        -Mayor coordinación y comunicación.
+        -Reunirnos antes de la fecha de termino de cada sprint para verificar que el sprint está completo.
+        -Hacer las retrospectivas con más tiempo.
 
     Continue:
-            -Buen ambiente de trabajo.
-            -Apoyarnos en dudas y/o problemas.
+        -Buen ambiente de trabajo.
+        -Apoyarnos en dudas y/o problemas.
     
     Stop: 
-            -Evitar atraso en tareas pendientes.
+        -Evitar atraso en tareas pendientes.
 
 #Retroalimentación Sprint 3
 
 Los avances en este sprint fueron los esperados debido a que se implemento en todas las vistas EJS como template engine, haciendo dinámicas las vistas del sprint 2. De igual manera se agregaron las nuevas vistas propuestas para agregar un nuevo producto y la administración del mismo. Las acciones propuestas son:
 
     Start:  
-            -Entregar los sprints en la fecha establecida.
-            -Sesiones breves 10-15 minutos para planear sprint.
-            Coordinar de mejor manera nuestro trabajo para cumplir con los tiempos establecidos.
+        -Entregar los sprints en la fecha establecida.
+        -Sesiones breves 10-15 minutos para planear sprint.
+        Coordinar de mejor manera nuestro trabajo para cumplir con los tiempos establecidos.
 
     Continue:
-            -Cumplir con la parte del trabajo que le toca a cada uno.
-            -La forma de comunicación y organización.
-            -Seguir compartiendo ideas de todo tipo que puedan sumar al proyecto.
-            -Generando ideas y aplicando ideas mejores para el proyecto.
+        -Cumplir con la parte del trabajo que le toca a cada uno.
+        -La forma de comunicación y organización.
+        -Seguir compartiendo ideas de todo tipo que puedan sumar al proyecto.
+        -Generando ideas y aplicando ideas mejores para el proyecto.
     
     Stop: 
-            -Acumular trabajo de sprints anteriores.
-            -Hacer los sprints a destiempo.
-            Dejar todo a la última hora provocando que se vayan atrasando los sprints.
+        -Acumular trabajo de sprints anteriores.
+        -Hacer los sprints a destiempo.
+        Dejar todo a la última hora provocando que se vayan atrasando los sprints.
 
 #Retroalimentación Sprint 4
 
 Se agrego al proyecto la parte del CRUD para poder crear, eliminar y modificar productos dentro del archivo JSON que contiene la información de los mismos. Las acciones propuestas son:
 
     Start:  
-            -Definir alcances.
-            -Mayor comunicación.
-            -Reuniones antes y después de cada sprint.
-            -Aportar ideas y mejoras al trabajo existente.
-            -Mejor planeación de los sprints.
+        -Definir alcances.
+        -Mayor comunicación.
+        -Reuniones antes y después de cada sprint.
+        -Aportar ideas y mejoras al trabajo existente.
+        -Mejor planeación de los sprints.
 
     Continue:
-            -Trabajo de calidad.
-            -Escuchar y valorar todas las opiniones e ideas.
+        -Trabajo de calidad.
+        -Escuchar y valorar todas las opiniones e ideas.
     
     Stop: 
-            -Atrasos con entregas de sprints pasados.
-            -No comunicar los avances realizados.
+        -Atrasos con entregas de sprints pasados.
+        -No comunicar los avances realizados.
             
 #Retroalimentación Sprint 5
 
@@ -96,3 +96,34 @@ Puntos que tiene contento al equipo:
        Complejidad del proyecto
        Algunos ligeros retrasos en el avance del sprint
 
+#Retroalimentación Sprint 7
+
+Este septimo entregable fue de los mas sencillos de realizar debido a que el proyecto ya contaba con algunos de los requerimientos solicitados para este entregable ya implementados. Como lo fueron las validaciones en backend, solo fue necesario implementarlas en frontend.
+
+Puntos que tiene contento al equipo:
+ 
+        Estado actual del proyecto
+        Funcionalidades implementadas en tiempo y forma 
+        Comunicación
+ 
+   Puntos que hacen dudar al equipo:
+ 
+       Siguiente entregable (número 8)
+       Mejorar algunos detalles de implementaciones pasadas
+
+
+#Retroalimentación Sprint 8
+
+Sprint para la implementación de un dashboard, desarrollado utilizando la biblioteca React.js
+
+Puntos que tiene contento al equipo:
+ 
+       Culminacion exitosa del proyecto final
+       Termino en tiempo de todos los sprints
+       Funcionalidad del proyecto en general
+ 
+   Puntos que hacen dudar al equipo:
+ 
+        Algunas funcionalidades opcionales no implementadas
+        Leve mejora de algunos detalles estéticos del proyecto
+        
